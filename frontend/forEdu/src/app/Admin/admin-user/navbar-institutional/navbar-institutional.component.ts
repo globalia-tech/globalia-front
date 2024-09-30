@@ -4,7 +4,7 @@ import { InstitutionalUserStudentComponent } from '../institutional-user-student
 import { InstitutionalUserAdminComponent } from '../institutional-user-admin/institutional-user-admin.component';
 import { NavegationInstitutionalService } from '../../../service/institutional/navegation-institutional.service';
 import { InstitutionalUserTeacherComponent } from '../institutional-user-teacher/institutional-user-teacher.component';
-import { AppComponent } from "../../../app.component";
+
 
 @Component({
   selector: 'app-navbar-institutional',
@@ -18,7 +18,6 @@ export class NavbarInstitutionalComponent {
   tablaActual: string = '';
   constructor(
     private navegationInstitutionalService : NavegationInstitutionalService,
-    private router: Router
   ) {}
   
   ngOnInit() {
