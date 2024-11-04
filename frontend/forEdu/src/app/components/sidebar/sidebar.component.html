@@ -1,5 +1,9 @@
-<div class="custom-panel-menu">
-  <img src="/Group 4139.png" alt="Logo Foredu">
+<div [ngClass]="isOpen ? 'custom-panel-menu' : 'custom-panel-menu-close'">
+  <div class="logo">
+    <img src="/Group 4139.png" alt="Logo Foredu" class="logo-foredu">
+     <i class="pi pi-bars" (click)="toggleSidebar()"></i>
+  </div>
+  
 
   <p-panelMenu [model]="items"  />
 </div>

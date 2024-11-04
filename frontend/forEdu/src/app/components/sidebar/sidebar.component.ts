@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
@@ -7,13 +8,20 @@ import { StyleClassModule } from 'primeng/styleclass';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [PanelMenuModule],
+  imports: [PanelMenuModule, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 
 
 export class SidebarComponent implements OnInit {
+
+  isOpen = true;
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
+ 
   items: MenuItem[] = [];
   constructor(private router: Router) {}
 
@@ -22,17 +30,17 @@ export class SidebarComponent implements OnInit {
       {
         label: 'Inicio',
         icon: 'pi pi-fw pi-home',
-        command: () => this.router.navigate(['/dashboard/']) // Navega al componente DASHBOARD
+        command: () => this.router.navigate(['/dashboard/']) 
       },
       {
         label: 'Grados',
         icon: 'pi pi-fw pi-book',
-        command: () => this.router.navigate(['/dashboard/grade']) // Navega al componente GRADO
+        command: () => this.router.navigate(['/dashboard/grade']) 
       },
       {
         label: 'Calendarios',
         icon: 'pi pi-fw pi-calendar',
-        command: () => this.router.navigate(['/dashboard/calendar']) // Navega al componente GRADO
+        command: () => this.router.navigate(['/dashboard/calendar']) 
       },
       {
         label: 'Mensajes',
@@ -42,27 +50,18 @@ export class SidebarComponent implements OnInit {
       {
         label: 'Usuarios',
         icon: 'pi pi-fw pi-users',
-        command: () => this.router.navigate(['/dashboard/users']) // Navega al componente USUARIOS
+        command: () => this.router.navigate(['/dashboard/users']) 
       }
       ,
       {
         label: 'Boletines',
         icon: 'pi pi-fw pi-graduation-cap',
-        command: () => this.router.navigate(['/dashboard/newsletter']) // Navega al componente BOLETINES
+        command: () => this.router.navigate(['/dashboard/newsletter']) 
       },
       {
         label: 'Herramientas',
         icon: 'pi pi-fw pi-cog',
-        items: [
-          {
-            label: 'Setting',
-            icon: 'pi pi-fw pi-cog',
-          },
-          {
-            label: 'Soporte',
-            icon: 'pi pi-fw pi-info-circle',
-          }
-        ]
+        command: () => this.router.navigate(['/dashboard/newsletter']) 
       }
     ]
   }

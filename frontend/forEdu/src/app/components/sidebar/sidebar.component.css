@@ -1,73 +1,127 @@
 @import "primeicons/primeicons.css";
-img{
-  width: 7rem;
-  height: auto;
-  margin: 0 0 1.25rem 2.125rem;
+img {
+   width: 7rem;
+   height: auto;
+   margin: 0 0 1.25rem 2.125rem;
+}
+.logo {
+   display: flex;
+   margin-top: 1rem;
+   margin-bottom: 1.5rem;
+   
+}
+
+.logo i {
+   padding-left: 1.5rem;
+   position: relative;
+   top: 0.3rem;
+   cursor: pointer;
 }
 .custom-panel-menu {
-background-color: #E7EAF5;
-padding-top: 2em;
-padding-left: .625rem;
-padding-right: .625rem;
+   background-color: #e7eaf5;
+   padding-top: 2.5em;
+   padding-left: 0.625rem;
+   padding-right: 0.625rem;
+   box-sizing: border-box;
+   width: 250px;
+   height: 100vh;
+   overflow-y: auto;
+   z-index: 1000;
+   position: relative;
+   transition: all 0.5s ease;
+}
 
-  width: 18vw;
+.custom-panel-menu-close {
+  background-color: #e7eaf5;
+  padding-top: 2em;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  box-sizing: border-box;
+  width: 68px;
   height: 100vh;
   overflow-y: auto;
   z-index: 1000;
-  position: fixed;
-
+  position: relative;
+  transition: all 0.5s ease;
+}
+.custom-panel-menu-close .logo-foredu{
+display: none;
 }
 
-::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link
-{
-  background-color: #E7EAF5;
-  color: #717171;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link:hover {
-  background-color: #F5F5F5;
-  color: #E9511D;
-}
-
-::ng-deep.p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link:hover .p-menuitem-icon
- {
-  color: #E9511D;
-}
-
-::ng-deep  .p-panelmenu-header-action
-{
-  background-color: #E7EAF5;
-  color: #717171;
-  transition: background-color 0.3s ease, color 0.3s ease;
+::ng-deep .custom-panel-menu-close .p-menuitem-text {
+  display: none;
 }
 
 
-::ng-deep .p-panelmenu-header-action:hover
-{
-  background-color: #F5F5F5;
-  color: #E9511D;
+
+::ng-deep
+   .p-panelmenu
+   .p-panelmenu-content
+   .p-menuitem
+   > .p-menuitem-content
+   .p-menuitem-link {
+   background-color: #e7eaf5;
+   color: #717171;
+   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-::ng-deep .p-panelmenu .p-panelmenu-content
-{
-    padding: 0;
+::ng-deep
+   .p-panelmenu
+   .p-panelmenu-content
+   .p-menuitem
+   > .p-menuitem-content
+   .p-menuitem-link:hover {
+   background-color: #f5f5f5;
+   color: #e9511d;
 }
 
-::ng-deep .p-panelmenu-header-action:hover .pi
- {
-  color: #E9511D;
+::ng-deep.p-panelmenu
+   .p-panelmenu-content
+   .p-menuitem
+   > .p-menuitem-content
+   .p-menuitem-link:hover
+   .p-menuitem-icon {
+   color: #e9511d;
 }
 
-::ng-deep .p-panelmenu .p-panelmenu-content .p-submenu-list .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text:hover
- {
-  background-color: #F5F5F5;
-  color: #E9511D;
-  }
-
-  ::ng-deep .p-panelmenu .p-panelmenu-content .p-submenu-list .p-menuitem > .p-menuitem-content .p-menuitem-link:hover .p-menuitem-icon
-{
-  color: #E9511D;
+::ng-deep .p-panelmenu-header-action {
+   background-color: #e7eaf5;
+   color: #717171;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+::ng-deep .p-menuitem-icon {
+   margin-right: 1.3rem;
 }
 
+::ng-deep .p-panelmenu-header-action:hover {
+   background-color: #f5f5f5;
+   color: #e9511d;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-content {
+   padding: 0;
+}
+
+
+::ng-deep
+   .p-panelmenu
+   .p-panelmenu-content
+   .p-submenu-list
+   .p-menuitem
+   > .p-menuitem-content
+   .p-menuitem-link
+   .p-menuitem-text:hover {
+   background-color: #f5f5f5;
+   color: #e9511d;
+}
+
+::ng-deep
+   .p-panelmenu
+   .p-panelmenu-content
+   .p-submenu-list
+   .p-menuitem
+   > .p-menuitem-content
+   .p-menuitem-link:hover
+   .p-menuitem-icon {
+   color: #e9511d;
+}
