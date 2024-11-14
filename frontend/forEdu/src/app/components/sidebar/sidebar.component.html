@@ -1,9 +1,32 @@
 <div [ngClass]="isOpen ? 'custom-panel-menu' : 'custom-panel-menu-close'">
   <div class="logo">
-    <img src="/Group 4139.png" alt="Logo Foredu" class="logo-foredu">
-     <i class="pi pi-bars" (click)="toggleSidebar()"></i>
+    <img src="/assets/logo.png" alt="Logo Foredu" class="logo-foredu">
+    <i class="pi pi-bars" (click)="toggleSidebar()"></i>
   </div>
-  
 
-  <p-panelMenu [model]="items"  />
+  <p-panelMenu [model]="items" styleClass="w-full md:w-20rem">
+    <ng-template pTemplate="item" let-item>
+      <a pRipple class="flex align-items-center px-3 py-2 cursor-pointer">
+        <!-- Icono personalizado o ícono de PrimeNG -->
+        <ng-container *ngIf="item.customIcon; else primeIcon">
+          <img [src]="item.customIcon" alt="Icono" class="menu-icon" />
+        </ng-container>
+        <ng-template #primeIcon>
+          <i [class]="item.icon + ' text-primary'"></i>
+        </ng-template>
+
+        <!-- Etiqueta del item -->
+        <span class="ml-2">{{ item.label }}</span>
+
+        <!-- Badge (opcional) -->
+        <p-badge *ngIf="item.badge" class="ml-auto" [value]="item.badge"></p-badge>
+
+        <!-- Shortcut (opcional) -->
+        <span *ngIf="item.shortcut" class="ml-auto border-1 surface-border 
+              border-round surface-100 text-xs p-1">
+          {{ item.shortcut }}
+        </span>
+      </a>
+    </ng-template>
+  </p-panelMenu>
 </div>
