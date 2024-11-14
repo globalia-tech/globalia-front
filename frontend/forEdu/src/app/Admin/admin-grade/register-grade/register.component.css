@@ -7,6 +7,16 @@
     width: 100%;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+   width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
 .turno{
    font-size: 1.2rem;
    color: #9F9F9F;
@@ -23,14 +33,19 @@
 }
 
 .form-group {
+  
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 1.25rem;
-    flex-wrap: wrap;
+   
+}
+.group-items{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.form-group .group-items label {
     font-weight: bold;
     flex-basis: 6.25rem; /* Tamaño fijo para los labels */
     margin:.625rem;
@@ -39,11 +54,12 @@
     margin-bottom: .3125rem; /* Espacio inferior cuando los elementos se envuelven */
 }
 
-.form-group select {
+.form-group .group-items select {
     flex-grow: 1; /* Permite que el select crezca para llenar el espacio disponible */
     padding: .625rem;
     border: 1px solid #000; /* Borde negro */
     background-color: #f9f9f9; /* Fondo claro */
+    margin-right: 2rem;
 }
 
 .button-container {

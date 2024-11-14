@@ -50,7 +50,7 @@ export const routes: Routes = [
         data: { title: 'Crear Grados' },
       },
       {
-        path: 'detailsgrade',
+        path: 'detailsgrade/:id',
         component: DetailComponent,
         data: { title: 'Detalles' },
       },

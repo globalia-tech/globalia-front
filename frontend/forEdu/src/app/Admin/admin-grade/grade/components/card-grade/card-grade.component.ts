@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { GradeRegister } from '../../interfaces/grade-register';
+import { GradeRegister } from '../../interface/grade-register';
 import { Router } from '@angular/router';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';

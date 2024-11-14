@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { CardGradeComponent } from '../../../components/card-grade/card-grade.component';
-import { CardAddComponent } from '../../../components/card-add/card-add.component';
+import { CardGradeComponent } from './components/card-grade/card-grade.component';
+import { CardAddComponent } from './components/card-add/card-add.component';
 import { NavbarComponent } from "../../../components/navbar/navbar.component";
 import { SidebarComponent } from "../../../components/sidebar/sidebar.component";
-import { GradeRegister } from '../../../interfaces/grade-register';
-import { GradeRegisterService } from '../../../service/grade-register.service';
+import { GradeRegister } from './interface/grade-register';
+import { GradeRegisterService } from './service/grade-register.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-grade',
@@ -25,12 +26,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./grade.component.css']
 })
 export class GradeComponent {
+[x: string]: any;
 
   grades: GradeRegister[] = [];
   filteredGrades: GradeRegister[] = [];
   selectedTurno: string = 'TODOS';
 
-  constructor(private gradeService: GradeRegisterService) {}
+  constructor(private gradeService: GradeRegisterService, private router:Router) {}
 
   ngOnInit(): void {
     this.gradeService.getAllGrade().subscribe({
@@ -55,5 +57,11 @@ export class GradeComponent {
     } else {
       this.filteredGrades = this.grades.filter(grade => grade.turno === turno);
     }
+  }
+
+  goToDetail(gradeId: number) {
+    console.log(gradeId);
+    this.router.navigate(['dashboard', 'detailsgrade', gradeId]);
+
   }
 }

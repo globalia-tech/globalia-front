@@ -6,13 +6,14 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
-import { GradeRegisterService } from '../../../service/grade-register.service';
-import { GradeRegister } from '../../../interfaces/grade-register';
+import { GradeRegisterService } from '../grade/service/grade-register.service';
+import { GradeRegister } from '../grade/interface/grade-register';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ToastModule, MessageModule, ReactiveFormsModule, HttpClientModule, CommonModule],
+  imports: [ToastModule, MessageModule, ReactiveFormsModule, HttpClientModule, CommonModule,DividerModule ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   providers: [MessageService]

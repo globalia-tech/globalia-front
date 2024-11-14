@@ -3,10 +3,10 @@ import { ModalUserInstitutionalService } from '../../../service/modal/modal-user
 import { Person } from '../../../models/person';
 import { ProfesorService } from '../../../service/profesor.service';
 import { DataIterable, GetAll } from '../../../interfaces/profesor/get-all';
-import { GradeRegisterService } from '../../../service/grade-register.service';
-import { GradeRegister } from '../../../interfaces/grade-register';
+import { GradeRegisterService } from '../../admin-grade/grade/service/grade-register.service';
+import { GradeRegister } from '../../admin-grade/grade/interface/grade-register';
 import { CommonModule } from '@angular/common';
-import { Getgrade } from '../../../interfaces/getgrade';
+import { Getgrade } from '../../admin-grade/grade/interface/getgrade';
 
 @Component({
   selector: 'app-institutional-user-teacher',

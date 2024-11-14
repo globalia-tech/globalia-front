@@ -18,7 +18,9 @@
 
        <app-card-grade
          *ngFor="let grade of filteredGrades"
-         [grade]="grade">
+         [grade]="grade"
+         (click)="goToDetail(grade.id!)"
+         >
        </app-card-grade>
      </section>
    </div>

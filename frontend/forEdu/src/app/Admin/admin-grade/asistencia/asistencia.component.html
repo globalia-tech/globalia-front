@@ -37,44 +37,58 @@
               </tr>
             </thead>
             <tbody>
-              @for (person of persons; track person.id) {
-                <tr>
-                  <td><img class="student-photo" src="https://www.conmishijos.com/uploads/_trabalenguas.jpg" alt="Foto del alumno"></td>
-                  <td>{{ person.nombre }}</td>
-                  <td>{{ person.Asistencia }}</td>
-                  <td>{{ person.Justificativo }}</td>
-                  <td>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" [(ngModel)]="person.Lunes" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" [(ngModel)]="person.Martes" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" [(ngModel)]="person.Miercoles" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" [(ngModel)]="person.Jueves" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" [(ngModel)]="person.Viernes" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </td>
-                </tr>
-              }
+              <tr *ngFor="let asistencia of asistenciaAllagrupada; trackBy: trackById">
+                <td></td>
+                <td>{{ asistencia.nombre }}</td>
+                <td>{{ asistencia.porcentajeAsistencia}}</td>
+                <td>{{ asistencia.justificativo}}</td>
+               
+            
+                <!-- Asistencia para lunes -->
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" [checked]="asistencia.asistencia.lunes" disabled />
+                    <span class="checkmark"></span>
+              
+                  </label>
+                </td>
+            
+                <!-- Asistencia para martes -->
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" [checked]="asistencia.asistencia.martes" disabled />
+                    <span class="checkmark"></span>
+           
+                  </label>
+                </td>
+            
+                <!-- Asistencia para miércoles -->
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" [checked]="asistencia.asistencia.miercoles" disabled />
+                    <span class="checkmark"></span>
+                
+                  </label>
+                </td>
+            
+                <!-- Asistencia para jueves -->
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" [checked]="asistencia.asistencia.jueves" disabled />
+                    <span class="checkmark"></span>
+                  
+                  </label>
+                </td>
+            
+                <!-- Asistencia para viernes -->
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" [checked]="asistencia.asistencia.viernes" disabled />
+                    <span class="checkmark"></span>
+                
+                  </label>
+                </td>
+              </tr>
             </tbody>
           </table>
 

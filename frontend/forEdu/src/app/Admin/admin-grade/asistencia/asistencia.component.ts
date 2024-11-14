@@ -6,6 +6,9 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { MenuItem } from './interface/items.interface';
+import { AsistenciaService } from './service/asistencia.service';
+import { AsistenciaGetAll, DataIterable } from './interface/asistencia.interface';
 
 @Component({
   selector: 'app-asistencia',
@@ -16,67 +19,104 @@ import { ToastModule } from 'primeng/toast';
     SplitButtonModule,
     CommonModule,
     ToastModule
-
   ],
   templateUrl: './asistencia.component.html',
-  styleUrl: './asistencia.component.css',
+  styleUrls: ['./asistencia.component.css'],  // Corregido: styleUrl -> styleUrls
   providers: [MessageService]
 })
 export class AsistenciaComponent {
-  items!: any[];
+  public asistenciaAll: DataIterable[] = [];
   private asistenciaVerificacion: boolean = false;
-
+  public asistenciaAllagrupada:any;
 
   ngOnInit() {
-
-    this.items = [
-      {
-        label: 'Lunes',
-        icon: 'pi pi-calendar',
-        command: () => {
-          this.mostrarFechas('Lunes');
-        }
-      },
-      {
-        label: 'Martes',
-        icon: 'pi pi-calendar',
-        command: () => {
-          this.mostrarFechas('Martes');
-        }
-      },
-      {
-        label: 'Miércoles',
-        icon: 'pi pi-calendar',
-        command: () => {
-          this.mostrarFechas('Miercoles');
-        }
-      },
-      {
-        label: 'Jueves',
-        icon: 'pi pi-calendar',
-        command: () => {
-          this.mostrarFechas('Jueves');
-        }
-      },
-      {
-        label: 'Viernes',
-        icon: 'pi pi-calendar',
-        command: () => {
-          this.mostrarFechas('Viernes');
-        }
-      }
-    ];
+    this.asistenciaGetAll();
   }
+
+  constructor(
+    private modalUserInstitutionalService: ModalUserInstitutionalService,
+    private messageService: MessageService,
+    private asistenciaService: AsistenciaService
+  ) {}
+
   mostrarFechas(dia: string) {
     // Lógica para mostrar las fechas o hacer alguna acción cuando se selecciona un día
     console.log('Fecha seleccionada: ', dia);
   }
 
-  constructor(
-   private modalUserInstitutionalService: ModalUserInstitutionalService,
-   private messageService: MessageService
+  trackById(index: number, item: DataIterable): number {
+    return item.id;
+  }
 
-) {}
+  checkAsistenciaDia(asistencia: DataIterable, diaSemana: string): boolean {
+    const diasSemana: { [key: string]: number } = {
+      lunes: 1,
+      martes: 2,
+      miércoles: 3,
+      jueves: 4,
+      viernes: 5
+    };
+    const fechaAsistencia = new Date(asistencia.fecha);
+    const diaAsistencia = fechaAsistencia.getDay();
+    
+    // Comprobamos si el día de la fecha coincide con el día de la semana esperado
+    return diaAsistencia === diasSemana[diaSemana] && asistencia.asistio;
+  }
+
+  asistenciaGetAll() {
+    this.asistenciaService.getAll().subscribe({
+      next: (response) => {
+        // Agrupar las asistencias por estudiante
+        const groupedAsistencia: { [key: number]: any } = {};
+
+        response.dataIterable.forEach((asistencia) => {
+          const estudianteId = asistencia.estudiante;
+          const porcentajeAsistencia = asistencia.porcentajeAsistencia;
+          const fechaAsistencia = new Date(asistencia.fecha);
+          const diaSemana = fechaAsistencia.getDay(); // 0 (domingo) a 6 (sábado)
+
+          if (!groupedAsistencia[estudianteId]) {
+            groupedAsistencia[estudianteId] = {
+              nombre: asistencia.estudiante,
+              porcentajeAsistencia:asistencia.porcentajeAsistencia,
+              justificativo : asistencia.observaciones,
+              asistencia: {
+                lunes: false,
+                martes: false,
+                miercoles: false,
+                jueves: false,
+                viernes: false
+              }
+            };
+          }
+
+          // Marcar la asistencia según el día de la semana
+          switch (diaSemana) {
+            case 1: // Lunes
+              groupedAsistencia[estudianteId].asistencia.lunes = asistencia.asistio;
+              break;
+            case 2: // Martes
+              groupedAsistencia[estudianteId].asistencia.martes = asistencia.asistio;
+              break;
+            case 3: // Miércoles
+              groupedAsistencia[estudianteId].asistencia.miercoles = asistencia.asistio;
+              break;
+            case 4: // Jueves
+              groupedAsistencia[estudianteId].asistencia.jueves = asistencia.asistio;
+              break;
+            case 5: // Viernes
+              groupedAsistencia[estudianteId].asistencia.viernes = asistencia.asistio;
+              break;
+          }
+        });
+
+        // Convertir el objeto agrupado en un array de estudiantes
+        this.asistenciaAllagrupada = Object.values(groupedAsistencia);
+        console.log("asistenciaAll agrupada: ", this.asistenciaAllagrupada);
+      },
+      error: (err) => console.log("Error al obtener asistencia", err)
+    });
+  }
 
   openModal(user: any) {
     this.modalUserInstitutionalService.showModal(user);
@@ -84,168 +124,28 @@ export class AsistenciaComponent {
 
   isModalVisible = false;
 
-  opeenModal() {
-    this.isModalVisible = true;
-  }
+  
 
   closeModal() {
     this.isModalVisible = false;
   }
+
   tablaActual: string = "administradores";
 
   mostrarTabla(tabla: string) {
     this.tablaActual = tabla;
   }
 
-  persons = [
-    {
-      id: 1,
-      nombre: "Juan Pérez",
-      Asistencia: "70%",
-      Justificativo: "Cargado",
-      Lunes: false,
-      Martes: false,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: true
-    },
-    {
-      id: 2,
-      nombre: "Ana García",
-      Asistencia: "80%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: false,
-      Miercoles: true,
-      Jueves: false,
-      Viernes: true
-    },
-    {
-      id: 3,
-      nombre: "Carlos López",
-      Asistencia: "65%",
-      Justificativo: "Cargado",
-      Lunes: false,
-      Martes: true,
-      Miercoles: true,
-      Jueves: false,
-      Viernes: true
-    },
-    {
-      id: 4,
-      nombre: "María Fernández",
-      Asistencia: "90%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: true,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: true
-    },
-    {
-      id: 5,
-      nombre: "Pedro Sánchez",
-      Asistencia: "75%",
-      Justificativo: "No Cargado",
-      Lunes: true,
-      Martes: false,
-      Miercoles: false,
-      Jueves: true,
-      Viernes: true
-    },
-    {
-      id: 6,
-      nombre: "Lucía González",
-      Asistencia: "85%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: true,
-      Miercoles: true,
-      Jueves: false,
-      Viernes: true
-    },
-    {
-      id: 7,
-      nombre: "Miguel Torres",
-      Asistencia: "60%",
-      Justificativo: "No Cargado",
-      Lunes: false,
-      Martes: false,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: false
-    },
-    {
-      id: 8,
-      nombre: "Elena Ruiz",
-      Asistencia: "95%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: true,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: true
-    },
-    {
-      id: 9,
-      nombre: "Fernando Ramírez",
-      Asistencia: "50%",
-      Justificativo: "No Cargado",
-      Lunes: false,
-      Martes: true,
-      Miercoles: false,
-      Jueves: false,
-      Viernes: true
-    },
-    {
-      id: 10,
-      nombre: "Laura Morales",
-      Asistencia: "85%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: true,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: false
-    },
-    {
-      id: 11,
-      nombre: "Javier Ortega",
-      Asistencia: "70%",
-      Justificativo: "No Cargado",
-      Lunes: false,
-      Martes: true,
-      Miercoles: true,
-      Jueves: false,
-      Viernes: false
-    },
-    {
-      id: 12,
-      nombre: "Sofía Castillo",
-      Asistencia: "90%",
-      Justificativo: "Cargado",
-      Lunes: true,
-      Martes: true,
-      Miercoles: true,
-      Jueves: true,
-      Viernes: true
-    }
+  asistencia() {
+    return this.asistenciaVerificacion;
+  }
 
-
-];
-
-asistencia() {
-
-   return this.asistenciaVerificacion;
- }
- toggleAsistencia() {
-   this.asistenciaVerificacion = !this.asistenciaVerificacion;
-   if (this.asistenciaVerificacion) {
+  toggleAsistencia() {
+    this.asistenciaVerificacion = !this.asistenciaVerificacion;
+    if (this.asistenciaVerificacion) {
       this.messageService.add({severity: 'success', summary: 'Éxito', detail: 'Asistencia guardada con éxito'});
-   } else{
-      this.messageService.add({severity: 'warn', summary: 'warning', detail: 'Asistencia no se ha guardado'});
-   }
-
-
- }
+    } else {
+      this.messageService.add({severity: 'warn', summary: 'Advertencia', detail: 'Asistencia no se ha guardado'});
+    }
+  }
 }
