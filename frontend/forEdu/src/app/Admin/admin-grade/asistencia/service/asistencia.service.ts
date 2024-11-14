@@ -14,8 +14,8 @@ export class AsistenciaService {
 
   constructor() { }
 
-  getAll():Observable<AsistenciaGetAll>{
-    return this.http.get<AsistenciaGetAll>(`${this.url}/asistencia/getAll`)
+  getAll(id:number):Observable<AsistenciaGetAll>{
+    return this.http.get<AsistenciaGetAll>(`${this.url}/asistencia/grado/${id}`)
   }
 
 }

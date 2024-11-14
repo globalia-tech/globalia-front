@@ -9,6 +9,7 @@ import { ToastModule } from 'primeng/toast';
 import { MenuItem } from './interface/items.interface';
 import { AsistenciaService } from './service/asistencia.service';
 import { AsistenciaGetAll, DataIterable } from './interface/asistencia.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-asistencia',
@@ -28,15 +29,19 @@ export class AsistenciaComponent {
   public asistenciaAll: DataIterable[] = [];
   private asistenciaVerificacion: boolean = false;
   public asistenciaAllagrupada:any;
+  public gradeId!: number;
 
   ngOnInit() {
+    
+    this.gradeId = Number(this.route.snapshot.paramMap.get('id'));
     this.asistenciaGetAll();
   }
 
   constructor(
     private modalUserInstitutionalService: ModalUserInstitutionalService,
     private messageService: MessageService,
-    private asistenciaService: AsistenciaService
+    private asistenciaService: AsistenciaService,
+    private route: ActivatedRoute,
   ) {}
 
   mostrarFechas(dia: string) {
@@ -64,7 +69,7 @@ export class AsistenciaComponent {
   }
 
   asistenciaGetAll() {
-    this.asistenciaService.getAll().subscribe({
+    this.asistenciaService.getAll(this.gradeId).subscribe({
       next: (response) => {
         // Agrupar las asistencias por estudiante
         const groupedAsistencia: { [key: number]: any } = {};
@@ -79,7 +84,8 @@ export class AsistenciaComponent {
             groupedAsistencia[estudianteId] = {
               nombre: asistencia.estudiante,
               porcentajeAsistencia:asistencia.porcentajeAsistencia,
-              justificativo : asistencia.observaciones,
+              justificativo : asistencia.observaciones ? asistencia.observaciones: "N/A",
+              grado : asistencia.grado,
               asistencia: {
                 lunes: false,
                 martes: false,
