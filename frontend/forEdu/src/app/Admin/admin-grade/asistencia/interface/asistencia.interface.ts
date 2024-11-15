@@ -19,3 +19,17 @@ export interface DataIterable {
     grado:                number;
 
 }
+
+export interface AsistenciaGrouped {
+    nombre: string;
+    porcentajeAsistencia: number;
+    justificativo: string;
+    grado: string;
+    asistencia: {
+      lunes: boolean;
+      martes: boolean;
+      miercoles: boolean;
+      jueves: boolean;
+      viernes: boolean;
+    };
+  }
