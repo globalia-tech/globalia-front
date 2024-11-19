@@ -6,7 +6,7 @@ import { CardAddComponent } from './components/card-add/card-add.component';
 import { NavbarComponent } from "../../../components/navbar/navbar.component";
 import { SidebarComponent } from "../../../components/sidebar/sidebar.component";
 import { GradeRegister } from './interface/grade-register';
-import { GradeRegisterService } from './service/grade-register.service';
+import { GradeRegisterService } from '../service/grade-register.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -18,8 +18,6 @@ import { Router } from '@angular/router';
     ButtonModule,
     CardGradeComponent,
     CardAddComponent,
-    NavbarComponent,
-    SidebarComponent,
     CommonModule
   ],
   templateUrl: './grade.component.html',

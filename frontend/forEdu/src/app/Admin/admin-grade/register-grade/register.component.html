@@ -7,7 +7,7 @@
          [formGroup]="formGrade"
          (ngSubmit)="gradeSubmit()"
       >
-         <!-- Línea para Grado y Sección -->
+
          <div class="form-group">
             <div class="group-items">
                <label for="grado">Grado:</label>
@@ -32,7 +32,7 @@
             </div>
          </div>
 
-         <!-- Línea para Turno y Asignatura -->
+
 
          <div class="form-group">
             <div class="group-items">
@@ -58,21 +58,19 @@
             </div>
          </div>
          <p-divider />
-         <!-- Línea para Profesor -->
+    
          <div class="form-group">
             <div class="group-items">
                <label for="profesor">Profesor:</label>
                <select id="profesor" name="profesor" formControlName="profesor">
-                  <option value="1">Profesor Juan Pérez</option>
-                  <option value="2">Profesora María García</option>
-                  <option value="3">Profesor Luis Hernández</option>
-                  <option value="4">Profesora Ana López</option>
-                  <option value="5formGrade">Profesor Carlos Rodríguez</option>
-               </select>
+                  <option *ngFor="let teacher of teachers" [value]="teacher.id">
+                    {{ teacher.nombre }} {{ teacher.apellido }}
+                  </option>
+                </select>
             </div>
          </div>
 
-         <!-- Botón para enviar el formulario -->
+       
          <div class="button-container">
             <button type="submit">Crear Grado</button>
          </div>

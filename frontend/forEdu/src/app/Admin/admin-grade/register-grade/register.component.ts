@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
-import { GradeRegisterService } from '../grade/service/grade-register.service';
+import { GradeRegisterService } from '../service/grade-register.service';
 import { GradeRegister } from '../grade/interface/grade-register';
 import { DividerModule } from 'primeng/divider';
+import { ProfesorNameService } from '../service/profesorName.service';
+import { TeacherInfo } from './interfaces/teacherInfo.interface';
 
 @Component({
   selector: 'app-register',
@@ -18,12 +20,26 @@ import { DividerModule } from 'primeng/divider';
   styleUrls: ['./register.component.css'],
   providers: [MessageService]
 })
-export class GradeRegisterComponent {
+export class GradeRegisterComponent implements OnInit {
 
   private formBuild = inject(FormBuilder);
   private messageService = inject(MessageService);
   private gradeService = inject(GradeRegisterService);
-  private router = inject(Router);  // Inyecta correctamente el Router
+  private router = inject(Router);  
+  private profesorNameService = inject(ProfesorNameService);
+
+  teachers: TeacherInfo[] = [];
+
+
+  ngOnInit(): void {
+    this.profesorNameService.getTeachersInfo().subscribe((data) => {
+      this.teachers = data;
+    });
+  }
+  
+
+
+
 
   formGrade: FormGroup = this.formBuild.group({
     curso: ["", Validators.required],
@@ -58,4 +74,5 @@ export class GradeRegisterComponent {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Por favor completa todos los campos' });
     }
   }
+
 }

@@ -23,6 +23,7 @@ import { CalendarComponent } from './Admin/admin-calendar/calendar/calendar.comp
 
 export const routes: Routes = [
   {
+
     path: 'dashboard',
     component: LayoutAdminComponent,
 
@@ -98,5 +99,9 @@ export const routes: Routes = [
     children:[
 
     ]
+  },
+  {
+    path: '**',
+    component: LayoutAdminComponent
   }
 ];

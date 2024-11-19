@@ -20,6 +20,8 @@ import { DecodeService } from '../../../service/decode/decode.service';
 })
 export class AdmiDashboardComponent {
 
+
+
   username:string = "Invitado"
 
    constructor(private router : Router,usernameDecode: DecodeService){

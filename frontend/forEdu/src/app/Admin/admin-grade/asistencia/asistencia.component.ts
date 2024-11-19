@@ -22,7 +22,7 @@ import { ActivatedRoute } from '@angular/router';
     ToastModule
   ],
   templateUrl: './asistencia.component.html',
-  styleUrls: ['./asistencia.component.css'],  // Corregido: styleUrl -> styleUrls
+  styleUrls: ['./asistencia.component.css'], 
   providers: [MessageService]
 })
 export class AsistenciaComponent {
@@ -45,7 +45,7 @@ export class AsistenciaComponent {
   ) {}
 
   mostrarFechas(dia: string) {
-    // Lógica para mostrar las fechas o hacer alguna acción cuando se selecciona un día
+   
     console.log('Fecha seleccionada: ', dia);
   }
 
@@ -64,21 +64,21 @@ export class AsistenciaComponent {
     const fechaAsistencia = new Date(asistencia.fecha);
     const diaAsistencia = fechaAsistencia.getDay();
     
-    // Comprobamos si el día de la fecha coincide con el día de la semana esperado
+    
     return diaAsistencia === diasSemana[diaSemana] && asistencia.asistio;
   }
 
   asistenciaGetAll() {
     this.asistenciaService.getAll(this.gradeId).subscribe({
       next: (response) => {
-        // Agrupar las asistencias por estudiante
+        
         const groupedAsistencia: { [key: number]: any } = {};
 
         response.dataIterable.forEach((asistencia) => {
           const estudianteId = asistencia.estudiante;
           const porcentajeAsistencia = asistencia.porcentajeAsistencia;
           const fechaAsistencia = new Date(asistencia.fecha);
-          const diaSemana = fechaAsistencia.getDay(); // 0 (domingo) a 6 (sábado)
+          const diaSemana = fechaAsistencia.getDay(); 
 
           if (!groupedAsistencia[estudianteId]) {
             groupedAsistencia[estudianteId] = {
@@ -96,27 +96,27 @@ export class AsistenciaComponent {
             };
           }
 
-          // Marcar la asistencia según el día de la semana
+    
           switch (diaSemana) {
-            case 1: // Lunes
+            case 1: 
               groupedAsistencia[estudianteId].asistencia.lunes = asistencia.asistio;
               break;
-            case 2: // Martes
+            case 2: 
               groupedAsistencia[estudianteId].asistencia.martes = asistencia.asistio;
               break;
-            case 3: // Miércoles
+            case 3:
               groupedAsistencia[estudianteId].asistencia.miercoles = asistencia.asistio;
               break;
-            case 4: // Jueves
+            case 4: 
               groupedAsistencia[estudianteId].asistencia.jueves = asistencia.asistio;
               break;
-            case 5: // Viernes
+            case 5: 
               groupedAsistencia[estudianteId].asistencia.viernes = asistencia.asistio;
               break;
           }
         });
 
-        // Convertir el objeto agrupado en un array de estudiantes
+       
         this.asistenciaAllagrupada = Object.values(groupedAsistencia);
         console.log("asistenciaAll agrupada: ", this.asistenciaAllagrupada);
       },

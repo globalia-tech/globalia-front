@@ -3,7 +3,7 @@ import { ModalUserInstitutionalService } from '../../../service/modal/modal-user
 import { Person } from '../../../models/person';
 import { ProfesorService } from '../../../service/profesor.service';
 import { DataIterable, GetAll } from '../../../interfaces/profesor/get-all';
-import { GradeRegisterService } from '../../admin-grade/grade/service/grade-register.service';
+import { GradeRegisterService } from '../../admin-grade/service/grade-register.service';
 import { GradeRegister } from '../../admin-grade/grade/interface/grade-register';
 import { CommonModule } from '@angular/common';
 import { Getgrade } from '../../admin-grade/grade/interface/getgrade';

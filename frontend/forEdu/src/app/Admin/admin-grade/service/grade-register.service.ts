@@ -1,10 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { apiSetting } from '../../../../../settings/apisetting';
-import { GradeRegister } from '../interface/grade-register';
+import { apiSetting } from '../../../../settings/apisetting';
+import { GradeRegister } from '../grade/interface/grade-register';
 import { Observable } from 'rxjs';
-import { GradeSuccess } from '../interface/grade-success';
-import { Getgrade } from '../interface/getgrade';
+import { GradeSuccess } from '../grade/interface/grade-success';
+import { Getgrade } from '../grade/interface/getgrade';
 import { map } from 'rxjs/operators';
 
 @Injectable({

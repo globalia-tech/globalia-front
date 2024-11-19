@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
-import { GradeRegisterService } from '../../service/grade-register.service';
+import { GradeRegisterService } from '../../../service/grade-register.service';
 import { MenuItem, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { MenubarService } from 'primeng/menubar';
