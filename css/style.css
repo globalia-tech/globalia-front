@@ -1,0 +1,128 @@
+.categoriasProyect{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 80px;
+}
+ .headersearch{
+background-color: white;
+    top: 5px;
+    position: fixed;
+    width: 100%;
+    gap: 25px;
+   z-index: 1;
+   flex-wrap: wrap-reverse;
+   justify-content: center;
+   padding-bottom: 5px;
+}
+
+.headersearch nav{
+    display: flex;
+    justify-content: center;
+}
+
+.headersearch nav ol{
+    margin-bottom: 0;
+    gap: 10px;
+    background-color: transparent;
+
+}
+.nav-list-fn:hover{
+ text-decoration: none;
+ color: blueviolet;
+}
+.headersearch  .active {
+    padding-bottom: 2px;
+   border-bottom: 1px blue solid;
+
+  }
+
+h4{
+    font-size: 36px;
+    font-weight: 500;
+}
+.categoriasProyect h4{
+    margin: 40px 0;
+}
+.headersearch .search{
+ width: 100%;
+ max-width: 300px;
+ display: flex;
+ align-items: center;
+ 
+ position: relative;
+}
+.headersearch input{
+    padding: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 23px;
+
+}
+.headersearch .search i{
+    position: absolute;
+    left: 5px;
+}
+.ctn-cards{
+    padding: 5px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+}
+
+.ctn-cards  .card{
+    border: 0;
+    border-radius: 13px;
+    background-color: rgb(210, 223, 245);
+    
+}
+.ctn-cards .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.ctn-cards .card-body h5{
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+}
+.ctn-cards .card-body ul li{
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.ctn-cards .card-body h6{
+    font-size: 14px;
+}
+.ctn-cards .card-body a{
+    border-radius: 20px;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+ .linkmore{
+    text-align: end;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.ctn-cards-modo{
+    border: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+}
+
+.ctn-cards-modo h5{
+    font-size: 14px;
+    font-weight: 700;
+}
+.ctn-cards-modo p{
+    font-size: 14px;
+}
