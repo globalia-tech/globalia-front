@@ -126,3 +126,59 @@ h4{
 .ctn-cards-modo p{
     font-size: 14px;
 }
+
+/*-------------------- ----------------- ----------------*/
+/* Fijamos la altura del carrusel */
+.carousel-inner {
+    height: 500px; /* Puedes ajustar la altura según lo que necesites */
+}
+
+/* Aseguramos que las imágenes se ajusten sin deformarse */
+.carousel-item img {
+    object-fit: cover; /* Cubre el área sin deformar la imagen */
+    height: 100%; /* Ajusta la imagen al 100% de la altura del contenedor */
+    width: 100%; /* Ajusta la imagen al 100% de la anchura del contenedor */
+}
+
+/* Posicionamos el texto dentro del carrusel */
+.hero-text {
+    background: rgba(0, 0, 0, 0.336); /* Fondo negro semitransparente */
+    padding: 0.6rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%);
+    color: white;
+    
+}
+
+
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
