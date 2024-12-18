@@ -3,9 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/quienes-somos.css">
     <title>Quienes Somos</title>
 </head>
 <body>
+
+    <section class="contact-info bg-dark py-2">
+        <div class="container">
+          <div class="row justify-content-between">
+            <!-- Información de contacto izquierda -->
+            <div class="col-auto">
+              <a href="tel:+58999999999" class="text-light me-3">
+                <i class="bi bi-telephone"></i> +58 999 999 999
+              </a>
+              <a href="mailto:Globaliateach@gmail.com" class="text-light">
+                <i class="bi bi-envelope"></i> Globaliateach@gmail.com
+              </a>
+            </div>
+            
+            <!-- Redes sociales derecha -->
+            <div class="col-auto">
+              <a href="https://www.instagram.com" target="_blank" class="text-light me-3">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com" target="_blank" class="text-light me-3">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.x.com" target="_blank" class="text-light me-3">
+                <img src="./assets/x.png" alt="X" style="width: 16px; height: 16px;">
+                        
+              </a>
+                 <a href="https://www.linkedin.com" target="_blank" class="text-light">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light px-4" ">
+        <a class="navbar-brand" href="../index.html">Globalia Tech</a>
+        <button style="background-color: white;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./html/quienes-somos.html">Nosotros</a>
+                </li>
+                <li class="nav-item" 
+                 style="border-bottom: 2px black solid; padding-bottom: 0px;">
+                    <a class="nav-link" style="padding-bottom: 0px;" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#perfil">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#redes">Links a Redes</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-primary">Iniciar Sesión</button>
+        </div>
+    </nav>
+
+    <!--Imagen de inicio-->
+    <section class="section-img-portada">
+        <div class="ctn-text">
+            <h3>¿Quienes Somos?</h3>
+            <p>Un equipo de expertos dedicados a transformar tus ideas en realidades digitales.</p>
+         
+        </div>
+        <button>CHAT</button>
+    </section>
     
+    <section class="ctn-section" 
+      style="text-align: center; max-width: 1400px; margin: 0 auto; margin-top: 150px;" >
+      <h2 style="margin-bottom: 40px;">Historia</h2>
+      <p style="max-width:1038px ; margin: 0 auto; margin-bottom: 80px;">Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.Corem </p>
+     <picture style="display: block; width: 100%; height:412px; margin-bottom: 160px;">
+      <img src="../assets/9712.jpg"  
+      style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 20px;"/>
+     </picture>
+
+     <h2 style="margin: 45px 0;">Nuestros valores</h2>
+     
+     <div class="ctn-valores"
+      style="display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       gap: 10px;
+       flex-wrap: wrap;">
+      <div>
+        
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32.6821 77.5642V33.718M64.8436 77.5642V33.718M35.1561 31.2821V21.5385C35.1561 18.8479 37.3713 16.6667 40.104 16.6667H57.4217C60.1544 16.6667 62.3696 18.8479 62.3696 21.5385V31.2821M20.3123 80.0001H79.6873C85.1527 80.0001 89.5832 75.6377 89.5832 70.2565V41.0257C89.5832 35.6445 85.1527 31.2821 79.6873 31.2821H20.3123C14.847 31.2821 10.4165 35.6445 10.4165 41.0257V70.2565C10.4165 75.6377 14.847 80.0001 20.3123 80.0001Z" stroke="#048efc" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        <p>Valores</p>  
+      </div> 
+
+      <div>
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 70.8333V37.5V12.5L72.5 30L52.5 45M35 55.3782C20.3408 57.8506 10 63.8388 10 70.8333C10 80.0381 27.9086 87.5 50 87.5C72.0914 87.5 90 80.0381 90 70.8333C90 63.8388 79.6591 57.8506 65 55.3782" stroke="#048efc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Valores</p>
+      </div>
+
+      <div>
+        <svg width="106" height="106" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50.5 23C50.5 24.3807 51.6193 25.5 53 25.5C54.3807 25.5 55.5 24.3807 55.5 23H50.5ZM55.5 3C55.5 1.61929 54.3807 0.5 53 0.5C51.6193 0.5 50.5 1.61929 50.5 3H55.5ZM50.5 103C50.5 104.381 51.6193 105.5 53 105.5C54.3807 105.5 55.5 104.381 55.5 103H50.5ZM55.5 83C55.5 81.6193 54.3807 80.5 53 80.5C51.6193 80.5 50.5 81.6193 50.5 83H55.5ZM83 50.5C81.6193 50.5 80.5 51.6193 80.5 53C80.5 54.3807 81.6193 55.5 83 55.5V50.5ZM103 55.5C104.381 55.5 105.5 54.3807 105.5 53C105.5 51.6193 104.381 50.5 103 50.5V55.5ZM3 50.5C1.61929 50.5 0.5 51.6193 0.5 53C0.5 54.3807 1.61929 55.5 3 55.5V50.5ZM23 55.5C24.3807 55.5 25.5 54.3807 25.5 53C25.5 51.6193 24.3807 50.5 23 50.5V55.5ZM90.5 52.9997C90.5 73.7104 73.7107 90.4997 53 90.4997V95.4997C76.4721 95.4997 95.5 76.4718 95.5 52.9997H90.5ZM53 90.4997C32.2893 90.4997 15.5 73.7104 15.5 52.9997H10.5C10.5 76.4718 29.5279 95.4997 53 95.4997V90.4997ZM15.5 52.9997C15.5 32.289 32.2893 15.4997 53 15.4997V10.4997C29.5279 10.4997 10.5 29.5276 10.5 52.9997H15.5ZM53 15.4997C73.7107 15.4997 90.5 32.289 90.5 52.9997H95.5C95.5 29.5276 76.4721 10.4997 53 10.4997V15.4997ZM55.5 23V3H50.5V23H55.5ZM55.5 103V83H50.5V103H55.5ZM83 55.5H103V50.5H83V55.5ZM3 55.5H23V50.5H3V55.5ZM65.5 53C65.5 59.9036 59.9036 65.5 53 65.5V70.5C62.665 70.5 70.5 62.665 70.5 53H65.5ZM53 65.5C46.0964 65.5 40.5 59.9036 40.5 53H35.5C35.5 62.665 43.335 70.5 53 70.5V65.5ZM40.5 53C40.5 46.0964 46.0964 40.5 53 40.5V35.5C43.335 35.5 35.5 43.335 35.5 53H40.5ZM53 40.5C59.9036 40.5 65.5 46.0964 65.5 53H70.5C70.5 43.335 62.665 35.5 53 35.5V40.5Z" fill="#048efc"/>
+          </svg>
+         <p>Valores</p>          
+      </div>
+
+      <div>
+        <svg width="92" height="100" viewBox="0 0 92 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M29.9646 82.9037C28.6652 83.3708 27.9906 84.8027 28.4576 86.102C28.9247 87.4013 30.3566 88.076 31.6559 87.6089L29.9646 82.9037ZM53.1009 86.8589L52.8565 84.3709L53.1009 86.8589ZM66.4753 83.6538L67.6395 85.8661V85.8661L66.4753 83.6538ZM79.2547 71.1168L77.2557 69.6155L79.2547 71.1168ZM70.5143 63.2724L72.3474 64.9723L70.5143 63.2724ZM64.6286 69.6195L66.4618 71.3194L64.6286 69.6195ZM48.6428 69.9358C47.262 69.9358 46.1428 71.0551 46.1428 72.4358C46.1428 73.8165 47.262 74.9358 48.6428 74.9358V69.9358ZM77.8959 62.4842L76.4365 64.514L77.8959 62.4842ZM35.3337 60.3814L36.5202 62.5819H36.5202L35.3337 60.3814ZM51.3307 58.8033L52.0361 56.4049L51.3307 58.8033ZM57.5778 60.6406L56.8724 63.039L57.5778 60.6406ZM59.5571 68.6785L57.724 66.9786L59.5571 68.6785ZM54.2398 70.736C53.301 71.7484 53.3607 73.3302 54.3731 74.269C55.3855 75.2078 56.9673 75.1481 57.9061 74.1357L54.2398 70.736ZM31.6559 87.6089C32.2525 87.3945 33.2979 87.2998 34.9374 87.4259C36.5238 87.548 38.3635 87.8463 40.4235 88.1953C44.3845 88.8662 49.2222 89.752 53.3453 89.3469L52.8565 84.3709C49.5494 84.6958 45.4708 83.979 41.2585 83.2655C39.232 82.9222 37.1708 82.5829 35.3208 82.4407C33.5238 82.3025 31.5971 82.3169 29.9646 82.9037L31.6559 87.6089ZM53.3453 89.3469C56.1316 89.0732 58.3854 88.9519 60.4826 88.5425C62.7147 88.1069 64.8161 87.352 67.6395 85.8661L65.311 81.4414C62.8157 82.7546 61.1769 83.3127 59.5249 83.6351C57.7381 83.9839 55.9641 84.0656 52.8565 84.3709L53.3453 89.3469ZM67.6395 85.8661C70.3019 84.465 72.9091 82.1816 75.1925 79.8156C77.5021 77.4225 79.6074 74.8103 81.2538 72.6182L77.2557 69.6155C75.6819 71.7112 73.7124 74.1492 71.5947 76.3434C69.4509 78.5648 67.2786 80.4059 65.311 81.4414L67.6395 85.8661ZM68.6811 61.5725L62.7955 67.9197L66.4618 71.3194L72.3474 64.9723L68.6811 61.5725ZM58.3239 69.9358H48.6428V74.9358H58.3239V69.9358ZM62.7955 67.9197C61.5751 69.2357 59.9621 69.9358 58.3239 69.9358V74.9358C61.4152 74.9358 64.3379 73.6098 66.4618 71.3194L62.7955 67.9197ZM79.3552 60.4543C75.9879 58.0334 71.4905 58.5428 68.6811 61.5725L72.3474 64.9723C73.4817 63.7491 75.1633 63.5987 76.4365 64.514L79.3552 60.4543ZM81.2538 72.6182C84.1753 68.7281 83.1634 63.1922 79.3552 60.4543L76.4365 64.514C78.0502 65.6741 78.4354 68.0448 77.2557 69.6155L81.2538 72.6182ZM14.4638 58.9102H26.3521V53.9102H14.4638V58.9102ZM26.8242 59.6153V88.4615H31.8242V59.6153H26.8242ZM26.3521 89.1666H14.4638V94.1666H26.3521V89.1666ZM13.9917 88.4615V59.6153H8.9917V88.4615H13.9917ZM14.4638 89.1666C14.3973 89.1666 14.3014 89.1423 14.1954 89.028C14.0863 88.9104 13.9917 88.7164 13.9917 88.4615H8.9917C8.9917 91.4313 11.2673 94.1666 14.4638 94.1666V89.1666ZM26.8242 88.4615C26.8242 88.7164 26.7296 88.9104 26.6206 89.028C26.5145 89.1423 26.4186 89.1666 26.3521 89.1666V94.1666C29.5486 94.1666 31.8242 91.4313 31.8242 88.4615H26.8242ZM26.3521 58.9102C26.4186 58.9102 26.5145 58.9345 26.6205 59.0488C26.7296 59.1664 26.8242 59.3604 26.8242 59.6153H31.8242C31.8242 56.6455 29.5486 53.9102 26.3521 53.9102V58.9102ZM14.4638 53.9102C11.2673 53.9102 8.9917 56.6455 8.9917 59.6153H13.9917C13.9917 59.3604 14.0864 59.1664 14.1954 59.0488C14.3014 58.9345 14.3973 58.9102 14.4638 58.9102V53.9102ZM31.9968 65.0209L36.5202 62.5819L34.1472 58.1809L29.6237 60.6199L31.9968 65.0209ZM44.6378 60.5127H45.8566V55.5127H44.6378V60.5127ZM50.6253 61.2017L56.8724 63.039L58.2832 58.2422L52.0361 56.4049L50.6253 61.2017ZM57.724 66.9786L54.2398 70.736L57.9061 74.1357L61.3903 70.3783L57.724 66.9786ZM56.8724 63.039C57.5413 63.2358 58.08 63.8061 58.286 64.6427C58.4924 65.4807 58.2996 66.3578 57.724 66.9786L61.3903 70.3783C64.9554 66.5337 63.5295 59.7852 58.2832 58.2422L56.8724 63.039ZM45.8566 60.5127C47.4657 60.5127 49.0691 60.744 50.6253 61.2017L52.0361 56.4049C50.0243 55.8132 47.9459 55.5127 45.8566 55.5127V60.5127ZM36.5202 62.5819C39.0506 61.2175 41.8291 60.5127 44.6378 60.5127V55.5127C40.9868 55.5127 37.3945 56.4299 34.1472 58.1809L36.5202 62.5819ZM65.4613 33.9743C65.4613 39.8552 61.0836 44.2948 56.073 44.2948V49.2948C64.1938 49.2948 70.4613 42.2545 70.4613 33.9743H65.4613ZM56.073 44.2948C51.0623 44.2948 46.6846 39.8552 46.6846 33.9743H41.6846C41.6846 42.2545 47.9521 49.2948 56.073 49.2948V44.2948ZM46.6846 33.9743C46.6846 28.0933 51.0623 23.6538 56.073 23.6538V18.6538C47.9521 18.6538 41.6846 25.6941 41.6846 33.9743H46.6846ZM56.073 23.6538C61.0836 23.6538 65.4613 28.0933 65.4613 33.9743H70.4613C70.4613 25.6941 64.1938 18.6538 56.073 18.6538V23.6538ZM44.1846 31.4743C39.174 31.4743 34.7963 27.0347 34.7963 21.1538H29.7963C29.7963 29.434 36.0638 36.4743 44.1846 36.4743V31.4743ZM34.7963 21.1538C34.7963 15.2728 39.174 10.8333 44.1846 10.8333V5.83325C36.0638 5.83325 29.7963 12.8735 29.7963 21.1538H34.7963ZM44.1846 10.8333C49.1953 10.8333 53.573 15.2728 53.573 21.1538H58.573C58.573 12.8735 52.3055 5.83325 44.1846 5.83325V10.8333Z" fill="#048efc"/>
+          </svg>
+          <p>Valores</p>
+      </div>
+     </div>
+     
+     <div 
+      style="margin:130px 0; display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 20px;">
+
+      <div style="width: 100%; max-width: 348px; padding: 38px 25px; border: 1px black solid; border-radius:10px ;">
+        <h4 style="margin-bottom: 20px;">Nuestra Misión</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim aliquid fugiat vero quis dolor sequi inventore ad dignissimos dolores quas ipsa sint, harum temporibus molestias optio facere voluptates explicabo in? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nostrum perferendis quos beatae a maiores, quidem, eligendi quas voluptas quo dicta provident nihil explicabo ullam aperiam totam odit voluptatem et!</p>
+      </div>
+
+      <div 
+       style="width: 100%; max-width: 348px; padding: 38px 25px; border: 1px black solid; border-radius:10px ;">
+        <h4 style="margin-bottom: 20px;">Nuestra Misión</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque quaerat temporibus, harum tempora cum distinctio fugit sint dicta, veritatis rerum impedit repellendus quo. Facere accusantium modi laboriosam blanditiis quibusdam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim aliquid fugiat vero quis dolor sequi inventore ad dignissimos dolores quas ipsa sint, harum temporibus molestias optio facere voluptates explicabo in?</p>
+      </div>
+     </div>
+
+     <div style="width: 100%; max-width: 868px; margin: 50px auto;">
+      <h2 style="margin-top: 60px;">Nuestro equipo</h2>
+      <p style="margin-top: 35px;">Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+      <section class="ctn-team">
+        <div class="team">
+          <img src="../assets/perfiles/angel.jpg" alt="perfil de Angel Suarez"/>
+          <p>Angel Suarez</p>
+        </div>
+
+        <div class="team">
+          <img src="../assets/perfiles/hugo.jpg" alt="perfil de Hugo Catalan"/>
+          <p>Hugo Catalan</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/yohan.jpg" alt="perfil de Yohan J Rodriguez"/>
+          <p>Yohan J Rodriguez Sosa</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/1617110579258.jpeg" alt="perfil de Agustín Moldavsky"/>
+          <p>Agustín Moldavsky Rodoni</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/eli.png" alt="perfil de Eli Lucero"/>
+          <p>ELi Lucero</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/daily.png" alt="perfil de Daily Fuenmayor Bedoya"/>
+          <p>Daily Fuenmayor Bedoya</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/gonzalo.jpeg" alt="perfil de Gonzalo Villegas"/>
+          <p>Gonzalo Villegas</p>
+        </div>
+
+
+        <div class="team">
+          <img src="../assets/perfiles/yhordi.jpg" alt="perfil de Yhordi Choque Espinoza"/>
+          <p>Yhordi Choque Espinoza</p>
+        </div>
+      </section>
+     </div>
+
+     <div style="border-radius: 20px; width: 100%; max-width:702px; margin: 50px auto; background-color: #738bec; padding: 10px; ">
+      <h6 style="max-width: 440px; margin: 0 auto; font-size: 24px; line-height: 29px; margin-top: 40px; margin-bottom: 50px;">¡Aprovecha esta oportunidad única para tu negocio!</h6>
+      <button class="btn" style=" margin-bottom: 50px; border: 0; border-radius: 10px; padding: 15px; background-color: blue;">
+        <a style="color: #fffafa;"
+         
+         href="#aunnohay">Cominenza ahora
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.675 9H0.5V7H12.675L7.075 1.4L8.5 0L16.5 8L8.5 16L7.075 14.6L12.675 9Z" fill="white"/>
+            </svg>
+        </a>      
+      </button>
+     </div>
+
+     <div style="margin: 80px 0; display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-evenly;">
+      <div class="check">
+        <p>Creatividad</p>
+        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36.2188 7.625H16.2031C11.4656 7.625 7.625 11.4655 7.625 16.2031V44.7969C7.625 49.5345 11.4656 53.375 16.2031 53.375H44.7969C49.5344 53.375 53.375 49.5345 53.375 44.7969V29.0702M50.5156 14.7734L30.5 34.7889L24.7813 29.0702" stroke="#738bec" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          
+      </div>
+      <div class="check">
+        <p>Innovación</p>
+        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36.2188 7.625H16.2031C11.4656 7.625 7.625 11.4655 7.625 16.2031V44.7969C7.625 49.5345 11.4656 53.375 16.2031 53.375H44.7969C49.5344 53.375 53.375 49.5345 53.375 44.7969V29.0702M50.5156 14.7734L30.5 34.7889L24.7813 29.0702" stroke="#738bec" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          
+      </div>
+  
+      <div class="check">
+        <p>Experiencia</p>
+        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36.2188 7.625H16.2031C11.4656 7.625 7.625 11.4655 7.625 16.2031V44.7969C7.625 49.5345 11.4656 53.375 16.2031 53.375H44.7969C49.5344 53.375 53.375 49.5345 53.375 44.7969V29.0702M50.5156 14.7734L30.5 34.7889L24.7813 29.0702" stroke="#738bec" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          
+      </div>
+     </div>
+
+    
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
