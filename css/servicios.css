@@ -1,0 +1,137 @@
+body{
+    overflow-x: hidden;
+}
+.navbar {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.913) !important ;
+    z-index: 1;
+}
+.section-img-portada{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height:641px ;
+    background: url('../assets/153804.jpg');
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ctn-text{
+    width: 100%;
+    max-width: 593px ;
+    padding: 5px;
+    color: white;
+}
+.section-img-portada .ctn-text h3{
+ font-size: 48px;
+ line-height: 58px;
+
+}
+.section-img-portada .ctn-text p{
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.soluciones{
+    width: 100%;
+    max-width: 800px;
+    margin: 70px auto;
+    text-align: center;
+}
+.soluciones h4{
+    font-size: 36px;
+}
+.soluciones p {
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+.ctn-servicios{
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+.item-service{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.services{
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+   
+}
+.services .item{
+    width: 300px;
+    height: auto; 
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.item p{
+    text-decoration: dashed;
+}
+
+footer{
+    background-color: black;
+}
+
+footer .ctn-inf{
+    padding: 45px 8px;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 55px;
+    justify-content: center;
+   
+}
+.ctn-inf > div {
+    width: 100%;
+    max-width: 400px;
+     
+}
+.ctn-inf div h5{
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 3px;
+} 
+.ctn-inf div p{
+    font-weight: 100;
+    color: rgba(240, 248, 255, 0.449);
+}
+.ctn-inf div h6{
+    font-weight: 600;
+}
+.ctn-inf .contacto section  {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer section{
+    max-width: 900px;
+    margin: 0 auto;
+}
+footer section hr{
+    
+    border-top: 2px solid white;
+}
+
+
+footer section p{
+    font-weight: 100;
+    color: rgba(240, 248, 255, 0.449);
+}
+
+.ctn-copi p{
+ margin: 0;
+ padding-bottom: 1rem;
+}

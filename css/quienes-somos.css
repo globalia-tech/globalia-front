@@ -23,11 +23,12 @@ body{
     width: 100%;
     max-width: 593px ;
     padding: 5px;
+    color: white;
 }
 .section-img-portada .ctn-text h3{
  font-size: 48px;
  line-height: 58px;
- color: black;
+
 }
 .section-img-portada .ctn-text p{
     font-size: 20px;
@@ -45,6 +46,7 @@ body{
     border: 2px transparent solid;
     border-radius: 100px;
 }
+
 
 .section-img-portada button:hover {
  border: 2px rgb(121, 121, 241) solid;
@@ -106,6 +108,7 @@ body{
 }
 .ctn-team .team {
  width: 120px;
+ height: 236px;
 }
 .ctn-team .team img{
     object-position: top;
@@ -124,6 +127,38 @@ body{
 .btn a:hover{
  text-decoration: none;
  color: white;
+}
+.btn{
+    position: relative;
+
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: gloding 20s linear infinite;
+}
+
+@keyframes gloding {
+  0%{
+    background-position: 0 0;
+  } 
+  50%{
+    background-position: 400% 0;
+  }
+
+  100%{
+    background-position: 0 0;
+  }
 }
 
 .check{
@@ -168,4 +203,60 @@ body{
         border-top-right-radius: 10px;
         border-start-start-radius: 10px;
     }
+}
+
+footer{
+    background-color: black;
+}
+
+footer .ctn-inf{
+    padding: 45px 8px;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 55px;
+    justify-content: center;
+   
+}
+.ctn-inf > div {
+    width: 100%;
+    max-width: 400px;
+     
+}
+.ctn-inf div h5{
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 3px;
+} 
+.ctn-inf div p{
+    font-weight: 100;
+    color: rgba(240, 248, 255, 0.449);
+}
+.ctn-inf div h6{
+    font-weight: 600;
+}
+.ctn-inf .contacto section  {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer section{
+    max-width: 900px;
+    margin: 0 auto;
+}
+footer section hr{
+    
+    border-top: 2px solid white;
+}
+
+
+footer section p{
+    font-weight: 100;
+    color: rgba(240, 248, 255, 0.449);
+}
+
+.ctn-copi p{
+ margin: 0;
+ padding-bottom: 1rem;
 }
