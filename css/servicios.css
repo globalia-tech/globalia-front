@@ -62,22 +62,45 @@ body{
     gap: 10px;
     margin-bottom: 40px;
 }
+.item-service h6{
+    font-weight: 600;
+}
 .services{
     
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 18px;
    
 }
+
 .services .item{
-    width: 300px;
+    width: 100%;
+    max-width: 340px;
     height: auto; 
     padding: 10px;
     border: 1px solid black;
     border-radius: 8px;
 }
+.item h6{
+    font-weight: 600;
+}
 .item p{
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 20px;
     text-decoration: dashed;
+}
+.item > div {
+    display: flex;
+     gap: 10px;
+     align-items: center;
+}
+.services .item img{
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+
 }
 
 footer{
@@ -98,6 +121,7 @@ footer .ctn-inf{
      
 }
 .ctn-inf div h5{
+    color: white;
     margin-bottom: 40px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -107,6 +131,7 @@ footer .ctn-inf{
     color: rgba(240, 248, 255, 0.449);
 }
 .ctn-inf div h6{
+    color: white;
     font-weight: 600;
 }
 .ctn-inf .contacto section  {
