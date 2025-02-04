@@ -4,15 +4,51 @@ body{
 .navbar {
     position: absolute;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.913) !important ;
+    background-color: transparent !important ;
     z-index: 1;
+}
+.navbar .nav-item .nav-link{
+    color: white;
+}
+.navbar .nav-item .nav-link:hover{
+    color: rgb(162, 0, 255);
+}
+
+.btn-float {
+    position: fixed;
+    right: 40px;
+    z-index: 1000;
+    cursor: pointer;
+   
+    color: #afa9a9; /* Color del ícono */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.btn-float:hover {
+    transform: scale(1.1);
+    
+}
+
+.to-top {
+    bottom: 1.25rem;
+}
+
+.btn-float i {
+    font-size: 1.5rem;
 }
 .section-img-portada{
     position: relative;
     text-align: center;
     width: 100%;
     height:641px ;
-    background: url('../assets/153804.jpg');
+    background: url('../assets/fondo.png');
     background-position: top;
     background-size: cover;
     display: flex;
@@ -47,6 +83,7 @@ body{
 .soluciones p {
     font-size: 20px;
     padding: 5px 15px;
+    margin-bottom: 120px;
 }
 
 .ctn-servicios{
@@ -67,20 +104,22 @@ body{
 }
 .services{
     
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     gap: 18px;
    
 }
 
 .services .item{
+    background-color: rgba(22, 19, 59, 1);
+
     width: 100%;
     max-width: 340px;
     height: auto; 
     padding: 10px;
-    border: 1px solid black;
+    box-shadow: 0px 8px 15px 2px #000000b3;
     border-radius: 8px;
+    color: white;
 }
 .item h6{
     font-weight: 600;
@@ -103,6 +142,59 @@ body{
 
 }
 
+
+.btn{
+    
+    background-color: rgb(24, 15, 42);
+}
+
+.btn a:hover{
+ text-decoration: none;
+ color: white;
+
+}
+.btn svg{
+    transition: transform 0.1s ease-in-out;
+}
+.btn:hover svg{
+ transition: transform 0.2s ease-in-out;
+ transform: translateX(10px);
+} 
+.btn{
+    position: relative;
+
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: gloding 20s linear infinite;
+}
+
+
+@keyframes gloding {
+    0%{
+      background-position: 0 0;
+    } 
+    50%{
+      background-position: 400% 0;
+    }
+  
+    100%{
+      background-position: 0 0;
+    }
+  }
+  
+
 footer{
     background-color: black;
 }
@@ -121,7 +213,7 @@ footer .ctn-inf{
      
 }
 .ctn-inf div h5{
-    color: white;
+    color: rgba(117, 29, 250, 0.648);
     margin-bottom: 40px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -131,7 +223,7 @@ footer .ctn-inf{
     color: rgba(240, 248, 255, 0.449);
 }
 .ctn-inf div h6{
-    color: white;
+    color: rgba(117, 29, 250, 0.648);
     font-weight: 600;
 }
 .ctn-inf .contacto section  {

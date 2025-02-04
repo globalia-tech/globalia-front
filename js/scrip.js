@@ -16,3 +16,41 @@ if (navLinks.length > 0) {
   // Selecciona el primer enlace como activo por defecto
   navLinks[0].classList.add('active');
 }
+
+
+//observa la barra de navegacion para cambiar su estilo a fixed y no se pierda en el scroll
+
+
+
+const header = document.getElementById("navSection");
+const rect = header.getBoundingClientRect();
+const ubicacionELement = rect.top
+console.log(ubicacionELement)
+window.addEventListener('scroll', ()=>{ 
+ 
+  
+
+  if(window.scrollY < ubicacionELement){
+  console.log('paso el header')  
+  header.classList.remove("fixed"); 
+  } else{
+    header.classList.add("fixed");
+    
+  }
+  console.log(rect.top)
+ 
+ })
+
+ //cambia el estilo del navbar 
+
+ const btnnavbar = document.getElementById('btnNavbar')
+ const navbar = document.getElementById('navbarNav');
+
+ btnnavbar.addEventListener('click', () => {
+  console.log('nav')
+   if(!navbar.classList.contains('navMobil')){
+    navbar.classList.add('navMobil');
+   }else{
+    navbar.classList.remove('navMobil');
+   }
+ })
