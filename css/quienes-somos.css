@@ -1,18 +1,33 @@
 body{
     overflow-x: hidden;
-}
-.navbar {
+  }
+body header .navbar {
     position: absolute;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.913) !important ;
+    background-color: transparent !important  ;
     z-index: 1;
+}
+.navbar .nav-item .nav-link{
+    transition-property: color;
+    transition-property: transform;
+    transition-duration: 0.1s;
+    transition-timing-function:ease-in-out ;
+    color: white;
+}
+.navbar .nav-item .nav-link:hover{
+    transition-property: color;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function:ease-in-out ;
+    color: rgb(162, 0, 255);
+    transform: scale(1.1);
 }
 .section-img-portada{
     position: relative;
     text-align: center;
     width: 100%;
     height:641px ;
-    background: url('../assets/153804.jpg');
+    background: url('../assets/fondo.png');
     background-position: top;
     background-size: cover;
     display: flex;
@@ -53,6 +68,8 @@ body{
 }
 .ctn-section{
     padding: 10px;
+   
+
 }
 .ctn-section .ctn-valores p{
  font-weight: 500;
@@ -123,11 +140,23 @@ body{
     line-height: 29px;
     font-weight: 500;
 }
+.btn{
+    
+    background-color: rgb(24, 15, 42);
+}
 
 .btn a:hover{
  text-decoration: none;
  color: white;
+
 }
+.btn svg{
+    transition: transform 0.1s ease-in-out;
+}
+.btn:hover svg{
+ transition: transform 0.2s ease-in-out;
+ transform: translateX(10px);
+} 
 .btn{
     position: relative;
 
@@ -223,16 +252,18 @@ footer .ctn-inf{
      
 }
 .ctn-inf div h5{
+    color: rgba(117, 29, 250, 0.648);
     margin-bottom: 40px;
     font-weight: 600;
     letter-spacing: 3px;
 } 
 .ctn-inf div p{
     font-weight: 100;
-    color: rgba(240, 248, 255, 0.449);
+    color: rgba(255, 254, 240, 0.953);
 }
 .ctn-inf div h6{
     font-weight: 600;
+    color:  rgba(119, 29, 250, 0.648);
 }
 .ctn-inf .contacto section  {
     display: flex;
