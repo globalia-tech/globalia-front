@@ -4,7 +4,7 @@ body{
 body header .navbar {
     position: absolute;
     width: 100%;
-    background-color: transparent !important  ;
+    background-color: #04022199  !important  ;
     z-index: 1;
 }
 .navbar .nav-item .nav-link{
@@ -27,7 +27,7 @@ body header .navbar {
     text-align: center;
     width: 100%;
     height:641px ;
-    background: url('../assets/fondo.png');
+    background: url('../assets/imagen-fondo-seccion-nosotros.png');
     background-position: top;
     background-size: cover;
     display: flex;
@@ -36,18 +36,22 @@ body header .navbar {
 }
 .ctn-text{
     width: 100%;
-    max-width: 593px ;
+    max-width: 869px ;
     padding: 5px;
     color: white;
 }
 .section-img-portada .ctn-text h3{
- font-size: 48px;
- line-height: 58px;
+ font-weight: 700;
+ text-align: center;
+    font-size: 56px;
+ line-height: 64px;
 
 }
 .section-img-portada .ctn-text p{
-    font-size: 20px;
-    line-height: 28px;
+    margin-top: 33px;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
 }
 .section-img-portada button{
     transition: border linear 0.21s;
@@ -143,6 +147,9 @@ body header .navbar {
 .btn{
     
     background-color: rgb(24, 15, 42);
+}
+.btn:hover{
+    background-color: #771DFA;
 }
 
 .btn a:hover{
