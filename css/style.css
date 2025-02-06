@@ -147,6 +147,10 @@ background-color:rgba(36, 4, 85, 1);
   justify-content: center;
 }
 
+.dropdown-menu li a:hover{
+  color: white;
+  background-color: blue;
+}
 .navbar .navMobil{
   display: flex;
   flex-direction: column;
@@ -181,11 +185,18 @@ right: 20px;
   .navbar .navbar-toggler {
     display: block;
   }
+  .nav-item  .dropdown-menu{
+    position: absolute;
+    top: -100%;
+   left: -354%;
+  }
 
 }
 .navbar-toggler:hover{
   box-shadow: none;
 }
+
+
 
 .headersearch  .active {
   color: rgba(1, 194, 225, 1);
@@ -626,6 +637,23 @@ padding:12px 24px ;
         margin-top: 10px; /* Espaciado superior */
     }
 
+    .nav-item  .dropdown-menu{
+    
+      top: 100%;
+     left: -84px;
+    }
+
+    #navSection > nav > ol{
+     
+      gap: 11px;
+      font-size: 14px;
+    }
+
+    .headersearch nav ol li a{
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      line-height: 32px;
+    }
 }
 @media (max-width: 405px) {
  #categorias{
@@ -634,7 +662,21 @@ padding:12px 24px ;
   .ctn-cards-modo  > div{
     flex-direction: column;
   }
+
+  .ctn-cards{
+    grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+  }
+
+  .ctn-cards-modo{
+    grid-template-columns: repeat(auto-fill, minmax(291px,1fr));
+  }
+
+  .preguntas .pregunta-title{
+    flex-direction: column-reverse;
+  }
 }
+
+
 .headersearch nav ol{
   gap: 40px;
 }
