@@ -27,7 +27,7 @@ body header .navbar {
     text-align: center;
     width: 100%;
     height:641px ;
-    background: url('../assets/imagen-fondo-seccion-nosotros.png');
+    background: url('../assets/imagen-fondo-seccion-nosotros.webp');
     background-position: top;
     background-size: cover;
     display: flex;
