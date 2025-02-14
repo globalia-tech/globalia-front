@@ -146,7 +146,24 @@ background-color:rgba(36, 4, 85, 1);
   
   justify-content: center;
 }
+.p-header{
+  margin-bottom: 0;
+}
+.ctn-contacto-izquierda{
+  display: flex;  
+  gap: 38px; 
+  max-width: 75%;
+}
+@media (max-width:645px){
+  .p-header{
+   display: none;
+  }
 
+.ctn-contacto-izquierda{
+    gap:24px ;
+   
+  }
+} 
 .dropdown-menu li a:hover{
   color: white;
   background-color: blue;
