@@ -7,7 +7,7 @@
     transform: translate(-50%, -50%);
     width: 60%; /* Ajusta el ancho del contenedor */
     max-width: 100%;
-    z-index: 10; /* Asegúrate de que el texto esté siempre encima */
+    z-index: 1; /* Asegúrate de que el texto esté siempre encima */
     text-align: center;
     color: #fff; /* Texto en blanco para contraste */
     background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
@@ -19,68 +19,58 @@
 
 /* Texto que parece continuar */
 .hero-text-contacto h1 {
-    font-size: 2rem;
-    white-space: nowrap; /* No permite que el texto salte a la siguiente línea */
-    overflow: hidden; /* Oculta el contenido que sobrepasa */
-    text-overflow: ellipsis; /* Agrega "..." al final del texto */
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    text-align: center;
     margin: 0;
 }
 
 .hero-text-contacto p {
-    font-size: 1rem;
-    white-space: nowrap; /* No permite que el texto salte a la siguiente línea */
-    overflow: hidden; /* Oculta el contenido que sobrepasa */
-    text-overflow: ellipsis; /* Agrega "..." al final del texto */
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    text-align: center;
     margin: 10px 0 0;
 }
 
 
 
 /* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
+
+@media (max-width: 770px) {
     .hero-text-contacto {
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 50%;
-        width: 85%; /* Contenedor más ancho */
-        text-align: center; /* Centra el contenido */
-        padding: 10px;
-    }
-
-    .hero-text-contacto h1 {
-        font-size: 1.2rem; /* Texto más pequeño */
-    }
-
-    .hero-text-contacto p {
-        font-size: 0.9rem;
-    }
-
-    .hero-text-contacto a {
-        display: block; /* Botón siempre visible en su propia línea */
-        margin-top: .625rem; /* Espaciado superior */
-    }
-}
-@media (max-width: 575px) {
-    .hero-text-contacto {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        width: 85%; /* Contenedor más ancho */
+        width: 100%; /* Contenedor más ancho */
         text-align: center; /* Centra el contenido */
         padding: .625rem;
+        
     }
 
     .hero-text-contacto h1 {
-        font-size: 1.2rem; /* Texto más pequeño */
+        font-size: 28px; /* Texto más pequeño */
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .hero-text-contacto p {
-        font-size: 0.9rem;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
     }
 
     .hero-text-contacto a {
         display: block; /* Botón siempre visible en su propia línea */
         margin-top: 10px; /* Espaciado superior */
+    }
+
+    .row{
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
