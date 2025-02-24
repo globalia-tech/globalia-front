@@ -94,3 +94,12 @@ window.addEventListener('scroll', ()=>{
     navbar.classList.remove('navMobil');
    }
  })
+
+
+ const formsubmit = document.getElementById('formSubmit')
+ formsubmit.addEventListener('submit',(e) => {
+  e.preventDefault();
+ let formDate = new FormData(formsubmit);
+ const data = Object.fromEntries(formDate.entries());
+ console.log(data)
+});

@@ -150,20 +150,20 @@
                     <div class="card-body" style="background-color: white; border-radius: 15px; padding: 15px;">
                         <h2 class="text-center mb-6">Solicita una Consulta Gratuita</h2>
                         <h3 style="text-align: center; font-weight: 600; margin-bottom: 25px;">Todas tus dudas te las responderemos a la brevedad</h3>
-                        <form style="display: flex; flex-direction: column; gap: 27px;">
+                        <form id="formContacto" style="display: flex; flex-direction: column; gap: 27px;">
                             <div class="row mb-3 ">
                                 <div class="col">
                                   
-                                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                                    <input type="text" class="form-control" name="Nombre" id="nombre" placeholder="Ingresa tu nombre" required>
                                 </div>
                                 <div class="col">
                                   
-                                    <input type="text" class="form-control" id="marca" placeholder="Tu marca/Negocio" required>
+                                    <input type="text" class="form-control" name="Negocio" id="marca" placeholder="Tu marca/Negocio" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                               <div class="col">
-                                <select  class="form-control">
+                                <select  class="form-control" name="codigo">
                                   <option>Seleccione el codigo</option>
                                   <option>+15</option>
                                   <option>+591</option>
@@ -171,12 +171,12 @@
                                  </div>
                                 <div class="col">
                                     
-                                    <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de whatsapp" required>
+                                    <input type="number" name="NumeroTelefonico" class="form-control" id="telefono" placeholder="Ingresa tu número de whatsapp" required>
                                     <label for="telefono" class="form-label" style="font-weight: 600; font-size: 14px;">Código de área(sin 0) + Número (sin 15)</label>
                                 </div>
                                 <div class="col">
                                     
-                                    <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico" required>
+                                    <input type="email" name="Email" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico" required>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -187,7 +187,7 @@
                                 
                               </select>
                               <br/>
-                                <textarea class="form-control" style="height: 168px;" id="motivo" rows="3" placeholder="Escribe el motivo de tu contacto" required></textarea>
+                                <textarea class="form-control" name="Motivo" style="height: 168px;" id="motivo" rows="3" placeholder="Escribe el motivo de tu contacto" required></textarea>
                             </div>
                             <button type="submit" class=" btn-primario btn-transition-scale" style="width: 100%; max-width: 716px; margin: 0 auto;">Enviar Mensaje</button>
                         </form>
@@ -314,7 +314,8 @@
        
   </footer>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../js/contacto.js"></script>
+    <script  src="../js/stylenavbar.js"></script>
+    <script type="module" src="../js/contactos.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

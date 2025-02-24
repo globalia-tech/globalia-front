@@ -1,4 +1,5 @@
 
+
  //cambia el estilo del navbar 
 
  const btnnavbar = document.getElementById('btnNavbar')
