@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.use(cors({
     origin: "http://localhost:3000",
     methods:'GET,HEAD,POST,PUT,DELETE',
@@ -36,5 +36,8 @@ app.post("/api/send-data", async (req, res) => {
         throw new Error("Error al hacer la solicitud")
     }
 })
-app.use(express.static(__dirname))
-app.listen(3000, () => console.log('Servidor en http://localhost:3000'))
+app.use(express.static("public"));
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
+})
+app.listen(PORT, () => console.log('Servidor en http://localhost:3000'))
