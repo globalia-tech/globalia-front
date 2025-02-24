@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://globalia-tech.netlify.app",
     methods:'GET,HEAD,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type'
 }))
