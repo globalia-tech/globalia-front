@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Logs y archivos temporales
+*.log
+.DS_Store
+.env
+.env.local
+.env.development
+.env.production
