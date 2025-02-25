@@ -3,7 +3,7 @@ export function PostForm () {
   
     try{
     
-    fetch('http://localhost:3000/api/send-data',{
+    fetch('https://globalia-tech.netlify.app/api/send-data',{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
