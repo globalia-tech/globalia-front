@@ -90,7 +90,7 @@ export default function Home() {
      
       <div className="carousel-inner" style={{height: "100%"}}>
             <div className="carousel-item active" style={{height: "100%"}}>
-                <img src="./public/assets/fondo portada.webp" className="d-block w-100" 
+                <img src="/assets/fondo portada.webp" className="d-block w-100" 
                 style={{height: "100%" ,objectFit: "cover", objectPosition: "center"}} alt="Imagen 1"/>
             </div>
 
@@ -287,7 +287,7 @@ export default function Home() {
     
     {/*<!--Imagen de descanso-->*/}
     <div className="img-descanso">
-      <img src="./public/assets/fondo2.webp" 
+      <img src="/assets/fondo2.webp" 
       alt="imagen de descanso" style={{width: "100%" ,height: "100%"}}/>
     </div>
 
