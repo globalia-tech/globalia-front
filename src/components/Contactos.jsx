@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './style/contacto.css';
 export default function Contactos() {
 
@@ -10,9 +9,9 @@ export default function Contactos() {
 
        try{
     
-        fetch('/api/google-script',{
+        fetch('https://script.google.com/macros/s/AKfycbxduCLmtJXsyNmeZgu6uA27zBykzc9K7zDyP8nb1XFdQz1x2sIKzN4tJKHhSYmcS_OuFw/exec',{
             method: 'POST',
-            
+            mode: 'no-cors',
             headers:{
                 'Content-Type': 'application/json'
             },
