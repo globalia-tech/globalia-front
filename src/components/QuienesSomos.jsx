@@ -13,7 +13,7 @@ export default function QuienesSomos() {
        {/*<!-- <button>CHAT</button> -->*/}
     </section>
     
-    <section className="ctn-section" id="navSection"
+    <section className="ctn-section" id=""
       style={{textAlign: "center", maxWidth: "1400px", margin:"0 auto", marginTop:"150px"}} >
       <h2 style={{marginBottom: "40px",fontSize: "36px"}}>Historia</h2>
       <p style={{maxWidth:"1038px", margin:"0 auto", marginBottom:"80px", fontSize:" 24px", lineHeight: "32px"}}>Nos conocimos en una plataforma de hackatones, donde combinamos nuestras habilidades técnicas con un fuerte espíritu de equipo, logrando desarrollar un producto digital que recibió excelentes valoraciones.

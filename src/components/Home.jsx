@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import './style/style.css';
 export default function Home() {
-
+  const seccionRef = useRef(null)
     useEffect(() => {
         if ("scrollRestoration" in history) {
             history.scrollRestoration = "manual";
@@ -32,7 +32,10 @@ export default function Home() {
           
 
         const header = document.getElementById("navSection");
-        const rect = header.getBoundingClientRect();
+        if(!seccionRef.current) return
+          
+        
+        const rect = seccionRef.current.getBoundingClientRect();
         const ubicacionELement = rect.top
         console.log(ubicacionELement)
         
@@ -114,7 +117,7 @@ export default function Home() {
       {/*<!-- Menú de navegación Categoria de Proyecto (Está fijado a la parte superior, corregir)-->*/}
     
     <div style={{margin: "0 auto", marginTop: "60px",  width: "100%", maxWidth:"1158px", height: "70px"}}>
-      <div className="  headersearch " id="navSection">
+      <div className="  headersearch " id="navSection" ref={seccionRef}>
         {/*<!--- <div className="search">
             <i className="bi bi-search"></i>
             <input type="search"/>
