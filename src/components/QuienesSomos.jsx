@@ -16,8 +16,15 @@ export default function QuienesSomos() {
     <section className="ctn-section" id=""
       style={{textAlign: "center", maxWidth: "1400px", margin:"0 auto", marginTop:"150px"}} >
       <h2 style={{marginBottom: "40px",fontSize: "36px"}}>Historia</h2>
-      <p style={{maxWidth:"1038px", margin:"0 auto", marginBottom:"80px", fontSize:" 24px", lineHeight: "32px"}}>Nos conocimos en una plataforma de hackatones, donde combinamos nuestras habilidades técnicas con un fuerte espíritu de equipo, logrando desarrollar un producto digital que recibió excelentes valoraciones.
-        Ese éxito nos motivó a seguir colaborando, creando soluciones innovadoras y ofreciendo servicios que optimizan el trabajo de nuestros clientes, impulsando su crecimiento y eficiencia.</p>
+      <div style={{maxWidth:"1038px", margin:"0 auto", marginBottom:"80px", fontSize:" 24px", lineHeight: "32px"}}>
+      <p >Nos conocimos en una plataforma de hackatones,
+         donde logramos una gran sinergia técnica y un fuerte sentido de compañerismo,
+          lo que nos permitió entregar un producto digital ampliamente elogiado.</p>
+          <p>Desde entonces, decidimos seguir colaborando para crear más soluciones innovadoras 
+          y ofrecer servicios que optimicen las actividades de nuestros clientes, 
+          ayudándolos a organizar y priorizar sus tareas con mayor eficiencia.</p>
+      </div>
+      
      <picture style={{display: "block", width:"100%", height:"412px", margin:" 0 auto", marginBottom:" 160px",
       maxWidth: "1156px "}}>
       <img src="../assets/imagen-seccion _historia.webp"  
