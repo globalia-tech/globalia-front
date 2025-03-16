@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import './style/style.css';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 export default function HeaderFooter({children}) {
    //cambia el estilo del navbar 
   
@@ -85,11 +85,22 @@ export default function HeaderFooter({children}) {
             <ul className="navbar-nav mx-auto">
                 <li className="nav-item"
                  >
-                    <Link className="nav-link" to={"/"} 
-                    style={{textDecoration:"underline", color: "aqua"}} >Inicio</Link>
+                    <NavLink className="nav-link" to={"/"} 
+                    style={({isActive}) => {
+                      return {
+                        textDecoration: isActive ? "underline" : "none",
+                         color: isActive ? "aqua" : 'white'
+                      }
+                    }} >Inicio</NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to={"/quienes-somos"}>Nosotros</Link>
+                    <NavLink className="nav-link" to={"/quienes-somos"}
+                    style={({isActive}) => {
+                      return {
+                        textDecoration: isActive ? "underline" : "none",
+                         color: isActive ? "aqua" : 'white'
+                      }
+                    }}>Nosotros</NavLink>
                 </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,9 +111,7 @@ export default function HeaderFooter({children}) {
                     <li><a className="dropdown-item" href="html/webService.html" style={{color: "white"}}>Social Media</a></li>
                   </ul>
                 </li>
-                <li className="nav-item">
-                    <Link to={"/contactenos"} className="nav-link">Contacto</Link>
-                </li>
+               
                { /*<li className="nav-item">
                     <a className="nav-link" href="#perfil">Perfil</a>
                 </li>
@@ -110,7 +119,8 @@ export default function HeaderFooter({children}) {
                     <a className="nav-link" href="#redes">Links a Redes</a>
                 </li> */}
             </ul>
-            <button className="btn-primario btn-transition-scale">Contactanos</button>
+            <Link to={'/contactenos'} 
+             className="btn-primario btn-transition-scale">Contactanos</Link>
         </div>
     </nav>
 

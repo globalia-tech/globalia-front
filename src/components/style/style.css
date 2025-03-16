@@ -4,6 +4,11 @@ html, body {
   font-family: "Inter", serif;
 }
 
+/*estilos de si el navlink esta activado */
+a.Active {
+text-decoration:underline;
+color: aqua;
+}
 .btn-float {
     position: fixed;
     right: 40px;
@@ -122,6 +127,8 @@ background-color:rgba(36, 4, 85, 1);
 .btn-transition-scale:hover{
   transition: transform 0.2s ease-out;
  transform: scale(1.1);
+ color: white;
+    text-decoration: none;
 }
 
 /**esfecto de dirección*/
@@ -505,6 +512,7 @@ padding:12px 24px ;
   .btn-primary:hover {
     background-color: #1d1b20;
     transform: scale(1.1);
+    
   }
   .ctn-cards-modo {
     background-color: #f9f9f9;
@@ -738,9 +746,11 @@ estilos de la img de descanso
 }
 
 .preguntas .ctn-preguntas{
+  margin: 0 auto;
   margin-top: 100px;
-    width: 100%;
-    max-width: 50vw;
+  width: 100%;
+  max-width: 50vw;
+    
 }
 .preguntas .pregunta-title{
     display: flex;
