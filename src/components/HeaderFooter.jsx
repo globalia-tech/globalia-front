@@ -96,7 +96,7 @@ export default function HeaderFooter({children}) {
                     Servicios
                   </a>
                   <ul className="dropdown-menu" style={{backgroundColor: "rgba(36, 4, 85, 1)", color: "white"}}>
-                    <li><a className="dropdown-item" href="#" style={{color: "white"}}>Desarrollo Web</a></li>
+                    <li><a className="dropdown-item" href="/desarrollo-web" style={{color: "white"}}>Desarrollo Web</a></li>
                     <li><a className="dropdown-item" href="html/webService.html" style={{color: "white"}}>Social Media</a></li>
                   </ul>
                 </li>
