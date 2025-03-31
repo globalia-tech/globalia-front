@@ -7,6 +7,7 @@ import Home from "./components/Home.jsx";
 import QuienesSomos from "./components/QuienesSomos.jsx";
 import Contactos from "./components/Contactos.jsx";
 import DesarrolloWeb from "./components/DesarrolloWeb.jsx";
+import SocialMedia from "./components/SocialMedia.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="quienes-somos" element={<QuienesSomos />} />
           <Route path="contactenos" element={<Contactos />} />
           <Route path="desarrollo-web" element={<DesarrolloWeb />} />
+          <Route path="social-media" element={<SocialMedia />} />
         </Route>
       </Routes>
     </BrowserRouter>
