@@ -81,10 +81,11 @@ export default function SocialMedia() {
                 <source src="src\assets\redes-video01.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
-              <video className="video-item" controls muted loop playsInline>
-                <source src="src\assets\redes-video01.mp4" type="video/mp4" />
-                Tu navegador no soporta el elemento de video.
-              </video>
+              <img
+                className="video-item"
+                src="src\assets\redes-img01.jpg"
+                alt="Call to action social media"
+              />
             </div>
             <button className="btn-primario btn-transition-scale">
               Quiero saber más
