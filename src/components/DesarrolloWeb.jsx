@@ -1,6 +1,29 @@
+import { useState, useEffect } from "react";
 import "./style/desarrolloweb.css";
 
 export default function DesarrolloWeb() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeHover, setActiveHover] = useState(null);
+  const totalSlides = 5;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % totalSlides);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const handleImageClick = (index) => {
+    if (window.innerWidth <= 768) {
+      setActiveHover(activeHover === index ? null : index);
+    }
+  };
+
   return (
     <>
       <section
@@ -48,7 +71,7 @@ export default function DesarrolloWeb() {
       <section className="plantillas-seccion">
         <div className="plantillas-contenedor">
           <h2>Diseñemos juntos desde plantillas pre-realizadas</h2>
-          <div className="plantillas-galeria">
+          <div className="plantillas-galeria desktop-view">
             <div className="fila-superior">
               <div className="plantilla-item">
                 <img src="src\assets\plantilla01.png" alt="Plantilla web 1" />
@@ -67,6 +90,40 @@ export default function DesarrolloWeb() {
               <div className="plantilla-item">
                 <img src="src\assets\plantilla05.png" alt="Plantilla web 5" />
               </div>
+            </div>
+          </div>
+
+          <div className="plantillas-galeria mobile-view">
+            <div
+              className="plantillas-slider-mobile"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              <div className="plantilla-item-mobile">
+                <img src="src\assets\plantilla01.png" alt="Plantilla web 1" />
+              </div>
+              <div className="plantilla-item-mobile">
+                <img src="src\assets\plantilla02.png" alt="Plantilla web 2" />
+              </div>
+              <div className="plantilla-item-mobile">
+                <img src="src\assets\plantilla03.png" alt="Plantilla web 3" />
+              </div>
+              <div className="plantilla-item-mobile">
+                <img src="src\assets\plantilla04.png" alt="Plantilla web 4" />
+              </div>
+              <div className="plantilla-item-mobile">
+                <img src="src\assets\plantilla05.png" alt="Plantilla web 5" />
+              </div>
+            </div>
+            <div className="slider-controls">
+              {[...Array(totalSlides)].map((_, index) => (
+                <span
+                  key={index}
+                  className={`slider-dot ${
+                    currentSlide === index ? "active" : ""
+                  }`}
+                  onClick={() => handleDotClick(index)}
+                ></span>
+              ))}
             </div>
           </div>
           <div className="titulo-boton-contenedor">
@@ -109,10 +166,17 @@ export default function DesarrolloWeb() {
               <img
                 src="src\assets\customdesign02.png"
                 alt="Diseño personalizado 2"
+                onClick={() => handleImageClick(1)}
               />
-              <div className="hover-content hover-right">
+              <div
+                className={`hover-content hover-right ${
+                  activeHover === 1 ? "active" : ""
+                }`}
+              >
                 <p>
-                Foredu es una app dedicada a la educación permitiendo administrar de manera fácil y ágil las actividades escolares de las personas que estudian
+                  Foredu es una app dedicada a la educación permitiendo
+                  administrar de manera fácil y ágil las actividades escolares
+                  de las personas que estudian
                 </p>
               </div>
             </div>
@@ -120,10 +184,17 @@ export default function DesarrolloWeb() {
               <img
                 src="src\assets\customdesign03.png"
                 alt="Diseño personalizado 3"
+                onClick={() => handleImageClick(2)}
               />
-              <div className="hover-content hover-left">
+              <div
+                className={`hover-content hover-left ${
+                  activeHover === 2 ? "active" : ""
+                }`}
+              >
                 <p>
-                Petopia es una web app que permite generar un QR para la identificación de la mascota, además de tener una historia de salud, recordatorios de vacunaciones y visitas con veterinario
+                  Petopia es una web app que permite generar un QR para la
+                  identificación de la mascota, además de tener una historia de
+                  salud, recordatorios de vacunaciones y visitas con veterinario
                 </p>
               </div>
             </div>

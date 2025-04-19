@@ -3,16 +3,17 @@ import "./style/socialmedia.css";
 export default function SocialMedia() {
   return (
     <>
-      <section
-        className="social-hero"
-        style={{ height: "729px", position: "relative" }}
-      >
-        <div className="hero-background" style={{ height: "100%" }}>
+      <section className="social-hero">
+        <div className="hero-background">
           <img
             src="src\assets\social-media.png"
-            className="d-block w-100 h-100"
+            className="hero-image-desktop"
             alt="Social Media GlobaliaTech"
-            style={{ objectFit: "cover" }}
+          />
+          <img
+            src="src\assets\social-media-mobile.png"
+            className="hero-image-mobile"
+            alt="Social Media GlobaliaTech Mobile"
           />
         </div>
 
@@ -29,7 +30,9 @@ export default function SocialMedia() {
         <div className="community-manager-contenedor">
           <h2>Social Media</h2>
           <div className="subtitulo-container">
-            <h3>Servicios de Community Manager</h3>
+            <h3>
+              Servicios de Community <span>Manager</span>
+            </h3>
           </div>
           <p>
             Gestionamos la presencia online de tu marca a través de diferentes
@@ -59,7 +62,8 @@ export default function SocialMedia() {
         <div className="creacion-imagenes-contenedor">
           <div className="subtitulo-container">
             <h3>
-              Creación de imágenes y videos publicitarios para Redes Sociales
+              Creación de <span>imágenes y videos</span> publicitarios para{" "}
+              <span>Redes Sociales</span>
             </h3>
           </div>
           <p>
@@ -73,14 +77,14 @@ export default function SocialMedia() {
         <div className="cta-contenedor">
           <div className="videos-contenedor">
             <div className="videos-wrapper">
-              <img
-                src="src\assets\community-manager-service.png"
-                alt="Call to action social media"
-              />
-              <img
-                src="src\assets\community-manager-service.png"
-                alt="Call to action social media"
-              />
+              <video className="video-item" controls muted loop playsInline>
+                <source src="src\assets\redes-video01.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+              <video className="video-item" controls muted loop playsInline>
+                <source src="src\assets\redes-video01.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
             </div>
             <button className="btn-primario btn-transition-scale">
               Quiero saber más
@@ -88,8 +92,7 @@ export default function SocialMedia() {
           </div>
         </div>
       </section>
-      <section className="separador-seccion">
-      </section>
+      <section className="separador-seccion"></section>
     </>
   );
 }
