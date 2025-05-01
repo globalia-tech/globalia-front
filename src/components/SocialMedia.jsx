@@ -1,4 +1,9 @@
 import "./style/socialmedia.css";
+import imagenSocialMedia from "../assets/social-media.png";
+import imagenSocialMediaMobile from "../assets/social-media-mobile.png";
+import imagenCommunityManager from "../assets/community-manager-service.png";
+import imagenRedesVideo01 from "../assets/redes-video01.mp4"; 
+import imagenRedesImg01 from "../assets/redes-img01.jpg";
 
 export default function SocialMedia() {
   return (
@@ -6,12 +11,12 @@ export default function SocialMedia() {
       <section className="social-hero">
         <div className="hero-background">
           <img
-            src="src\assets\social-media.png"
+            src={imagenSocialMedia}
             className="hero-image-desktop"
             alt="Social Media GlobaliaTech"
           />
           <img
-            src="src\assets\social-media-mobile.png"
+            src={imagenSocialMediaMobile}
             className="hero-image-mobile"
             alt="Social Media GlobaliaTech Mobile"
           />
@@ -48,7 +53,7 @@ export default function SocialMedia() {
         <div className="cta-contenedor">
           <div className="cta-imagen-contenedor">
             <img
-              src="src\assets\community-manager-service.png"
+              src={imagenCommunityManager}
               alt="Call to action social media"
             />
             <button className="btn-primario btn-transition-scale">
@@ -78,12 +83,12 @@ export default function SocialMedia() {
           <div className="videos-contenedor">
             <div className="videos-wrapper">
               <video className="video-item" controls muted loop playsInline>
-                <source src="src\assets\redes-video01.mp4" type="video/mp4" />
+                <source src={imagenRedesVideo01} type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
               <img
                 className="video-item"
-                src="src\assets\redes-img01.jpg"
+                src={imagenRedesImg01}
                 alt="Call to action social media"
               />
             </div>
