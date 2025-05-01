@@ -1,4 +1,9 @@
 import './style/quienes-somos.css';
+import imagen from '../assets/imagen-seccion_historia.webp';
+import imagenAgustin from '../assets/perfiles/1617110579258.jpeg';
+import imagenIlena from '../assets/perfiles/Ileana.jpg';
+import imagenEli from '../assets/perfiles/eli.webp';
+import imagenYohan from '../assets/perfiles/yohan.jpg';
 export default function QuienesSomos() {
   return (
     <>
@@ -27,7 +32,7 @@ export default function QuienesSomos() {
       
      <picture style={{display: "block", width:"100%", height:"412px", margin:" 0 auto", marginBottom:" 160px",
       maxWidth: "1156px "}}>
-      <img src="../assets/imagen-seccion _historia.webp"  
+      <img src={imagen} alt="Imagen de la sección historia"
       style={{width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" ,borderRadius: "20px"}}/>
      </picture>
 
@@ -146,46 +151,33 @@ export default function QuienesSomos() {
       <h2 style={{marginTop: "60px" ,fontSize: "36px"}}>Nuestro equipo</h2>
      {/* <!--<p style="margin-top: 35px;">Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p> -->*/}
       <section className="ctn-team">
-        <div className="team">
+       {/* <div className="team">
           <img src="../assets/perfiles/angel.jpg" alt="perfil de Angel Suarez"/>
           <p>Angel Suarez</p>
-        </div>
+        </div>*/}
 
         
 
         <div className="team">
-          <img src="../assets/perfiles/Ileana.jpg" alt="perfil de Yohan J Rodriguez"/>
+          <img src={imagenIlena} alt="perfil de Yohan J Rodriguez"/>
           <p>Ileana Nieto</p>
         </div>
 
         <div className="team">
-          <img src="../assets/perfiles/yohan.jpg" alt="perfil de Yohan J Rodriguez"/>
+          <img src={imagenYohan} alt="perfil de Yohan J Rodriguez"/>
           <p>Yohan J Rodriguez Sosa</p>
         </div>
 
 
         <div className="team">
-          <img src="../assets/perfiles/1617110579258.jpeg" alt="perfil de Agustín Moldavsky"/>
+          <img src={imagenAgustin} alt="perfil de Agustín Moldavsky"/>
           <p>Agustín Moldavsky Rodoni</p>
         </div>
 
 
         <div className="team">
-          <img src="../assets/perfiles/eli.webp" alt="perfil de Eli Lucero"/>
+          <img src={imagenEli} alt="perfil de Eli Lucero"/>
           <p>ELi Lucero</p>
-        </div>
-
-
- {/*<!---
-        <div className="team">
-          <img src="../assets/perfiles/gonzalo.jpeg" alt="perfil de Gonzalo Villegas"/>
-          <p>Gonzalo Villegas</p>
-        </div>
---->*/}
-
-        <div className="team">
-          <img src="../assets/perfiles/yhordi.jpg" alt="perfil de Yhordi Choque Espinoza"/>
-          <p>Yhordi Choque Espinoza</p>
         </div>
       </section>
      </div>

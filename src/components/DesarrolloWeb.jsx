@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
 import "./style/desarrolloweb.css";
+import imagenDesarrolloWeb from "../assets/desarrollo-web.png";
+import imagenPlantilla01 from "../assets/plantilla01.png";
+import imagenPlantilla02 from "../assets/plantilla02.png";
+import imagenPlantilla03 from "../assets/plantilla03.png";
+import imagenPlantilla04 from "../assets/plantilla04.png";
+import imagenPlantilla05 from "../assets/plantilla05.png";
+import imagenCustomDesign01 from "../assets/customdesign01.png";
+import imagenCustomDesign02 from "../assets/customdesign02.png";
+import imagenCustomDesign03 from "../assets/customdesign03.png";
+import imagenCustomDesign04 from "../assets/customdesign04.png";
 
 export default function DesarrolloWeb() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,7 +42,7 @@ export default function DesarrolloWeb() {
       >
         <div className="hero-background" style={{ height: "100%" }}>
           <img
-            src="src\assets\desarrollo-web.png"
+            src={imagenDesarrolloWeb}
             className="d-block w-100 h-100"
             alt="Desarrollo Web GlobaliaTech"
             style={{ objectFit: "cover" }}
@@ -74,26 +84,26 @@ export default function DesarrolloWeb() {
           <div className="plantillas-galeria desktop-view">
             <div className="fila-superior">
               <div className="plantilla-item">
-                <img src="src\assets\plantilla01.png" alt="Plantilla web 1" />
+                <img src={imagenPlantilla01} alt="Plantilla web 1" />
               </div>
               <div className="plantilla-item">
-                <img src="src\assets\plantilla02.png" alt="Plantilla web 2" />
+                <img src={imagenPlantilla02} alt="Plantilla web 2" />
               </div>
               <div className="plantilla-item">
-                <img src="src\assets\plantilla03.png" alt="Plantilla web 3" />
+                <img src={imagenPlantilla03} alt="Plantilla web 3" />
               </div>
             </div>
             <div className="fila-inferior">
               <div className="plantilla-item">
-                <img src="src\assets\plantilla04.png" alt="Plantilla web 4" />
+                <img src={imagenPlantilla04} alt="Plantilla web 4" />
               </div>
               <div className="plantilla-item">
-                <img src="src\assets\plantilla05.png" alt="Plantilla web 5" />
+                <img src={imagenPlantilla05} alt="Plantilla web 5" />
               </div>
             </div>
           </div>
 
-          <div className="plantillas-galeria mobile-view">
+        {/*}  <div className="plantillas-galeria mobile-view">
             <div
               className="plantillas-slider-mobile"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -125,7 +135,7 @@ export default function DesarrolloWeb() {
                 ></span>
               ))}
             </div>
-          </div>
+          </div>*/}
           <div className="titulo-boton-contenedor">
             <h3>
               Cuando nos contrates te mostraremos más plantillas para que elijas
@@ -158,13 +168,13 @@ export default function DesarrolloWeb() {
           <div className="custom-design-galeria">
             <div className="design-item">
               <img
-                src="src\assets\customdesign01.png"
+                src={imagenCustomDesign01}
                 alt="Diseño personalizado 1"
               />
             </div>
             <div className="design-item">
               <img
-                src="src\assets\customdesign02.png"
+                src={imagenCustomDesign02}
                 alt="Diseño personalizado 2"
                 onClick={() => handleImageClick(1)}
               />
@@ -182,7 +192,7 @@ export default function DesarrolloWeb() {
             </div>
             <div className="design-item">
               <img
-                src="src\assets\customdesign03.png"
+                src={imagenCustomDesign03}
                 alt="Diseño personalizado 3"
                 onClick={() => handleImageClick(2)}
               />
@@ -200,7 +210,7 @@ export default function DesarrolloWeb() {
             </div>
             <div className="design-item">
               <img
-                src="src\assets\customdesign04.png"
+                src={imagenCustomDesign04}
                 alt="Diseño personalizado 4"
               />
             </div>

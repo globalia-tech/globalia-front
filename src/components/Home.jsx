@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react';
+import imagen from '../assets/fondo-portada.webp';
+import imagen2 from '../assets/fondo2.webp';
 import './style/style.css';
 export default function Home() {
   const seccionRef = useRef(null)
@@ -93,7 +95,7 @@ export default function Home() {
      
       <div className="carousel-inner" style={{height: "100%"}}>
             <div className="carousel-item active" style={{height: "100%"}}>
-                <img src="/assets/fondo portada.webp" className="d-block w-100" 
+                <img src={imagen} className="d-block w-100" 
                 style={{height: "100%" ,objectFit: "cover", objectPosition: "center"}} alt="Imagen 1"/>
             </div>
 
@@ -110,11 +112,7 @@ export default function Home() {
   </div>
    
 
-    
-  
-    
-  
-      {/*<!-- Menú de navegación Categoria de Proyecto (Está fijado a la parte superior, corregir)-->*/}
+    {/*<!-- Menú de navegación Categoria de Proyecto (Está fijado a la parte superior, corregir)-->*/}
     
     <div style={{margin: "0 auto", marginTop: "60px",  width: "100%", maxWidth:"1158px", height: "70px"}}>
       <div className="  headersearch " id="navSection" ref={seccionRef}>
@@ -163,7 +161,7 @@ export default function Home() {
                
               </div>
 
-              <div className="card" >
+              {/*<div className="card" >
                 <div className="card-body">
                   <h5 className="card-title">Infraestructura y Gestión</h5>
                  <ul>
@@ -172,10 +170,10 @@ export default function Home() {
                     <li>Servidores web</li>
                     <li>Soporte</li>
                  </ul>
-                 {/*<a className="btn btn-primary" href="#" role="button">Ver mas</a>*/}
+                 {/*<a className="btn btn-primary" href="#" role="button">Ver mas</a>
                 </div>
               
-              </div>
+              </div>*/}
 
               <div className="card" >
                 <div className="card-body">
@@ -290,7 +288,7 @@ export default function Home() {
     
     {/*<!--Imagen de descanso-->*/}
     <div className="img-descanso">
-      <img src="/assets/fondo2.webp" 
+      <img src={imagen2}
       alt="imagen de descanso" style={{width: "100%" ,height: "100%"}}/>
     </div>
 
