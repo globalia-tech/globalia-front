@@ -7,7 +7,7 @@ export default function QuienesSomos() {
     <section className="section-img-portada">
         <div className="ctn-text">
             <h3>¿Quienes Somos?</h3>
-            <p>Un equipo de expertos dedicados a transformar tus ideas en realidades digitales.</p>
+            <p>Un equipo de expertos dedicados a transformar tus ideas en realidades digitales</p>
          
         </div>
        {/*<!-- <button>CHAT</button> -->*/}
@@ -127,7 +127,7 @@ export default function QuienesSomos() {
       <div style={{width: "100%", maxWidth: "348px",backgroundColor: "rgba(22, 19, 59, 1)", color: "white",
        boxShadow: "0px 5px 11px 3px rgba(0, 0, 0, 0.759)"}} 
        className=" p-5 mb-5  rounded-4">
-        <h4 style={{marginBottom: "20px", color: "white", fontSize: "24px"}}>Nuestra Misión:</h4>
+        <h4 style={{marginBottom: "20px", color: "rgba(252, 252, 252, 1)", fontSize: "24px"}}>Nuestra Misión:</h4>
         <p style={{textAlign: "start" ,fontSize: "16px"}}>Desarrollamos soluciones de software innovadoras, útiles,
           confiables y personalizadas que impulsan la transformación digital, facilitando el crecimiento de los clientes, su competitividad y éxito en el mercado</p>
       </div>
@@ -136,9 +136,9 @@ export default function QuienesSomos() {
        style={{width: "100%", maxWidth: "348px",  backgroundColor:"rgba(22, 19, 59, 1)", color: "white", 
         boxShadow: "0px 5px 11px 3px rgba(0, 0, 0, 0.759)"}}
        className=" p-5 mb-5  rounded-4">
-        <h4 style={{marginBottom: "20px", color: "white", fontSize: "24px"}}>Nuestra visión:</h4>
+        <h4 style={{marginBottom: "20px", color: "rgba(252, 252, 252, 1)", fontSize: "24px"}}>Nuestra visión:</h4>
         <p style={{textAlign: "start", fontSize: "16px"}}>Convertirnos en un referente global y principal aliado tecnológico
-          de empresas y personas, respondiendo a las necesidades del mercado.</p>
+          de empresas y personas, respondiendo a las necesidades del mercado</p>
       </div>
      </div>
 
@@ -172,7 +172,7 @@ export default function QuienesSomos() {
 
         <div className="team">
           <img src="../assets/perfiles/eli.webp" alt="perfil de Eli Lucero"/>
-          <p>ELi Lucero</p>
+          <p>Eli Lucero</p>
         </div>
 
 
@@ -274,11 +274,11 @@ export default function QuienesSomos() {
 
 
           </div>
-        <div style={{borderRadius: "20px", width: "100%", maxWidth:"702px", margin: "50px auto", backgroundColor: "#16133B", padding: "10px", color: "white"}}>
+        <div style={{borderRadius: "20px", width: "100%", maxWidth:"702px", margin: "50px auto", backgroundColor: "rgba(46, 132, 235, 0.2)", padding: "10px", color: "rgba(26, 30, 41, 0.87)"}}>
       <h6 style={{maxWidth: "440px" ,margin: "0 auto" ,fontSize: "24px" ,lineHeight: "29px" ,marginTop: "40px", marginBottom: "50px"}}>¡Aprovecha esta oportunidad única para tu negocio!</h6>
-      <button className="btn" style={{color: "white", marginBottom: "50px", border: "0", borderRadius: "10px",padding: "15px", background:  "linear-gradient(90.02deg, rgba(2, 149, 215, 0.36) -1.34%, rgba(119, 29, 250, 0.36) 99.98%)"}}>
-      Comenzar ahora 
-      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button className="btn" style={{color: "white", background:"rgba(119, 29, 250, 1)", marginBottom: "50px", border: "0", borderRadius: "10px",padding: "15px"}}>
+      Comenzar ahora
+      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: "8px"}}>
         <path d="M12.675 9H0.5V7H12.675L7.075 1.4L8.5 0L16.5 8L8.5 16L7.075 14.6L12.675 9Z" fill="white"/>
         </svg>
         

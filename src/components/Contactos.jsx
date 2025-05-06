@@ -49,8 +49,8 @@ export default function Contactos() {
         </div>
      
         <div className="hero-text-contacto" style={{backgroundColor: "transparent"}}>
-            <h1>Conectate con GlobaliaTech</h1>
-            <p>Hablemos de tu próximo proyecto. <br/>Desde el concepto hasta la implementación, estamos contigo en cada paso.</p>
+            <h1>Contacta con Globalia Tech</h1>
+            <p>Hablemos de tu próximo proyecto. <br/>Desde el concepto hasta la implementación, estamos contigo en cada paso</p>
         </div>
     
 
@@ -81,14 +81,14 @@ export default function Contactos() {
                             <div className="row mb-3">
                               <div className="col">
                                 <select  className="form-control" name="codigo">
-                                  <option>Seleccione el codigo</option>
+                                  <option>Código de país</option>
                                   <option>+15</option>
                                   <option>+591</option>
                                 </select>
                                  </div>
                                 <div className="col">
                                     
-                                    <input type="number" name="NumeroTelefonico" className="form-control" id="telefono" placeholder="Ingresa tu número de whatsapp" required/>
+                                    <input type="number" name="NumeroTelefonico" className="form-control" id="telefono" placeholder="Número de whatsapp" required/>
                                     <label htmlFor="telefono" className="form-label" style={{fontWeight: "600", fontSize: "14px"}}>Código de área(sin 0) + Número (sin 15)</label>
                                 </div>
                                 <div className="col">
@@ -98,7 +98,7 @@ export default function Contactos() {
                             </div>
                             <div className="mb-3">
                               <select className="form-control" >
-                                <option>Que tipo de servicio necesitas?</option>
+                                <option>¿Qué tipo de servicio necesitas?</option>
                                 <option>Desarrollo web</option>
                                 <option>Social Media</option>
                                 
@@ -108,7 +108,7 @@ export default function Contactos() {
                             </div>
                             <button type="submit" className=" btn-primario btn-transition-scale" style={{width:"100%", maxWidth:"716px", margin: "0 auto"}}>Enviar Mensaje</button>
                         </form>
-                        <p className="mt-4 text-center text-muted">Cuentanos sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos.</p>
+                        <p className="mt-4 text-center text-muted">Cuentanos sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos</p>
                     </div>
                 </div>
             

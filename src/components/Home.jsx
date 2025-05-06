@@ -116,7 +116,7 @@ export default function Home() {
   
       {/*<!-- Menú de navegación Categoria de Proyecto (Está fijado a la parte superior, corregir)-->*/}
     
-    <div style={{margin: "0 auto", marginTop: "60px",  width: "100%", maxWidth:"1158px", height: "70px"}}>
+    <div style={{margin: "0 auto", marginTop: "100px",  width: "100%", maxWidth:"1158px", height: "50px"}}>
       <div className="  headersearch " id="navSection" ref={seccionRef}>
         {/*<!--- <div className="search">
             <i className="bi bi-search"></i>
@@ -128,7 +128,7 @@ export default function Home() {
               <li ><a className=" nav-list-fn" href="#Categorias">Categorías de<br/> proyectos</a></li>
               <li  aria-current="page"><a className="nav-list-fn" href="#porqueElegirnos">Por qué<br/>
                 elegirnos</a></li>
-              <li  aria-current="page"><a className="nav-list-fn" href="#preguntasFrecuentes">Preguntas<br/> Frecuentes</a></li>
+              <li  aria-current="page"><a className="nav-list-fn" href="#preguntasFrecuentes">Preguntas<br/> frecuentes</a></li>
             </ol>
           </nav>
         
@@ -148,6 +148,7 @@ export default function Home() {
       
         <div id="Categorias" style={{margin: "80px auto" ,padding: "80px 0"}}>
           <h4  className="">Categorías de proyectos</h4>
+          <p></p>
         <p>Explora cómo podemos trabajar juntos en proyectos tecnológicos, desde desarrollo web hasta soluciones personalizadas, para hacer realidad tus ideas.</p>
         <div className="ctn-cards" >
             <div className="card" >
@@ -165,12 +166,10 @@ export default function Home() {
 
               <div className="card" >
                 <div className="card-body">
-                  <h5 className="card-title">Infraestructura y Gestión</h5>
+                  <h5 className="card-title">Soporte</h5>
                  <ul>
-                    <li>Base de Datos</li>
-                    <li>Gestión de Hosting</li>
-                    <li>Servidores web</li>
-                    <li>Soporte</li>
+                    <li>Resolvemos tus dudas con el proyecto</li>
+                    <li>Cuenta con nosotros ya que eres una persona muy valiosa para nuestro equipo</li>
                  </ul>
                  {/*<a className="btn btn-primary" href="#" role="button">Ver mas</a>*/}
                 </div>
@@ -179,11 +178,11 @@ export default function Home() {
 
               <div className="card" >
                 <div className="card-body">
-                  <h5 className="card-title">Social </h5>
+                  <h5 className="card-title">Social Media</h5>
                  <ul>
                     <li>
-                        Creación de imágenes y videos punlicitarios para redes sociales</li>
-                        <li>Servicios de Community Maneger</li>
+                        Creación de imágenes y videos publicitarios para redes sociales</li>
+                        <li>Servicios de Community Manager</li>
                         <li>Manual de estilo en redes sociales</li>
                  </ul>
 
@@ -225,7 +224,7 @@ export default function Home() {
               <div className="">
                 
                   <h5 className="card-title">Experiencia y Profesionalismo</h5>
-                  <p className="card-text">Contamos con un equipo experto en diseño web, desarrollo y soluciones digitales adaptadas a tus necesidades.</p>
+                  <p className="card-text">Contamos con un equipo experto en diseño web, desarrollo y soluciones digitales adaptadas a tus necesidades</p>
                 
               </div>
             </div>
@@ -242,7 +241,7 @@ export default function Home() {
               <div className="">
                 
                   <h5 className="card-title">Entrega Puntual</h5>
-                  <p className="card-text">Cumplimos con los plazos acordados sin comprometer la calidad.</p>
+                  <p className="card-text">Cumplimos con los plazos acordados sin comprometer la calidad</p>
                 
               </div>
                       </div>
@@ -259,7 +258,7 @@ export default function Home() {
               <div className="">
                 
                   <h5 className="card-title">Soluciones Personalizadas</h5>
-                  <p className="card-text">Cada proyecto es único; creamos estrategias hechas a medida para alcanzar tus objetivos.</p>
+                  <p className="card-text">Cada proyecto es único; creamos estrategias hechas a medida para alcanzar tus objetivos</p>
               
               </div>
             </div>
@@ -318,7 +317,14 @@ export default function Home() {
               </h2>
               <div id="flush-collapseOne" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the first items accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&aposs also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <strong>Ofrecemos una amplia gama de servicios, que incluyen:</strong> 
+                  <ul>
+                      <li>Diseño y desarrollo de sitios web</li>
+                      <li>Diseño adaptable a distintos dispositivos</li>
+                      <li>Soporte técnico</li>
+                      <li>Administración de redes sociales</li>
+                      <li>Creación de identidad de marca (branding)</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -331,7 +337,7 @@ export default function Home() {
               </h2>
               <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the second items accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Trabajamos de cerca con cada cliente para entender sus necesidades y objetivos. A través de un proceso colaborativo y ágil, creamos soluciones personalizadas que impulsan la presencia online y mejoran la experiencia del usuario 
                 </div>
               </div>
             </div>
@@ -344,7 +350,7 @@ export default function Home() {
               </h2>
               <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the third items accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Sí, tenemos paquetes flexibles que incluyen servicios de branding, diseño de sitios web y desarrollo a medida. Podemos ajustarlos a las necesidades específicas de tu negocio
                 </div>
               </div>
             </div>
@@ -358,7 +364,7 @@ export default function Home() {
               </h2>
               <div id="flush-collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the third items accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Claro, ofrecemos una consulta inicial gratuita para discutir tu proyecto y proporcionarte un presupuesto personalizado sin compromiso de compra
                 </div>
               </div>
             </div>
@@ -372,7 +378,7 @@ export default function Home() {
               </h2>
               <div id="flush-collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the third items accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Somos un equipo multidisciplinario que incluye expertos en UX/UI, Desarrollo Front End y Back End, Control de calidad (QA) y Scrum Master. Cada miembro del equipo está comprometido en ofrecer soluciones de alta calidad y una experiencia de usuario excepcional
                 </div>
               </div>
             </div>
@@ -385,7 +391,7 @@ export default function Home() {
               </h2>
               <div id="flush-collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div className="accordion-body">
-                  <strong>This is the third items accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Sí, ofrecemos soporte post-lanzamiento para asegurarnos de que tu sitio web funcione correctamente y se mantenga actualizado. También ofrecemos servicios de mantenimiento continuo para solucionar cualquier inconveniente
                 </div>
               </div>
             </div>
