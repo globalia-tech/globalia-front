@@ -23,20 +23,20 @@ export default function HeaderFooter({children}) {
           <a href="tel:+58999999999" className="text-light me-3" style={{display: "flex", gap: "8px"}}>
             <i className="bi bi-telephone"></i><p className="p-header"> +58 999 999 999</p>
           </a>
-          <a href="mailto:Globaliateach@gmail.com" className="text-light" style={{display: "flex", gap: "8px"}}>
-            <i className="bi bi-envelope"></i> <p className="p-header">Globaliateach@gmail.com</p>
+          <a href="mailto:info@globalia-tech.com" className="text-light" style={{display: "flex", gap: "8px"}}>
+            <i className="bi bi-envelope"></i> <p className="p-header">info@globalia-tech.com</p>
           </a>
         </div>
         
       {/**  <!-- Redes sociales derecha --> */}
         <div className="col-auto">
-          <a href="https://www.instagram.com" target="_blank" className="text-light me-3">
+          <a href="https://www.instagram.com/globaliatech/" target="_blank" className="text-light me-3">
             <i className="bi bi-instagram"></i>
           </a>
-          <a href="https://www.facebook.com" target="_blank" className="text-light me-3">
+          <a href="https://www.facebook.com/globaliatech/" target="_blank" className="text-light me-3">
             <i className="bi bi-facebook"></i>
           </a>
-             <a href="https://www.linkedin.com" target="_blank" className="text-light">
+             <a href="https://www.linkedin.com/company/globalia-tech/" target="_blank" className="text-light">
             <i className="bi bi-linkedin"></i>
           </a>
         </div>
@@ -89,7 +89,7 @@ export default function HeaderFooter({children}) {
                     style={({isActive}) => {
                       return {
                         textDecoration: isActive ? "underline" : "none",
-                         color: isActive ? "aqua" : 'white'
+                         color: isActive ? "rgba(1, 194, 225, 1)" : 'white'
                       }
                     }} >Inicio</NavLink>
                 </li>
@@ -98,7 +98,7 @@ export default function HeaderFooter({children}) {
                     style={({isActive}) => {
                       return {
                         textDecoration: isActive ? "underline" : "none",
-                         color: isActive ? "aqua" : 'white'
+                         color: isActive ? "rgba(1, 194, 225, 1)" : 'white'
                       }
                     }}>Nosotros</NavLink>
                 </li>
@@ -155,14 +155,14 @@ export default function HeaderFooter({children}) {
         <div className="s-footer__section s-footer__section--contacto">
           <h4 style={{fontWeight: "600", fontSize: "20px", lineHeight: "28px", textAlign: "start"}}>¡Contactanos!</h4>
           <ul>
-            <li style={{ marginBottom:"10px",display:  "flex", flexDirection: "column", gap:"7px"}}><strong>Email:</strong> <i className="bi bi-envelope">  contacto@globaliatech.com</i> </li>
+            <li style={{ marginBottom:"10px",display:  "flex", flexDirection: "column", gap:"7px"}}><strong>Email:</strong> <i className="bi bi-envelope">  info@globalia-tech.com</i> </li>
             <li style={{marginBottom:"10px", display: "flex", flexDirection:"column", gap:"7px"}} ><strong>WhatsApp:</strong><i className="bi bi-whatsapp">  +123 456 7890</i> </li>
-            <li style={{listStyle: "none"}}><strong>O llenando nuestro formulario:</strong><a style={{color: "white"}} href=""> Hacé click aquí</a></li>
+            
           </ul>
         </div>
 
         <div className="s-footer__section">
-          <h4 style={{fontWeight: "600" ,fontSize:"20px" ,lineHeight: "28px" ,textAlign: "start"}}>¡Seguimos!</h4>
+          <h4 style={{fontWeight: "600" ,fontSize:"20px" ,lineHeight: "28px" ,textAlign: "start"}}>¡Seguinos!</h4>
           <ul className="s-footer__social" >
             <li >
               <a href="https://instagram.com/globaliatech" target="_blank" style={{display: "flex", gap: "8px"}}>
@@ -177,7 +177,7 @@ export default function HeaderFooter({children}) {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/globaliatech" target="_blank" style={{display: "flex" ,gap: "8px"}}>
+              <a href="https://www.linkedin.com/company/globalia-tech/" target="_blank" style={{display: "flex" ,gap: "8px"}}>
                 <i className="fab fa-linkedin"></i>
                 <span className="screen-reader-text">Linkedin</span>
               </a>

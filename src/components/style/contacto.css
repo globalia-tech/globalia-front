@@ -2,7 +2,7 @@
 /* Posicionamos el texto dentro del carrusel */
 .hero-text-contacto {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%; /* Ajusta el ancho del contenedor */
@@ -23,7 +23,8 @@
     font-weight: 700;
     line-height: 64px;
     text-align: center;
-    margin: 0;
+    margin: 10;
+    padding: 15px;
 }
 
 .hero-text-contacto p {
