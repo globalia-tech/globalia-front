@@ -1,4 +1,6 @@
 import './style/contacto.css';
+import frameImage from '../assets/Medida-frame-Hero-distintas-secciones-Desktop.jpg'
+import frameImage2 from '../assets/Frame4343.jpg'
 export default function Contactos() {
 
     const Submit = (event) => {
@@ -42,7 +44,7 @@ export default function Contactos() {
     <>
       <div className="carousel-inner" style={{height: "100vh"}}>
             <div className="carousel-item active" style={{height: "100%"}}>
-                <img src="../assets/Medida frame Hero distintas secciones Desktop.jpg" className="d-block w-100"
+                <img src={frameImage} className="d-block w-100"
                   alt="Imagen 1"/>
             </div>
             
@@ -62,7 +64,7 @@ export default function Contactos() {
     <section className="container py-5">
         <section className="row justify-content-center">
             
-                <div className="card " style={{background:`url("../assets/Frame4343.jpg")`, 
+                <div className="card " style={{background:`url(${frameImage2})`, 
                   padding: "18px", width: "100%", maxWidth: "953px", margin: "0" }}>
                     <div className="card-body" style={{backgroundColor: "white", borderRadius: "15px", padding:"15px"}}>
                         <h2 className="text-center mb-6">Solicita una Consulta Gratuita</h2>
