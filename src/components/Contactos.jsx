@@ -1,167 +1,218 @@
-import './style/contacto.css';
-import frameImage from '../assets/Medida-frame-Hero-distintas-secciones-Desktop.jpg'
-import frameImage2 from '../assets/Frame4343.jpg'
-export default function Contactos() {
+import React from 'react';
+import {
+    Box,
+    Typography,
+    Card,
+    Grid,
+    Container,
+    useTheme,
+    useMediaQuery,
+    TextField,
+    Select,
+    MenuItem,
+    Button,
+    styled
+} from '@mui/material';
+import frameImage from '../assets/Medida-frame-Hero-distintas-secciones-Desktop.jpg';
+import frameImage2 from '../assets/Frame4343.jpg';
 
-    const Submit = (event) => {
-       event.preventDefault();
-       const formDate = new FormData(event.target)
-       const date = Object.fromEntries(formDate.entries())
-       console.log(date);
+// Componentes estilizados
+const HeroSection = styled(Box)(({ theme }) => ({
+    position: 'relative',
+    height: '100vh',
+    '& img': {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover'
+    }
+}));
 
-       try{
-    
-        fetch('https://script.google.com/macros/s/AKfycbxduCLmtJXsyNmeZgu6uA27zBykzc9K7zDyP8nb1XFdQz1x2sIKzN4tJKHhSYmcS_OuFw/exec',{
+const HeroText = styled(Box)(({ theme }) => ({
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    textAlign: 'center',
+    color: theme.palette.common.white,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    padding: theme.spacing(4),
+    borderRadius: theme.shape.borderRadius,
+    width: '80%',
+    maxWidth: 1200,
+}));
+
+const FormCard = styled(Card)(({ theme }) => ({
+    background: `url(${frameImage2})`,
+    padding: theme.spacing(2),
+    width: '100%',
+    maxWidth: 953,
+    margin: '0 auto',
+}));
+
+const FormBody = styled(Box)(({ theme }) => ({
+    backgroundColor: theme.palette.common.white,
+    borderRadius: '15px',
+    padding: theme.spacing(3),
+}));
+
+const Contactos = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+
+        fetch('https://script.google.com/macros/s/AKfycbxduCLmtJXsyNmeZgu6uA27zBykzc9K7zDyP8nb1XFdQz1x2sIKzN4tJKHhSYmcS_OuFw/exec', {
             method: 'POST',
             mode: 'no-cors',
-            headers:{
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-               Nombre: date.Nombre,
-               Negocio: date.Negocio,
-               Telefono: date.codigo + date.NumeroTelefonico,
-               Email: date.Email,
-               Motivo: date.Motivo}
-            )
-        })
-        .then( e => {
-            if(e.ok){
-                console.log( 'Datos enviados correctamente')
-                 console.log(e.json())
+                Nombre: data.Nombre,
+                Negocio: data.Negocio,
+                Telefono: data.codigo + data.NumeroTelefonico,
+                Email: data.Email,
+                Motivo: data.Motivo
+            })
+        }).then(response => {
+            if (response.ok) console.log('Datos enviados correctamente');
+            else console.error('Error en el envío');
+        }).catch(error => console.error('Error:', error));
+    };
 
-            } else{
-                console.error('Datos no Enviados', e.status)
-                
-            }
+    return (
+        <>
+            <HeroSection>
+                <img src={frameImage} alt="Hero" />
+                <HeroText>
+                    <Typography variant="h1" sx={{ fontSize: isMobile ? '2rem' : '3.5rem', mb: 2 }}>
+                        Contacta con Globalia Tech
+                    </Typography>
+                    <Typography variant="h5" component="p">
+                        Hablemos de tu próximo proyecto.<br />
+                        Desde el concepto hasta la implementación, estamos contigo en cada paso
+                    </Typography>
+                </HeroText>
+            </HeroSection>
 
-        })
-    }catch{
-        throw new Error("Error al hacer la solicitud")
-    }
-    }
-  return (
-    <>
-      <div className="carousel-inner" style={{height: "100vh"}}>
-            <div className="carousel-item active" style={{height: "100%"}}>
-                <img src={frameImage} className="d-block w-100"
-                  alt="Imagen 1"/>
-            </div>
-            
-        </div>
-     
-        <div className="hero-text-contacto" style={{backgroundColor: "transparent"}}>
-            <h1>Contacta con Globalia Tech</h1>
-            <p>Hablemos de tu próximo proyecto. <br/>Desde el concepto hasta la implementación, estamos contigo en cada paso</p>
-        </div>
-    
+            <Container sx={{ my: 6 }}>
+                <Typography variant="h5" align="center" sx={{
+                    p: 3,
+                    bgcolor: 'rgba(46, 132, 235, 0.2)',
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    mx: 'auto',
+                    maxWidth: 'max-content'
+                }}>
+                    Atención al cliente de Lunes a Viernes de 9 a 19 hs
+                </Typography>
 
-    <p style={{fontSize: "24px", lineHeight: "32px", fontWeight: "600", maxWidth:" max-content",
-     backgroundColor: "rgba(46, 132, 235, 0.2)", padding: "24px", borderRadius: "10px",
-      boxShadow: "0 8px 8px rgba(0, 0, 0, 0.25)", margin: "10px auto", marginTop:" 70px"}}>
-      Atención al cliente de Lunes a Viernes de 9 a 19 hs
-    </p>
-    <section className="container py-5">
-        <section className="row justify-content-center">
-            
-                <div className="card " style={{background:`url(${frameImage2})`, 
-                  padding: "18px", width: "100%", maxWidth: "953px", margin: "0" }}>
-                    <div className="card-body" style={{backgroundColor: "white", borderRadius: "15px", padding:"15px"}}>
-                        <h2 className="text-center mb-6">Solicita una Consulta Gratuita</h2>
-                        <h3 style={{textAlign: "center" ,fontWeight:"600" ,marginBottom: "25px"}}>Todas tus dudas te las responderemos a la brevedad</h3>
-                        <form id="formContacto" onSubmit={Submit} style={{display: "flex", flexDirection: "column", gap: "27px"}}>
-                            <div className="row mb-3 ">
-                                <div className="col">
-                                  
-                                    <input type="text" className="form-control" name="Nombre" id="nombre" placeholder="Ingresa tu nombre" required/>
-                                </div>
-                                <div className="col">
-                                  
-                                    <input type="text" className="form-control" name="Negocio" id="marca" placeholder="Tu marca/Negocio" required/>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                              <div className="col">
-                                <select  className="form-control" name="codigo">
-                                  <option>Código de país</option>
-                                  <option>+15</option>
-                                  <option>+591</option>
-                                </select>
-                                 </div>
-                                <div className="col">
-                                    
-                                    <input type="number" name="NumeroTelefonico" className="form-control" id="telefono" placeholder="Número de whatsapp" required/>
-                                    <label htmlFor="telefono" className="form-label" style={{fontWeight: "600", fontSize: "14px"}}>Código de área(sin 0) + Número (sin 15)</label>
-                                </div>
-                                <div className="col">
-                                    
-                                    <input type="email" name="Email" className="form-control" id="correo" placeholder="Ingresa tu correo electrónico" required/>
-                                </div>
-                            </div>
-                            <div className="mb-3">
-                              <select className="form-control" >
-                                <option>¿Qué tipo de servicio necesitas?</option>
-                                <option>Desarrollo web</option>
-                                <option>Social Media</option>
-                                
-                              </select>
-                              <br/>
-                                <textarea className="form-control" name="Motivo" style={{height: "168px"}} id="motivo" rows="3" placeholder="Escribe el motivo de tu contacto" required></textarea>
-                            </div>
-                            <button type="submit" className=" btn-primario btn-transition-scale" style={{width:"100%", maxWidth:"716px", margin: "0 auto"}}>Enviar Mensaje</button>
+                <FormCard>
+                    <FormBody>
+                        <Typography variant="h3" align="center" gutterBottom>
+                            Solicita una Consulta Gratuita
+                        </Typography>
+                        <Typography variant="h6" align="center" gutterBottom sx={{ fontWeight: 600 }}>
+                            Todas tus dudas te las responderemos a la brevedad
+                        </Typography>
+
+                        <form onSubmit={handleSubmit}>
+                            <Grid container spacing={3} sx={{ mb: 3 }}>
+                                <Grid item xs={12} md={6}>
+                                    <TextField
+                                        fullWidth
+                                        name="Nombre"
+                                        label="Ingresa tu nombre"
+                                        required
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <TextField
+                                        fullWidth
+                                        name="Negocio"
+                                        label="Tu marca/Negocio"
+                                        required
+                                    />
+                                </Grid>
+                            </Grid>
+
+                            <Grid container spacing={3} sx={{ mb: 3 }}>
+                                <Grid item xs={12} md={3}>
+                                    <Select
+                                        fullWidth
+                                        name="codigo"
+                                        defaultValue="Código de país"
+                                    >
+                                        <MenuItem value="Código de país" disabled>Código de país</MenuItem>
+                                        <MenuItem value="+15">+15</MenuItem>
+                                        <MenuItem value="+591">+591</MenuItem>
+                                    </Select>
+                                </Grid>
+                                <Grid item xs={12} md={4}>
+                                    <TextField
+                                        fullWidth
+                                        name="NumeroTelefonico"
+                                        type="number"
+                                        label="Número de whatsapp"
+                                        required
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={5}>
+                                    <TextField
+                                        fullWidth
+                                        name="Email"
+                                        type="email"
+                                        label="Correo electrónico"
+                                        required
+                                    />
+                                </Grid>
+                            </Grid>
+
+                            <Grid container spacing={3}>
+                                <Grid item xs={12}>
+                                    <Select
+                                        fullWidth
+                                        defaultValue="¿Qué tipo de servicio necesitas?"
+                                        sx={{ mb: 2 }}
+                                    >
+                                        <MenuItem value="¿Qué tipo de servicio necesitas?" disabled>
+                                            ¿Qué tipo de servicio necesitas?
+                                        </MenuItem>
+                                        <MenuItem value="Desarrollo web">Desarrollo web</MenuItem>
+                                        <MenuItem value="Social Media">Social Media</MenuItem>
+                                    </Select>
+                                    <TextField
+                                        fullWidth
+                                        name="Motivo"
+                                        multiline
+                                        rows={6}
+                                        label="Escribe el motivo de tu contacto"
+                                        required
+                                    />
+                                </Grid>
+                            </Grid>
+
+                            <Box sx={{ textAlign: 'center', mt: 4 }}>
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    size="large"
+                                    sx={{ px: 6, mx: 'auto' }}
+                                >
+                                    Enviar Mensaje
+                                </Button>
+                            </Box>
                         </form>
-                        <p className="mt-4 text-center text-muted">Cuentanos sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos</p>
-                    </div>
-                </div>
-            
-        </section>
-    </section>
-{/*
-  <!--  <div className="container">
-      <div className="row">
-        <!-- Card 1: Icono de llamada 
-        <div className="col-xs-12 col-sm-4 col-md-4">
-          <div className="card2">
-            <div className="icon-title">
-              <i className="fas fa-phone-alt"></i>
-              <h2>Contacto Telefónico</h2>
-            </div>
-            <p>Llame para asistencia inmediata o más detalles.</p>
-          </div>
-        </div>
-        <!-- Card 2: Icono de correo 
-        <div className="col-xs-12 col-sm-4 col-md-4">
-          <div className="card2">
-            <div className="icon-title">
-              <i className="fas fa-envelope"></i>
-              <h2>Correo Electrónico</h2>
-            </div>
-            <p>Envíanos un correo y te responderemos a la brevedad.</p>
-          </div>
-        </div>
-        <!-- Card 3: Icono de ubicación 
-        <div className="col-xs-12 col-sm-4 col-md-4">
-          <div className="card2">
-            <div className="icon-title">
-              <i className="fas fa-map-marker-alt"></i>
-              <h2>Argentina <br> Colombia <br> Peru</h2>
-            </div>
-            <p>Visítanos en nuestra dirección física.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  --->
-    <!--- <div className="container2 social-section">     
-       <div>            
-          <h2>Redes Sociales</h2>
-                  <div className="social-icons d-flex justify-content-center">
-                      <a href="https://www.instagram.com" target="_blank" className="fab fa-instagram" aria-label="Instagram"></a>
-                      <a href="https://www.facebook.com" target="_blank" className="fab fa-facebook" aria-label="Facebook"></a>
-                      <a href="https://www.twitter.com" target="_blank" className="fab fa-twitter" aria-label="X (Twitter)"></a>
-                  </div>
-      </div>
-    </div> -->*/}
-    </>
-  )
-}
+
+                        <Typography variant="body2" align="center" sx={{ mt: 3, color: 'text.secondary' }}>
+                            Cuéntanos sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos
+                        </Typography>
+                    </FormBody>
+                </FormCard>
+            </Container>
+        </>
+    );
+};
+
+export default Contactos;
