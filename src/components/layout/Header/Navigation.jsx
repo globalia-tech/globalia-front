@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
 import Logo from "../../common/Logo";
 import MobileMenu from './MobileMenu.jsx';
