@@ -94,6 +94,41 @@ const ServiceCard = styled(Card)(({ theme }) => ({
     }
 }));
 
+const servicios = [
+    {
+        titulo: " Potencia Web Avanzada",
+        items: [
+            "Aplicaciones Web Escalables",
+            "Integración de Sistemas y APIs",
+            "Arquitectura de Datos Segura"
+        ]
+    },
+    {
+        titulo: "Experiencia Digital Impactante",
+        items: [
+            "Interfaces Intuitivas y Atractivas",
+            "Desarrollo Frontend Dinámico",
+            "Optimización de la Usabilidad"
+        ]
+    },
+    {
+        titulo: "Presencia Online Efectiva",
+        items: [
+            "Sitios Web Funcionales y Claros",
+            "Renovación y Optimización Web",
+            "Contenido Visual para Impactar"
+        ]
+    },
+    {
+        titulo: "Conexión y Crecimiento Social",
+        items: [
+            "Estrategias de Contenido Personalizadas",
+            "Community Management",
+            "Manuales de Estilo Coherentes"
+        ]
+    }
+];
+
 const FixedAppBar = styled(AppBar)(({ theme, scrolled }) => ({
     transition: 'all 0.3s ease',
     backgroundColor: scrolled ? theme.palette.background.paper : 'transparent',
@@ -206,52 +241,101 @@ function Home() {
 
             <Container maxWidth="lg" sx={{ my: 6, pt: 10 }}>
                 {/* Sección Categorías */}
-                <Box ref={categoriasRef} sx={{ my: 8 }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', mb: 4 }}>
+                <Box ref={categoriasRef} sx={{
+                    my: 8,
+                    px: { xs: 2, sm: 4, md: 6 },
+                    color: 'text.primary'
+                }}>
+                    <Typography variant="h4" gutterBottom sx={{
+                        textAlign: 'center',
+                        mb: 4,
+                        fontWeight: 700,
+                        color: 'inherit'
+                    }}>
                         Categorías de proyectos
                     </Typography>
-                    <Typography variant="body1" sx={{ mb: 4, textAlign: 'center' }}>
-                        Explora cómo podemos trabajar juntos en proyectos tecnológicos
+
+                    <Typography variant="body1" sx={{
+                        mb: 6,
+                        textAlign: 'center',
+                        maxWidth: 800,
+                        mx: 'auto',
+                        color: 'inherit'
+                    }}>
+                        Explora cómo podemos trabajar juntos en proyectos tecnológicos,
+                        desde desarrollo web hasta soluciones personalizadas,
+                        para hacer realidad tus ideas.
                     </Typography>
 
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} md={6}>
-                            <ServiceCard>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                    <svg width="63" height="50" viewBox="0 0 63 50" fill={theme.palette.primary.main}>
-                                        <path d="M20.0705 11.9875V4.69334C20.0705 2.67912 21.7762 1.04626 23.8804 1.04626H37.215C39.3192 1.04626 41.0249 2.67912 41.0249 4.69334V11.9875M8.64079 48.4583H54.3595C58.5678 48.4583 61.9793 45.1926 61.9793 41.1641V19.2817C61.9793 15.2532 58.5678 11.9875 54.3595 11.9875H8.64079C4.43249 11.9875 1.021 15.2532 1.021 19.2817V41.1641C1.021 45.1926 4.43249 48.4583 8.64079 48.4583Z" stroke="#1A1E29" strokeOpacity="0.87" strokeWidth="2" strokeLinecap="round"/>
-                                    </svg>
-                                    <Typography variant="h5" gutterBottom sx={{ ml: 2 }}>
-                                        Desarrollo Web
-                                    </Typography>
-                                </Box>
-                                <ul>
-                                    <li>Sitios web desde cero</li>
-                                    <li>Renovación y modificación de sitios web</li>
-                                    <li>Servicios de UX/UI</li>
-                                </ul>
-                            </ServiceCard>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <ServiceCard>
-                                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                    <svg width="57" height="54" viewBox="0 0 57 54" fill={theme.palette.primary.main}>
-                                        <path d="M36.146 33.375L26.5835 30.1875V16.8591M52.0835 27C52.0835 12.9167 40.6668 1.5 26.5835 1.5C12.5002 1.5 1.0835 12.9167 1.0835 27C1.0835 41.0833 12.5002 52.5 26.5835 52.5C28.2177 52.5 29.816 52.3463 31.3648 52.0525M37.7398 44.5312L42.521 49.3125L55.271 36.5625" stroke="#1A1E29" strokeOpacity="0.87" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                    <Typography variant="h5" gutterBottom sx={{ ml: 2 }}>
-                                        Social Media
-                                    </Typography>
-                                </Box>
-                                <ul>
-                                    <li>Creación de contenido para redes</li>
-                                    <li>Community Management</li>
-                                    <li>Manual de estilo en redes</li>
-                                </ul>
-                            </ServiceCard>
-                        </Grid>
+                    <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+                        {servicios.map((servicio, index) => (
+                            <Grid item key={index} xs={12} sm={6} md={4} lg={4} xl={3}>
+                                <ServiceCard sx={{
+                                    backgroundColor: theme.palette.primary.dark,
+                                    color: 'white',
+                                    height: '100%',
+                                    p: 3,
+                                    borderRadius: 2,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    minHeight: { xs: 280, md: 320 }, // Altura mínima adaptable
+                                    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    '&:hover': {
+                                        boxShadow: 2,
+                                        transform: 'translateY(-2px)'
+                                    }
+                                }}>
+                                    {/* Encabezado con altura fija */}
+                                    <Box sx={{
+                                        mb: 2,
+                                        pb: 1,
+                                        minHeight: 70, // Altura fija para títulos
+                                        borderBottom: '1px solid rgba(255,255,255,0.1)',
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}>
+                                        <Typography variant="h5" sx={{
+                                            fontWeight: 600,
+                                            color: 'white !important',
+                                            lineHeight: 1.2,
+                                            fontSize: { xs: '1.25rem', md: '1.4rem' }
+                                        }}>
+                                            {servicio.titulo}
+                                        </Typography>
+                                    </Box>
+
+                                    {/* Lista con altura adaptable */}
+                                    <Box component="ul" sx={{
+                                        pl: 0,
+                                        listStyle: 'none',
+                                        flexGrow: 1,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-evenly', // Distribuye items uniformemente
+                                        '& li': {
+                                            position: 'relative',
+                                            pl: 2.5,
+                                            mb: 1,
+                                            fontSize: { xs: '0.9rem', md: '1rem' },
+                                            color: 'white !important',
+                                            '&:before': {
+                                                content: '"•"',
+                                                position: 'absolute',
+                                                left: 0,
+                                                color: `${theme.palette.primary.light} !important`,
+                                                fontSize: '1.2rem'
+                                            }
+                                        }
+                                    }}>
+                                        {servicio.items.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </Box>
+                                </ServiceCard>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Box>
-
                 {/* Sección Por qué elegirnos */}
                 <Box ref={elegirnosRef} sx={{ my: 8 }}>
                     <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', mb: 4 }}>
