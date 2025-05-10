@@ -11,7 +11,7 @@ export default function Footer() {
     const theme = useTheme();
 
     return (
-        <Box component="footer" sx={{ width: '100%', bgcolor: theme.palette.primary.dark, color: theme.palette.text.secondary, mt: 4 }}>
+        <Box component="footer" sx={{ width: '100%', bgcolor: theme.palette.primary.footer, color: theme.palette.text.secondary, mt: 4 }}>
             <Container sx={{ py: 5 }}>
                 <Box sx={{
                     display: 'grid',

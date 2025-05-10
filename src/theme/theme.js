@@ -6,6 +6,7 @@ const theme = createTheme({
             main: 'rgba(119, 29, 250, 1)',
             light: 'rgba(117, 29, 250, 0.648)',
             dark: 'rgba(36, 4, 85, 1)',
+            footer: 'rgba(26, 30, 41, 1)'
         },
         secondary: {
             main: 'rgba(1, 194, 225, 1)',
