@@ -52,6 +52,7 @@ function SocialLink({ href, icon, label, theme }) {
                 target="_blank"
                 sx={{
                     display: 'flex',
+                    alignItems: 'center',
                     gap: 1,
                     color: theme.palette.text.secondary,
                     textDecoration: 'none',

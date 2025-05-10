@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { Grid, Typography, Card, Box } from '@mui/material';
-import FeatureCard from './FeatureCard';
+import FeatureItem from './FeatureItem.jsx';
 import { features } from './featuresData.jsx';
 
 const WhyChooseUs = forwardRef((props, ref) => (
@@ -17,13 +17,13 @@ const WhyChooseUs = forwardRef((props, ref) => (
             ¿Por qué elegir{' '}
             <Box component="span" color="primary.main">
                 Globalia Tech
-            </Box>?
+            </Box> para su Empresa o Proyecto Personal?
         </Typography>
 
         <Grid container spacing={4} sx={{ mt: 4 }}>
             {features.map((feature, index) => (
                 <Grid item xs={12} md={6} key={index}>
-                    <FeatureCard feature={feature} />
+                    <FeatureItem feature={feature} />
                 </Grid>
             ))}
         </Grid>

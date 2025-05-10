@@ -45,7 +45,7 @@ const Home = () => {
                 activeSection={activeSection}
                 sectionRefs={{
                     'Categorías de proyectos': categoriasRef,
-                    'Por que elegirnos': elegirnosRef,
+                    'Por qué elegirnos': elegirnosRef,
                     'Preguntas frecuentes': preguntasRef
                 }}
             />
@@ -53,7 +53,7 @@ const Home = () => {
             <Container maxWidth="lg" sx={{ my: 6, pt: 10 }}>
                 <ServicesSection ref={categoriasRef} />
                 <WhyChooseUs ref={elegirnosRef} />
-                <FAQSection ref={preguntasRef} />
+
             </Container>
 
             <Box sx={{ height: '50vh', overflow: 'hidden' }}>
@@ -67,6 +67,9 @@ const Home = () => {
                     }}
                 />
             </Box>
+            <Container maxWidth="lg" sx={{ my: 6, pt: 10 }}>
+                <FAQSection ref={preguntasRef} />
+            </Container>
         </>
     );
 };

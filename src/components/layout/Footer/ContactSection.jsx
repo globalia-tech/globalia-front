@@ -1,8 +1,5 @@
 import { Box, Typography } from '@mui/material';
 
-/**
- * Contact information section for the footer
- */
 export default function ContactSection() {
     return (
         <Box>
@@ -14,29 +11,40 @@ export default function ContactSection() {
                     label="Email:"
                     icon="bi bi-envelope"
                     text="info@globalia-tech.com"
+                    href="mailto:info@globalia-tech.com"
                 />
                 <ContactItem
                     label="WhatsApp:"
                     icon="bi bi-whatsapp"
-                    text="+123 456 7890"
+                    text="+54 9 11 7625-5393"
+                    href="https://wa.me/5491176255393"
                 />
             </Box>
         </Box>
     );
 }
 
-/**
- * Individual contact item with label and icon
- * @param {Object} props - Component props
- * @param {string} props.label - Contact label
- * @param {string} props.icon - Icon class name
- * @param {string} props.text - Contact text
- */
-function ContactItem({ label, icon, text }) {
+function ContactItem({ label, icon, text, href }) {
     return (
         <Box component="li" sx={{ mb: 2, display: 'flex', flexDirection: 'column', gap: '7px' }}>
             <Typography variant="body1" component="strong">{label}</Typography>
-            <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Typography
+                variant="body1"
+                component="a"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                        textDecoration: 'underline'
+                    }
+                }}
+            >
                 <i className={icon}></i> {text}
             </Typography>
         </Box>

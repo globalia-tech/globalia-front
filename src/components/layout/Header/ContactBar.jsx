@@ -29,9 +29,9 @@ export default function ContactBar() {
                     alignItems: isMobile ? 'center' : 'flex-start'
                 }}>
                     <ContactInfo
-                        href="tel:+58999999999"
-                        icon="bi bi-telephone"
-                        text="+58 999 999 999"
+                        href="https://wa.me/5491176255393"
+                        icon="bi bi-whatsapp" // Sugiero cambiar el icono a uno de WhatsApp
+                        text="+54 9 11 7625 5393"
                         theme={theme}
                     />
                     <ContactInfo

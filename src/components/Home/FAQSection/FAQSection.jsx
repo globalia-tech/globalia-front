@@ -1,8 +1,9 @@
 import { forwardRef } from 'react';
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import {Accordion, AccordionSummary, AccordionDetails, Typography, Box} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { faqs } from './faqData';
 import { useTheme } from '@mui/material/styles';
+import {ChatIcon} from "../../common/SvgIcons/ChatIcon.jsx";
 
 const FAQSection = forwardRef((props, ref) => {
     const theme = useTheme();
@@ -17,7 +18,21 @@ const FAQSection = forwardRef((props, ref) => {
             }}
             {...props}
         >
-            <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', mb: 4 }}>
+            <Typography
+                variant="h4"
+                component="div" // Usamos div para permitir flex
+                gutterBottom
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    justifyContent: 'center',
+                    mb: 4,
+                    color: 'text.primary',
+                    fontSize: { xs: '1.5rem', md: '2rem' },
+                }}
+            >
+                <ChatIcon sx={{ fontSize: '2.5rem' }} /> {/* Ajusta tamaño ícono */}
                 Preguntas Frecuentes
             </Typography>
 
