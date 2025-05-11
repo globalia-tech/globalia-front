@@ -1,8 +1,12 @@
 import { Box, Typography, IconButton, useTheme, useMediaQuery } from '@mui/material';
+import {
+    WhatsApp,
+    Email,
+    Instagram,
+    Facebook,
+    LinkedIn
+} from '@mui/icons-material';
 
-/**
- * Contact information bar displayed at the top of the page
- */
 export default function ContactBar() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -13,54 +17,42 @@ export default function ContactBar() {
             py: 1,
             px: 2,
             width: '100%',
-            // Eliminar la propiedad que oculta en móviles
             display: 'block'
         }}>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
+                alignItems: 'center',
                 width: '100%',
                 padding: '12px 0'
             }}>
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap : 2,
-                    alignItems: isMobile ? 'center' : 'flex-start'
-                }}>
+                {/* Contact Info */}
+                <Box sx={{ display: 'flex', gap: 3 }}>
                     <ContactInfo
                         href="https://wa.me/5491176255393"
-                        icon="bi bi-whatsapp" // Sugiero cambiar el icono a uno de WhatsApp
+                        icon={<WhatsApp fontSize={isMobile ? "small" : "medium"} />}
                         text="+54 9 11 7625 5393"
-                        theme={theme}
                     />
                     <ContactInfo
                         href="mailto:info@globalia-tech.com"
-                        icon="bi bi-envelope"
+                        icon={<Email fontSize={isMobile ? "small" : "medium"} />}
                         text="info@globalia-tech.com"
-                        theme={theme}
                     />
                 </Box>
 
-                <Box sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
+                {/* Social Icons */}
+                <Box sx={{ display: 'flex', gap: 1 }}>
                     <SocialIcon
                         href="https://www.instagram.com/globaliatech/"
-                        icon="bi bi-instagram"
-                        theme={theme}
+                        icon={<Instagram fontSize={isMobile ? "small" : "medium"} />}
                     />
                     <SocialIcon
                         href="https://www.facebook.com/globaliatech/"
-                        icon="bi bi-facebook"
-                        theme={theme}
+                        icon={<Facebook fontSize={isMobile ? "small" : "medium"} />}
                     />
                     <SocialIcon
                         href="https://www.linkedin.com/company/globalia-tech/"
-                        icon="bi bi-linkedin"
-                        theme={theme}
+                        icon={<LinkedIn fontSize={isMobile ? "small" : "medium"} />}
                     />
                 </Box>
             </Box>
@@ -68,43 +60,35 @@ export default function ContactBar() {
     );
 }
 
-/**
- * Contact information item with icon and text
- * @param {Object} props - Component props
- * @param {string} props.href - Contact link URL
- * @param {string} props.icon - Icon class name
- * @param {string} props.text - Contact text
- * @param {Object} props.theme - MUI theme object
- */
-function ContactInfo({ href, icon, text, theme }) {
+function ContactInfo({ href, icon, text }) {
+    const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Box component="a" href={href} sx={{
-            color: theme.palette.text.secondary,
-            display: 'flex',
-            gap: 1,
-            alignItems: 'center',
-            textDecoration: 'none',
-            fontSize: isMobile ? '0.9rem' : 'inherit' // Reducir tamaño en móvil
-        }}>
-            <i className={icon}></i>
+        <Box
+            component="a"
+            href={href}
+            sx={{
+                color: theme.palette.text.secondary,
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                textDecoration: 'none',
+                '&:hover': { opacity: 0.8 }
+            }}
+        >
+            {icon}
             {!isMobile && (
-                <Typography variant="body2">{text}</Typography>
+                <Typography variant="body2" sx={{ fontSize: '0.9rem' }}>
+                    {text}
+                </Typography>
             )}
         </Box>
     );
 }
 
-/**
- * Social media icon button
- * @param {Object} props - Component props
- * @param {string} props.href - Social media link URL
- * @param {string} props.icon - Icon class name
- * @param {Object} props.theme - MUI theme object
- */
-function SocialIcon({ href, icon, theme }) {
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+function SocialIcon({ href, icon }) {
+    const theme = useTheme();
 
     return (
         <IconButton
@@ -112,12 +96,11 @@ function SocialIcon({ href, icon, theme }) {
             target="_blank"
             sx={{
                 color: theme.palette.text.secondary,
-                padding: isMobile ? '4px' : '8px' // Reducir padding en móvil
+                padding: '6px',
+                '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' }
             }}
         >
-            <i className={icon} style={{
-                fontSize: isMobile ? '1rem' : '1.25rem' // Reducir tamaño en móvil
-            }}></i>
+            {icon}
         </IconButton>
     );
 }

@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import { Email, WhatsApp } from '@mui/icons-material';
 
 export default function ContactSection() {
     return (
@@ -9,13 +10,13 @@ export default function ContactSection() {
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
                 <ContactItem
                     label="Email:"
-                    icon="bi bi-envelope"
+                    icon={<Email fontSize="small" />}
                     text="info@globalia-tech.com"
                     href="mailto:info@globalia-tech.com"
                 />
                 <ContactItem
                     label="WhatsApp:"
-                    icon="bi bi-whatsapp"
+                    icon={<WhatsApp fontSize="small" />}
                     text="+54 9 11 7625-5393"
                     href="https://wa.me/5491176255393"
                 />
@@ -45,7 +46,7 @@ function ContactItem({ label, icon, text, href }) {
                     }
                 }}
             >
-                <i className={icon}></i> {text}
+                {icon} {text}
             </Typography>
         </Box>
     );

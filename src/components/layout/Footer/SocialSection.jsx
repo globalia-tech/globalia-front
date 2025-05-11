@@ -1,8 +1,6 @@
 import { Box, Typography, useTheme } from '@mui/material';
+import { Instagram, Facebook, LinkedIn } from '@mui/icons-material';
 
-/**
- * Social media links section for the footer
- */
 export default function SocialSection() {
     const theme = useTheme();
 
@@ -14,36 +12,27 @@ export default function SocialSection() {
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
                 <SocialLink
                     href="https://instagram.com/globaliatech"
-                    icon="fab fa-instagram"
+                    icon={<Instagram fontSize="small" />}
                     label="Instagram"
-                    theme={theme}
                 />
                 <SocialLink
                     href="https://facebook.com/globaliatech"
-                    icon="fab fa-facebook"
+                    icon={<Facebook fontSize="small" />}
                     label="Facebook"
-                    theme={theme}
                 />
                 <SocialLink
                     href="https://www.linkedin.com/company/globalia-tech/"
-                    icon="fab fa-linkedin"
+                    icon={<LinkedIn fontSize="small" />}
                     label="LinkedIn"
-                    theme={theme}
                 />
             </Box>
         </Box>
     );
 }
 
-/**
- * Individual social media link with icon
- * @param {Object} props - Component props
- * @param {string} props.href - Social media URL
- * @param {string} props.icon - Icon class name
- * @param {string} props.label - Social media platform name
- * @param {Object} props.theme - MUI theme object
- */
-function SocialLink({ href, icon, label, theme }) {
+function SocialLink({ href, icon, label }) {
+    const theme = useTheme();
+
     return (
         <Box component="li" sx={{ mb: 2 }}>
             <Box
@@ -61,7 +50,7 @@ function SocialLink({ href, icon, label, theme }) {
                     }
                 }}
             >
-                <i className={icon}></i>
+                {icon}
                 <Typography variant="body1">{label}</Typography>
             </Box>
         </Box>
