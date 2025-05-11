@@ -16,7 +16,6 @@ import {
 import frameImage from '../assets/Medida-frame-Hero-distintas-secciones-Desktop.jpg';
 import frameImage2 from '../assets/Frame4343.jpg';
 
-// Componentes estilizados
 const HeroSection = styled(Box)(({ theme }) => ({
     position: 'relative',
     height: '100vh',
