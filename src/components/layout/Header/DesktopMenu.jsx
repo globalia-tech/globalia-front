@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { Box, Button, Menu, MenuItem, useTheme } from '@mui/material';
+import {KeyboardArrowDown} from "@mui/icons-material";
 
 /**
  * Desktop navigation menu for medium and larger screens
@@ -26,7 +27,20 @@ export default function DesktopMenu({ anchorEl, handleMenuOpen, handleMenuClose 
                      color: (params) => params.isActive ? theme.palette.secondary.main : theme.palette.text.secondary,
                      padding: '6px 12px',
                      transition: 'color 0.3s ease',
-                     textDecoration: 'none', // Elimina cualquier subrayado
+                     textDecoration: 'none',
+                     "&.active": {
+                         color: theme.palette.secondary.main,
+                         position: 'relative',
+                         '&::after': {
+                             content: '""',
+                             position: 'absolute',
+                             bottom: -4,
+                             left: 0,
+                             right: 0,
+                             height: '2px',
+                             backgroundColor: theme.palette.secondary.main,
+                         }
+                     },
                      '&:hover': {
                          color: theme.palette.secondary.light,
                      }
@@ -39,7 +53,20 @@ export default function DesktopMenu({ anchorEl, handleMenuOpen, handleMenuClose 
                      color: (params) => params.isActive ? theme.palette.secondary.main : theme.palette.text.secondary,
                      padding: '6px 12px',
                      transition: 'color 0.3s ease',
-                     textDecoration: 'none', // Elimina cualquier subrayado
+                     textDecoration: 'none',
+                     "&.active": {
+                         color: theme.palette.secondary.main,
+                         position: 'relative',
+                         '&::after': {
+                             content: '""',
+                             position: 'absolute',
+                             bottom: -4,
+                             left: 0,
+                             right: 0,
+                             height: '2px',
+                             backgroundColor: theme.palette.secondary.main,
+                         }
+                     },
                      '&:hover': {
                          color: theme.palette.secondary.light,
                      }
@@ -54,6 +81,9 @@ export default function DesktopMenu({ anchorEl, handleMenuOpen, handleMenuClose 
                         cursor: 'pointer',
                         padding: '6px 12px',
                         transition: 'color 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
                         '&:hover': {
                             color: theme.palette.secondary.light,
                         }
@@ -61,6 +91,12 @@ export default function DesktopMenu({ anchorEl, handleMenuOpen, handleMenuClose 
                     onClick={handleMenuOpen}
                 >
                     Servicios
+                    <KeyboardArrowDown
+                        sx={{
+                            transition: 'transform 0.2s ease',
+                            transform: Boolean(anchorEl) ? 'rotate(180deg)' : 'none'
+                        }}
+                    />
                 </Box>
                 <Menu
                     anchorEl={anchorEl}

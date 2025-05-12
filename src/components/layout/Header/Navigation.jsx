@@ -58,7 +58,6 @@ export default function Navigation() {
                         </Typography>
                     </Box>
 
-                    {/* Mantén la lógica de renderizado condicional */}
                     {isMobile ? (
                         <MobileMenu
                             anchorEl={anchorEl}

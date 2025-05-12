@@ -15,13 +15,11 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
     const theme = useTheme();
     const menuRef = useRef(null);
 
-    // Función para cerrar ambos menús
     const closeAllMenus = () => {
         toggleMobileMenu();
         handleMenuClose();
     };
 
-    // Detector de clics fuera del menú
     useEffect(() => {
         function handleClickOutside(event) {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -30,7 +28,6 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
             }
         }
 
-        // Agrega el detector de eventos solo si el menú está abierto
         if (mobileMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         }
@@ -57,7 +54,7 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
                 ref={menuRef}
                 sx={{
                     position: 'absolute',
-                    top: '64px', // Ajustar según altura de tu header
+                    top: '64px',
                     left: 0,
                     right: 0,
                     bgcolor: 'rgba(4, 2, 33, 0.9)',
