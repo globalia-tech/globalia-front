@@ -32,7 +32,9 @@ const NavigationBar = ({ activeSection, sectionRefs }) => {
 
     return (
         <FixedAppBar scrolled={activeSection !== 'Categorías de proyectos'}>
-            <Toolbar disableGutters sx={{ height: '100%' }}>
+            <Toolbar disableGutters sx={{
+                height: '100%'
+            }}>
                 <Container
                     maxWidth="lg"
                     sx={{

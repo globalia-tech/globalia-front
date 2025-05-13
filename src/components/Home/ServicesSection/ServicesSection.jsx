@@ -7,9 +7,11 @@ const ServicesSection = forwardRef((props, ref) => (
     <Box
         ref={ref}
         sx={{
-            my: 8,
+            mt: -4,
+            //my: 0,
             px: { xs: 2, sm: 4, md: 6 },
             color: 'text.primary'
+
         }}
         {...props}
     >
@@ -24,8 +26,13 @@ const ServicesSection = forwardRef((props, ref) => (
         <Grid container spacing={4} sx={{
             margin: 0,
             width: '100%',
+            display: 'flex',
+            justifyContent: 'flex-start',
             '& .MuiGrid-item': {
                 padding: {xs: '8px !important', sm: '16px !important'}
+            },
+            '&:last-child': {
+                justifyContent: services.length % 3 === 1 ? 'center' : 'flex-start',
             }
         }}>
             {services.map((service, index) => (

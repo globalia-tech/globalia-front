@@ -1,7 +1,13 @@
 export const faqs = [
     {
         question: '1. ¿Qué servicios ofrece Globalia Tech?',
-        answer: 'Ofrecemos desarrollo web, diseño adaptable, soporte técnico, administración de redes sociales y creación de identidad de marca'
+        "answer": [
+            "Diseño y desarrollo de sitios web",
+            "Diseño adaptable a distintos dispositivos",
+            "Soporte técnico",
+            "Administración de redes sociales",
+            "Creación de identidad de marca (branding)"
+        ]
     },
     {
         question: '2. ¿Cómo pueden ayudarme en mi proyecto?',
