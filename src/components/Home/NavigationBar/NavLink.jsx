@@ -6,9 +6,9 @@ const NavLink = styled(Typography)(({ theme, active }) => ({
     transition: 'all 0.3s ease',
     fontWeight: 600,
     textAlign: 'center',
-    color: active ? theme.palette.secondary.dark : theme.palette.common.white,
+    color: theme.palette.common.white,
     '&:hover': {
-        color: theme.palette.primary.main
+        color: theme.palette.secondary.main
     },
     padding: theme.spacing(1),
     margin: theme.spacing(0, 1)

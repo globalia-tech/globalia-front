@@ -107,6 +107,7 @@ const theme = createTheme({
             md: 768,
             lg: 1182,
             xl: 1536,
+            tablet: 1000
         },
     },
 });

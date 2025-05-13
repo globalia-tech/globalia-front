@@ -11,6 +11,7 @@ import DesktopMenu from './DesktopMenu';
 export default function Navigation() {
     const [anchorEl, setAnchorEl] = useState(null);
     const theme = useTheme();
+    const isTablet = useMediaQuery(theme.breakpoints.down('tablet'));
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,16 +50,15 @@ export default function Navigation() {
                         <Typography
                             variant="h4"
                             sx={{
-                                display: { xs: 'none', md: 'block' },
+                                display: isTablet ? 'none' : 'block',
                                 color: theme.palette.text.secondary,
                                 m: 0
-                            }}
+                        }}
                         >
                             Globalia Tech
                         </Typography>
                     </Box>
 
-                    {/* Mantén la lógica de renderizado condicional */}
                     {isMobile ? (
                         <MobileMenu
                             anchorEl={anchorEl}

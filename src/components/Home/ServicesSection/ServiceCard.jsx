@@ -1,14 +1,13 @@
-import { Card, CardContent, Typography, CardMedia, Box } from '@mui/material';
+import { Card, CardContent, Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
 
 const StyledCard = styled(Card)(({ theme }) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     transition: 'transform 0.3s ease',
-    backgroundColor: theme.palette.primary.dark, // Color del tema
-    color: '#fff', // Color de texto general
+    backgroundColor: theme.palette.primary.dark,
+    color: '#fff',
     '&:hover': {
         transform: 'translateY(-5px)'
     }
@@ -17,22 +16,13 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const ServiceCard = ({ service }) => {
     return (
         <StyledCard>
-            {service.image && (
-                <CardMedia
-                    component="img"
-                    height="180"
-                    image={service.image}
-                    alt={service.title}
-                    sx={{ objectFit: 'cover' }}
-                />
-            )}
             <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h5" gutterBottom sx={{ color: '#fff', fontWeight: 600 }}>
+                <Typography variant="h5" gutterBottom sx={{ color: '#fff', fontWeight: 400, textAlign: 'center' }}>
                     {service.titulo}
                 </Typography>
 
                 <Box component="ul" sx={{
-                    pl: 2.5,
+                    pl: 2,
                     mb: 2,
                     listStyle: 'none',
                     '& li': {
@@ -46,42 +36,21 @@ const ServiceCard = ({ service }) => {
                             color: 'primary.main',
                             fontSize: '1.5rem',
                             lineHeight: 1,
-                            top: '0.15em'
+                            top: '0.01em'
                         }
                     }
                 }}>
                     {service.items?.map((item, index) => (
-                        <Box component="li" key={index}>
+                        <Box component="li" key={index}
+                        sx={{
+                            top: '0.6em'
+                        }}>
                             <Typography variant="body2" sx={{ color: '#fff' }}>
                                 {item}
                             </Typography>
                         </Box>
                     ))}
                 </Box>
-
-                {service.route && (
-                    <Box sx={{ mt: 'auto' }}>
-                        <Box
-                            component={Link}
-                            to={service.route}
-                            sx={{
-                                color: '#fff',
-                                textDecoration: 'none',
-                                fontWeight: 500,
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: 1,
-                                '&:hover': {
-                                    textDecoration: 'underline',
-                                    color: 'primary.light'
-                                }
-                            }}
-                        >
-                            Ver más
-                            <span style={{ fontSize: '1.2rem' }}>→</span>
-                        </Box>
-                    </Box>
-                )}
             </CardContent>
         </StyledCard>
     );

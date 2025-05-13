@@ -32,7 +32,9 @@ const NavigationBar = ({ activeSection, sectionRefs }) => {
 
     return (
         <FixedAppBar scrolled={activeSection !== 'Categorías de proyectos'}>
-            <Toolbar disableGutters sx={{ height: '100%' }}>
+            <Toolbar disableGutters sx={{
+                height: '100%'
+            }}>
                 <Container
                     maxWidth="lg"
                     sx={{
@@ -55,7 +57,7 @@ const NavigationBar = ({ activeSection, sectionRefs }) => {
                             overflowX: 'auto',
                             scrollbarWidth: 'none',
                             '&::-webkit-scrollbar': { display: 'none' },
-                            maxWidth: 800, // Limite máximo para el contenido
+                            maxWidth: 800,
                             margin: '0 auto',
                         }}
                     >
@@ -76,10 +78,6 @@ const NavigationBar = ({ activeSection, sectionRefs }) => {
                                     padding: { xs: '6px 8px', sm: '8px 12px' },
                                     transition: 'all 0.3s ease',
                                     borderRadius: '4px',
-                                    '&:hover': {
-                                        transform: 'translateY(-2px)',
-                                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    },
                                 }}
                             >
                                 {section}
