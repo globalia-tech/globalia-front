@@ -1,34 +1,25 @@
 export const services = [
     {
-        titulo: "Potencia Web Avanzada",
+        titulo: "Desarrollo Web: ",
         items: [
-            "Aplicaciones Web Escalables",
-            "Integración de Sistemas y APIs",
-            "Arquitectura de Datos Segura"
+            "Sitios web desde cero",
+            "Renovación y modificación de sitios web",
+            "Servicios de UX/UI"
         ]
     },
     {
-        titulo: "Experiencia Digital Impactante",
+        titulo: "Soporte",
         items: [
-            "Interfaces Intuitivas y Atractivas",
-            "Desarrollo Frontend Dinámico",
-            "Optimización de la Usabilidad"
+            "Resolvemos tu dudas con el proyecto. cuenta con nosotros ya que eres una persona muy valiosa para nuestro equipo"
         ]
     },
     {
-        titulo: "Presencia Online Efectiva",
+        titulo: "Social Media: ",
         items: [
-            "Sitios Web Funcionales y Claros",
-            "Renovación y Optimización Web",
-            "Contenido Visual para Impactar"
+            "Creación de imágenes y videos publicitarios para redes sociales",
+            "servicios de Community Manager",
+            "Manual de estilos en redes sociales"
         ]
     },
-    {
-        titulo: "Conexión y Crecimiento Social",
-        items: [
-            "Estrategias de Contenido Personalizadas",
-            "Community Management",
-            "Manuales de Estilo Coherentes"
-        ]
-    }
+
 ];
