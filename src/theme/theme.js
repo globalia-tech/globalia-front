@@ -25,7 +25,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: '"Inter", serif',
+        fontFamily: '"Inter", sans-serif',
         h1: {
             fontWeight: 700,
             fontSize: '56px',

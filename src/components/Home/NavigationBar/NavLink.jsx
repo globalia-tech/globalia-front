@@ -1,17 +1,32 @@
-import { Typography, styled } from '@mui/material';
+import { Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-const NavLink = styled(Typography)(({ theme, active }) => ({
+const StyledTypography = styled(Typography, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})(({ theme, active }) => ({
     cursor: 'pointer',
-    borderBottom: active ? `3px solid ${theme.palette.primary.main}` : 'none',
-    transition: 'all 0.3s ease',
+    borderBottom: active ? `3px solid ${theme.palette.secondary.main}` : 'none',
     fontWeight: 600,
     textAlign: 'center',
-    color: theme.palette.common.white,
+    color: active ? theme.palette.secondary.main : theme.palette.text.secondary,
     '&:hover': {
         color: theme.palette.secondary.main
     },
-    padding: theme.spacing(1),
-    margin: theme.spacing(0, 1)
+    padding: '8px',
+    margin: '0 8px',
 }));
+
+const NavLink = ({ active, children, onClick, sx, ...props }) => {
+    return (
+        <StyledTypography
+            active={active}
+            onClick={onClick}
+            sx={sx}
+            {...props}
+        >
+            {children}
+        </StyledTypography>
+    );
+};
 
 export default NavLink;
