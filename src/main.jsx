@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"; // Corregir imp
 import Home from "./components/Home/Home.jsx";
 import QuienesSomos from "./components/QuienesSomos/QuienesSomos.jsx";
 import Contactos from "./components/Contactos.jsx";
-import DesarrolloWeb from "./components/DesarrolloWeb.jsx";
+//import DesarrolloWeb from "./components/DesarrolloWeb.jsx";
+import DesarrolloWeb from "./components/desarrolloweb/DesarrolloWeb.jsx";
 import SocialMedia from "./components/SocialMedia.jsx";
 
 createRoot(document.getElementById("root")).render(
