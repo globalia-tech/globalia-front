@@ -1,5 +1,7 @@
 import { Box, Typography, Button, Container, useMediaQuery, styled } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import PrimaryButton, { ArrowIcon } from './common/PrimaryButton';
+import { Link } from 'react-router-dom';
 
 // Import assets
 import imagenSocialMedia from "../assets/social-media.png";
@@ -315,9 +317,17 @@ export default function SocialMedia() {
                   src={imagenCommunityManager}
                   alt="Call to action social media"
               />
-              <StyledButton>
-                Quiero saber más
-              </StyledButton>
+             <PrimaryButton
+                                         variant="contained"
+                                         endIcon={<ArrowIcon />}
+                                         component={Link}
+                                         to="/contactenos"
+                                         sx={{
+                                             '&:hover': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' }
+                                         }}
+                                     >
+                                         Quiero saber más
+                                     </PrimaryButton>
             </ImageContainer>
           </CTAContainer>
         </CTASection>
@@ -371,9 +381,17 @@ export default function SocialMedia() {
                     alt="Call to action social media"
                 />
               </VideoWrapper>
-              <StyledButton>
-                Quiero saber más
-              </StyledButton>
+              <PrimaryButton
+                                          variant="contained"
+                                          endIcon={<ArrowIcon />}
+                                          component={Link}
+                                          to="/contactenos"
+                                          sx={{
+                                              '&:hover': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' }
+                                          }}
+                                      >
+                                          Quiero saber más
+                                      </PrimaryButton>
             </ImageContainer>
           </CTAContainer>
         </CTASection>
