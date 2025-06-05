@@ -3,13 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Box, Button, IconButton, MenuItem, useTheme, Collapse } from '@mui/material';
 
 /**
- * Mobile navigation menu for small screens
- * @param {Object} props - Component props
- * @param {HTMLElement} props.anchorEl - Anchor element for services dropdown
- * @param {boolean} props.mobileMenuOpen - State of mobile menu
- * @param {Function} props.toggleMobileMenu - Toggle function for mobile menu
- * @param {Function} props.handleMenuOpen - Opens services dropdown
- * @param {Function} props.handleMenuClose - Closes services dropdown
+ * Mobile navigation menu for small screens, accesible y mobile-first
  */
 export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu, handleMenuOpen, handleMenuClose }) {
     const theme = useTheme();
@@ -40,9 +34,12 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
     return (
         <>
             <IconButton
-                sx={{ color: '#fff' }}
+                sx={{ color: '#fff', minWidth: 44, minHeight: 44 }}
                 onClick={toggleMobileMenu}
-                aria-label="menu de navegación"
+                aria-label="Abrir menú de navegación"
+                aria-haspopup="true"
+                aria-expanded={mobileMenuOpen}
+                size="large"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" fill="white" className="bi bi-list" viewBox="0 0 16 16">
                     <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
@@ -54,21 +51,28 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
                 ref={menuRef}
                 sx={{
                     position: 'absolute',
-                    top: '64px',
+                    top: { xs: 56, md: 64 },
                     left: 0,
                     right: 0,
-                    bgcolor: 'rgba(4, 2, 33, 0.9)',
+                    bgcolor: 'rgba(4, 2, 33, 0.97)',
                     transform: mobileMenuOpen ? 'scaleY(1)' : 'scaleY(0)',
                     transformOrigin: 'top',
                     transition: 'transform 0.3s ease-in-out',
                     display: { xs: 'block', md: 'none' },
                     zIndex: 9999,
                     py: 2,
-                    boxShadow: 3
+                    boxShadow: 3,
+                    borderRadius: '0 0 16px 16px',
+                    minWidth: '100vw',
+                    minHeight: 180,
+                    overflow: 'hidden',
+                    pointerEvents: mobileMenuOpen ? 'auto' : 'none'
                 }}
+                role="menu"
+                aria-label="Menú de navegación móvil"
             >
                 {/* Contenido del menú */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
                     <NavItem to="/" label="Inicio" theme={theme} onClick={closeAllMenus} />
                     <NavItem to="/quienes-somos" label="Nosotros" theme={theme} onClick={closeAllMenus} />
 
@@ -79,9 +83,12 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
                             sx={{
                                 color: theme.palette.text.secondary,
                                 py: 1.5,
-                                fontSize: '1rem'
+                                fontSize: '1rem',
+                                minHeight: 44
                             }}
                             onClick={handleMenuOpen}
+                            aria-haspopup="true"
+                            aria-expanded={Boolean(anchorEl)}
                         >
                             Servicios
                         </Button>
@@ -103,25 +110,6 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
                             </Box>
                         </Collapse>
                     </Box>
-
-                    {/* Botón de contacto */}
-                    <Button
-                        component={Link}
-                        to="/contactenos"
-                        fullWidth
-                        sx={{
-                            mx: 2,
-                            my: 1,
-                            color: '#fff',
-                            backgroundColor: theme.palette.secondary.main,
-                            '&:hover': {
-                                backgroundColor: theme.palette.secondary.dark
-                            }
-                        }}
-                        onClick={closeAllMenus}
-                    >
-                        Contáctanos
-                    </Button>
                 </Box>
             </Box>
         </>
@@ -130,11 +118,6 @@ export default function MobileMenu({ anchorEl, mobileMenuOpen, toggleMobileMenu,
 
 /**
  * Navigation item for mobile menu
- * @param {Object} props - Component props
- * @param {string} props.to - Navigation link URL
- * @param {string} props.label - Navigation label
- * @param {Object} props.theme - MUI theme object
- * @param {Function} props.onClick - Click handler function
  */
 function NavItem({ to, label, theme, onClick }) {
     return (
@@ -145,10 +128,13 @@ function NavItem({ to, label, theme, onClick }) {
             sx={{
                 color: (params) => params.isActive ? theme.palette.secondary.main : theme.palette.text.secondary,
                 textDecoration: (params) => params.isActive ? 'underline' : 'none',
-                p: 1,
+                p: 1.5,
                 width: '100%',
-                textAlign: 'center'
+                textAlign: 'center',
+                fontSize: '1rem',
+                minHeight: 44
             }}
+            role="menuitem"
         >
             {label}
         </Box>
@@ -157,11 +143,6 @@ function NavItem({ to, label, theme, onClick }) {
 
 /**
  * Service menu item
- * @param {Object} props - Component props
- * @param {string} props.href - Service link URL
- * @param {string} props.label - Service label
- * @param {Object} props.theme - MUI theme object
- * @param {Function} props.onClick - Click handler function
  */
 function ServiceMenuItem({ href, label, theme, onClick }) {
     return (
@@ -169,7 +150,8 @@ function ServiceMenuItem({ href, label, theme, onClick }) {
             component="a"
             href={href}
             onClick={onClick}
-            sx={{ color: theme.palette.text.secondary }}
+            sx={{ color: theme.palette.text.secondary, fontSize: '1rem', minHeight: 44 }}
+            role="menuitem"
         >
             {label}
         </MenuItem>

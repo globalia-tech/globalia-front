@@ -8,6 +8,8 @@ const StyledCard = styled(Card)(({ theme }) => ({
     transition: 'transform 0.3s ease',
     backgroundColor: theme.palette.primary.dark,
     color: '#fff',
+    borderRadius: 20,
+    boxShadow: '0 4px 16px rgba(36,4,85,0.10)',
     '&:hover': {
         transform: 'translateY(-5px)'
     }
@@ -15,9 +17,9 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 const ServiceCard = ({ service }) => {
     return (
-        <StyledCard>
-            <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h5" gutterBottom sx={{ color: '#fff', fontWeight: 400, textAlign: 'center' }}>
+        <StyledCard sx={{ minHeight: { xs: 220, md: 260 }, p: { xs: 1, md: 2 } }}>
+            <CardContent sx={{ flexGrow: 1, p: 0 }}>
+                <Typography variant="h5" gutterBottom sx={{ color: '#fff', fontWeight: 500, textAlign: 'center', fontSize: { xs: '1.1rem', md: '1.3rem' } }}>
                     {service.titulo}
                 </Typography>
 
@@ -29,6 +31,7 @@ const ServiceCard = ({ service }) => {
                         position: 'relative',
                         pl: '1.25rem',
                         mb: 0.75,
+                        fontSize: { xs: '0.95rem', md: '1.05rem' },
                         '&::before': {
                             content: '"•"',
                             position: 'absolute',

@@ -9,9 +9,10 @@ export const ArrowIcon = () => (
 const PrimaryButton = styled(Button)(({ theme }) => ({
     borderRadius: '30px',
     fontWeight: 700,
-    fontSize: '16px',
-    lineHeight: '19.36px',
+    fontSize: 'clamp(1rem, 1.5vw, 1.1rem)',
+    lineHeight: 1.2,
     padding: '12px 24px',
+    minHeight: 44, // Touch target mínimo
     textTransform: 'none',
     transition: 'all 0.3s ease',
     backgroundColor: theme.palette.primary.main,

@@ -18,18 +18,19 @@ import { ChatIcon } from "../../common/SvgIcons/ChatIcon.jsx";
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
     margin: theme.spacing(1, 0),
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', // Sombra más pronunciada
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
     borderRadius: theme.shape.borderRadius,
     '&.Mui-expanded': {
-        margin: theme.spacing(2, 0), // Más espacio cuando está expandido
+        margin: theme.spacing(2, 0),
     },
 }));
 
 const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
     borderBottom: `1px solid ${theme.palette.divider}`,
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    minHeight: 56,
     '&.Mui-expanded': {
         backgroundColor: theme.palette.primary.light,
         color: theme.palette.primary.contrastText,
@@ -39,11 +40,12 @@ const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
     },
     '& .MuiTypography-root': {
         fontWeight: 600,
+        fontSize: { xs: '1rem', md: '1.15rem' }
     },
 }));
 
 const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     backgroundColor: theme.palette.background.default,
     borderTop: `1px solid ${theme.palette.divider}`,
 }));
@@ -60,9 +62,12 @@ const FAQSection = forwardRef((props, ref) => {
         <Box
             ref={ref}
             sx={{
-                my: 10, // Aumenté el margen vertical para más espacio
-                px: { xs: 3, sm: 5, md: 7 }, // Aumenté el padding horizontal
+                my: { xs: 6, md: 10 },
+                px: { xs: 1, sm: 3, md: 7 },
                 color: 'text.primary',
+                width: '100%',
+                maxWidth: '1200px',
+                mx: 'auto'
             }}
             {...props}
         >
@@ -71,23 +76,22 @@ const FAQSection = forwardRef((props, ref) => {
                 component="div"
                 gutterBottom
                 sx={{
-                    mt: -18,
+                    mt: { xs: -8, md: -18 },
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 4,
+                    gap: 2,
                     justifyContent: 'center',
                     mb: 6,
                     fontWeight: 600,
-                    fontSize: { xs: '1.5rem', md: '2rem' },
-
+                    fontSize: { xs: '1.2rem', md: '2rem' },
                     letterSpacing: '0.01em',
                 }}
             >
-                <ChatIcon sx={{ fontSize: '3rem', color: theme.palette.secondary.main }} /> {/* Ícono más grande y color secundario */}
+                <ChatIcon sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: theme.palette.secondary.main }} />
                 Preguntas frecuentes
             </Typography>
 
-            <Paper elevation={3} sx={{ borderRadius: theme.shape.borderRadius, overflow: 'hidden' }}> {/* Contenedor con elevación */}
+            <Paper elevation={3} sx={{ borderRadius: theme.shape.borderRadius, overflow: 'hidden' }}>
                 {faqs.map((faq, index) => (
                     <StyledAccordion
                         key={index}
@@ -95,7 +99,7 @@ const FAQSection = forwardRef((props, ref) => {
                         onChange={handleChange(`panel${index}`)}
                     >
                         <StyledAccordionSummary
-                            expandIcon={<ExpandMoreIcon />} // El color del icono se maneja en StyledAccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
                             aria-controls={`panel${index}-content`}
                             id={`panel${index}-header`}
                         >
