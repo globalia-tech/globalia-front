@@ -89,6 +89,7 @@ const HeroSection = ({ setActiveSection, scrollToRef }) => {
                     sx={{
                         '&:hover': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' },
                         minWidth: 180,
+                        width: { xs: '100%', md: 'auto' , lg: '300px' },
                         fontSize: { xs: '1rem', md: '1.15rem' },
                         py: { xs: 1.5, md: 2 }
                     }}

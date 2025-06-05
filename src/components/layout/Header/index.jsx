@@ -19,125 +19,110 @@ export default function Header() {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const isTablet = useMediaQuery(theme.breakpoints.down('sm'));
 
-    // Estado para controlar la visibilidad del header al hacer scroll
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [anchorEl, setAnchorEl] = useState(null); // State for dropdown menu
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State for mobile menu
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+    const handleMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
 
-            if (currentScrollY > lastScrollY && currentScrollY > (CONTACT_BAR_HEIGHT.md + APP_BAR_HEIGHT.md)) {
-                // Ocultar si el scroll es hacia abajo y ya pasó la altura del header
-                setIsVisible(false);
-            } else if (currentScrollY < lastScrollY || currentScrollY < (CONTACT_BAR_HEIGHT.md + APP_BAR_HEIGHT.md)) {
-                // Mostrar si el scroll es hacia arriba o si está cerca del tope
-                setIsVisible(true);
-            }
-            setLastScrollY(currentScrollY);
-        };
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [lastScrollY, isMobile]);
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
 
     return (
-        <Slide in={isVisible} direction="down" mountOnEnter unmountOnExit>
-            <Box>
-                {/* ContactBar fija arriba */}
-                <Box
+        <Box>
+            {/* ContactBar fija arriba */}
+            <Box
+                sx={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    bgcolor: theme.palette.background.header || '#080726',
+                    zIndex: theme.zIndex.appBar,
+                    height: CONTACT_BAR_HEIGHT,
+                    display: 'flex',
+                    alignItems: 'center',
+                    px: { xs: 1, md: 4 },
+                }}
+            >
+                {/* Contact Info */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
+                    <ContactInfo
+                        href="https://wa.me/5491176255393"
+                        icon={<WhatsApp fontSize="small" />}
+                        text={isMobile ? null : "+54 9 11 7625 5393"}
+                    />
+                    <ContactInfo
+                        href="mailto:info@globalia-tech.com"
+                        icon={<Email fontSize="small" />}
+                        text={isMobile ? null : "info@globalia-tech.com"}
+                    />
+                </Box>
+                {/* Social Icons */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <SocialIcon href="https://www.instagram.com/globaliatech/" icon={<Instagram fontSize="small" />} />
+                    <SocialIcon href="https://www.facebook.com/globaliatech/" icon={<Facebook fontSize="small" />} />
+                    <SocialIcon href="https://www.linkedin.com/company/globalia-tech/" icon={<LinkedIn fontSize="small" />} />
+                </Box>
+            </Box>
+
+            {/* AppBar/Menu transparente debajo */}
+            <AppBar
+                position="fixed"
+                sx={{
+                    background: 'var(--azul-sombra-60, rgba(4, 2, 33, 0.60))',
+                    boxShadow: 'none',
+                    top: { xs: CONTACT_BAR_HEIGHT.xs, md: CONTACT_BAR_HEIGHT.md }, // Debajo del ContactBar, con valores específicos
+                    zIndex: theme.zIndex.appBar + 1,
+                    width: '100%',
+                }}
+            >
+                <Toolbar
+                    disableGutters
                     sx={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        bgcolor: theme.palette.background.header || '#080726',
-                        zIndex: theme.zIndex.appBar,
-                        height: CONTACT_BAR_HEIGHT,
+                        minHeight: APP_BAR_HEIGHT,
+                        px: { xs: 2, md: 4 },
                         display: 'flex',
                         alignItems: 'center',
-                        px: { xs: 1, md: 4 },
-                        transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
-                        transition: 'transform 0.3s ease-in-out',
-                    }}
-                >
-                    {/* Contact Info */}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
-                        <ContactInfo
-                            href="https://wa.me/5491176255393"
-                            icon={<WhatsApp fontSize="small" />}
-                            text={isMobile ? null : "+54 9 11 7625 5393"}
-                        />
-                        <ContactInfo
-                            href="mailto:info@globalia-tech.com"
-                            icon={<Email fontSize="small" />}
-                            text={isMobile ? null : "info@globalia-tech.com"}
-                        />
-                    </Box>
-                    {/* Social Icons */}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <SocialIcon href="https://www.instagram.com/globaliatech/" icon={<Instagram fontSize="small" />} />
-                        <SocialIcon href="https://www.facebook.com/globaliatech/" icon={<Facebook fontSize="small" />} />
-                        <SocialIcon href="https://www.linkedin.com/company/globalia-tech/" icon={<LinkedIn fontSize="small" />} />
-                    </Box>
-                </Box>
-
-                {/* AppBar/Menu transparente debajo */}
-                <AppBar
-                    position="fixed"
-                    sx={{
-                        background: 'transparent',
-                        boxShadow: 'none',
-                        top: { xs: CONTACT_BAR_HEIGHT.xs, md: CONTACT_BAR_HEIGHT.md }, // Debajo del ContactBar, con valores específicos
-                        zIndex: theme.zIndex.appBar + 1,
+                        justifyContent: 'space-between',
                         width: '100%',
-                        transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
-                        transition: 'transform 0.3s ease-in-out',
                     }}
                 >
-                    <Toolbar
-                        disableGutters
-                        sx={{
-                            minHeight: APP_BAR_HEIGHT,
-                            px: { xs: 2, md: 4 },
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            width: '100%',
-                        }}
-                    >
-                        {/* Logo + Nombre */}
-                        <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', minHeight: 44 }}>
-                            <Logo width={48} height={36} />
-                            <Typography
-                                variant="h4"
-                                sx={{
-                                    display: isTablet ? 'none' : 'block',
-                                    color: theme.palette.text.secondary,
-                                    fontWeight: 700,
-                                    fontSize: { xs: '1.1rem', md: '1.5rem' },
-                                    ml: 1,
-                                }}
-                            >
-                                Globalia Tech
-                            </Typography>
-                        </Box>
+                    {/* Logo + Nombre */}
+                    <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', minHeight: 44 }}>
+                        <Logo width={48} height={36} />
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                display: isTablet ? 'none' : 'block',
+                                color: theme.palette.text.secondary,
+                                fontWeight: 700,
+                                fontSize: { xs: '1.1rem', md: '1.5rem' },
+                                ml: 1,
+                            }}
+                        >
+                            Globalia Tech
+                        </Typography>
+                    </Box>
 
-                        {/* Menú de navegación y botón */}
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 3 } }}>
-                            <Box>
-                                {isMobile ? <MobileMenu /> : <DesktopMenu />}
-                            </Box>
-                            <Box>
-                                <PrimaryButton>Contáctanos</PrimaryButton>
-                            </Box>
+                    {/* Menú de navegación y botón */}
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 3 } }}>
+                        <Box>
+                            {isMobile ? <MobileMenu anchorEl={anchorEl} mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} handleMenuOpen={handleMenuOpen} handleMenuClose={handleMenuClose} /> : <DesktopMenu anchorEl={anchorEl} handleMenuOpen={handleMenuOpen} handleMenuClose={handleMenuClose} />}
                         </Box>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-        </Slide>
+                        <Box>
+                            <PrimaryButton component={Link} to="/contactenos">Contáctanos</PrimaryButton>
+                        </Box>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+        </Box>
     );
 }
 

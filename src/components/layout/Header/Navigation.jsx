@@ -28,7 +28,7 @@ export default function Navigation() {
     };
 
     return (
-        <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+        <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%',  }}>
             <AppBar position="absolute"
                     sx={{
                         backgroundColor: 'rgba(4, 2, 33, 0.6)',
