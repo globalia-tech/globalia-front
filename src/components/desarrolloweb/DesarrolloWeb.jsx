@@ -87,9 +87,7 @@ const DesarrolloWeb = () => {
   };
 
   const handleHoverChange = (index) => {
-    if (isMobile) {
-      setActiveHover(activeHover === index ? null : index);
-    }
+    setActiveHover(index);
   };
 
   return (
