@@ -35,16 +35,19 @@ export default function Header() {
     };
 
     return (
-        <Box>
+        <Box
+            sx={{
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+            }}
+        >
             {/* ContactBar fija arriba */}
             <Box
                 sx={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
                     width: '100%',
                     bgcolor: theme.palette.background.header || '#080726',
-                    zIndex: theme.zIndex.appBar,
                     height: CONTACT_BAR_HEIGHT,
                     display: 'flex',
                     alignItems: 'center',
@@ -72,15 +75,16 @@ export default function Header() {
                 </Box>
             </Box>
 
-            {/* AppBar/Menu transparente debajo */}
+            {/* AppBar/Menu transparente con posición absoluta */}
             <AppBar
-                position="fixed"
+                position="absolute"
                 sx={{
                     background: 'var(--azul-sombra-60, rgba(4, 2, 33, 0.60))',
                     boxShadow: 'none',
-                    top: { xs: CONTACT_BAR_HEIGHT.xs, md: CONTACT_BAR_HEIGHT.md }, // Debajo del ContactBar, con valores específicos
-                    zIndex: theme.zIndex.appBar + 1,
                     width: '100%',
+                    top: CONTACT_BAR_HEIGHT,
+                    left: 0,
+                    zIndex: theme.zIndex.appBar + 1,
                 }}
             >
                 <Toolbar
@@ -95,7 +99,18 @@ export default function Header() {
                     }}
                 >
                     {/* Logo + Nombre */}
-                    <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', minHeight: 44 }}>
+                    <Box 
+                        component={Link} 
+                        to="/" 
+                        sx={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            gap: 1, 
+                            textDecoration: 'none', 
+                            minHeight: 44,
+                            flex: isMobile ? 1 : 'none'
+                        }}
+                    >
                         <Logo width={48} height={36} />
                         <Typography
                             variant="h4"
@@ -111,20 +126,57 @@ export default function Header() {
                         </Typography>
                     </Box>
 
-                    {/* Menú de navegación y botón */}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 3 } }}>
-                        <Box>
-                            {isMobile ? <MobileMenu anchorEl={anchorEl} mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} handleMenuOpen={handleMenuOpen} handleMenuClose={handleMenuClose} /> : <DesktopMenu anchorEl={anchorEl} handleMenuOpen={handleMenuOpen} handleMenuClose={handleMenuClose} />}
+                    {/* Menú de navegación centrado para desktop */}
+                    {!isMobile && (
+                        <Box sx={{ 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            flex: 1,
+                            justifyContent: 'center',
+                            mx: 3
+                        }}>
+                            <DesktopMenu 
+                                anchorEl={anchorEl} 
+                                handleMenuOpen={handleMenuOpen} 
+                                handleMenuClose={handleMenuClose} 
+                            />
                         </Box>
-                        <Box>
-                            <PrimaryButton component={Link} to="/contactenos">Contáctanos</PrimaryButton>
-                        </Box>
+                    )}
+
+                    {/* Botón de contacto y menú móvil */}
+                    <Box sx={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: { xs: 1, md: 2 }
+                    }}>
+                        {isMobile && (
+                            <MobileMenu 
+                                anchorEl={anchorEl} 
+                                mobileMenuOpen={mobileMenuOpen} 
+                                toggleMobileMenu={toggleMobileMenu} 
+                                handleMenuOpen={handleMenuOpen} 
+                                handleMenuClose={handleMenuClose} 
+                            />
+                        )}
+                        <PrimaryButton component={Link} to="/contactenos">
+                            Contáctanos
+                        </PrimaryButton>
                     </Box>
                 </Toolbar>
             </AppBar>
         </Box>
     );
 }
+
+// Exportar alturas para uso en otros componentes
+export const HEADER_HEIGHTS = {
+    CONTACT_BAR: CONTACT_BAR_HEIGHT,
+    APP_BAR: APP_BAR_HEIGHT,
+    TOTAL: {
+        xs: 88, // 32 + 56
+        md: 112 // 40 + 72
+    }
+};
 
 function ContactInfo({ href, icon, text }) {
     return (

@@ -50,7 +50,7 @@ const Home = () => {
                 }}
             />
 
-            <Container maxWidth="lg" sx={{ my: 6, pt: 10 }}>
+            <Container maxWidth="lg" sx={{ my: 6, pt: 10,  }}>
                 <ServicesSection ref={categoriasRef} />
                 <WhyChooseUs ref={elegirnosRef} />
 
@@ -67,7 +67,7 @@ const Home = () => {
                     }}
                 />
             </Box>
-            <Container maxWidth="lg" sx={{ my: 6, pt: 10 }}>
+            <Container maxWidth="lg" sx={{ my: 6, pt: 10, marginTop: '-100px' }}>
                 <FAQSection ref={preguntasRef} />
             </Container>
         </>

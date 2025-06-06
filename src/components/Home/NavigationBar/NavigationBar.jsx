@@ -82,9 +82,9 @@ const NavigationBar = ({ activeSection: externalActiveSection, sectionRefs }) =>
     };
 
     return (
-        <FixedAppBar scrolled={scrolled}>
+        <FixedAppBar scrolled={scrolled}  sx={{marginTop: '70px'}}>
             <Toolbar disableGutters sx={{
-                height: '100%'
+                height: '100%', 
             }}>
                 <Container
                     maxWidth="lg"

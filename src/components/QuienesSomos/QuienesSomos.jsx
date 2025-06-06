@@ -125,17 +125,24 @@ const QuienesSomos = () => {
 
             {/* Sección Valores */}
             <Container sx={{ textAlign: 'center', my: 10 }}>
-                <Typography variant="h4" gutterBottom>
-                    Nuestros valores
-                </Typography>
-                <Grid container justifyContent="center" spacing={4}>
-                    {valores.map((valor) => (
-                        <Grid item key={valor.title}>
-                            <ValueCard {...valor} />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
+    <Typography 
+        variant="h4" 
+        gutterBottom 
+        sx={{ 
+            marginTop: '30px',
+            marginBottom: { xs: '40px', sm: '50px', md: '60px' }
+        }}
+    >
+        Nuestros valores
+    </Typography>
+    <Grid container justifyContent="center" spacing={4}>
+        {valores.map((valor) => (
+            <Grid item key={valor.title}>
+                <ValueCard {...valor} />
+            </Grid>
+        ))}
+    </Grid>
+</Container>
 
             <Box
                 sx={{

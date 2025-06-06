@@ -10,7 +10,7 @@ const DescriptionSection = ({ title, content }) => {
   }));
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', padding: { xs: '40px 20px', md: '80px 20px' } }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', padding: { xs: '40px 20px', md: '80px 20px' } , marginTop: '-100px'}}>
       <SectionContainer maxWidth="lg" sx={{ maxWidth: '1146px' }}>
         <Typography
           variant="h2"

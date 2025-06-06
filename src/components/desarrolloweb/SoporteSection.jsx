@@ -11,6 +11,7 @@ const SoporteSection = ({ title, content, email }) => {
     padding: theme.spacing(5, 2.5),
     backgroundColor: 'rgba(119, 29, 250, 0.20)',
     height: '382px',
+    marginBottom: '-32px',
     [theme.breakpoints.down('md')]: {
       height: 'auto',
     },

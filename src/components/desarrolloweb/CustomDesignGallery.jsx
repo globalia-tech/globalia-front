@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button, Typography, styled } from '@mui/material';
-import PrimaryButton, { ArrowIcon } from '../common/PrimaryButton.jsx';
 import { Link } from 'react-router-dom';
 
 const CustomDesignGallery = ({ 
@@ -9,237 +8,304 @@ const CustomDesignGallery = ({
   activeHover, 
   onHoverChange 
 }) => {
-  const CustomDesignGaleria = styled(Box)(({ theme }) => ({
-    height: '478px',
-    background: 'linear-gradient(90deg, rgba(117, 0, 255, 0.81) 0.49%, rgba(117, 0, 255, 0.60) 22.14%, rgba(71, 142, 229, 0.80) 48.71%, rgba(71, 142, 229, 0.61) 61.99%, rgba(71, 142, 229, 0.40) 75.77%, rgba(71, 142, 229, 0.20) 88.56%, rgba(71, 142, 229, 0.10) 98.4%)',
+  const GalleryContainer = styled(Box)(({ theme }) => ({
+    minHeight: '400px',
     boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+    background: 'linear-gradient(270deg, rgba(151, 71, 255, 0.81) 4.23%, rgba(151, 71, 255, 0.60) 23.23%, rgba(46, 132, 235, 0.80) 46.54%, rgba(46, 132, 235, 0.61) 58.2%, rgba(46, 132, 235, 0.40) 70.29%, rgba(46, 132, 235, 0.20) 81.51%, rgba(46, 132, 235, 0.10) 90.15%)',
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
-    padding: theme.spacing(2.5),
     position: 'relative',
+    overflow: 'hidden',
     [theme.breakpoints.down('md')]: {
-      height: 'auto',
-      padding: theme.spacing(2.5),
-      flexFlow: 'column',
+      padding: theme.spacing(2),
+      minHeight: '500px',
     },
   }));
 
-  const DesignItem = styled(Box)(({ theme, position }) => ({
+  const DevicesGrid = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
-    ...(position === 'topLeft' && {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      [theme.breakpoints.down('md')]: {
-        top: '120px',
-        left: '0px',
-        zIndex: 1,
-        height: '150px',
-      },
-    }),
-    ...(position === 'bottomRight' && {
-      position: 'absolute',
-      bottom: 0,
-      right: 0,
-      [theme.breakpoints.down('md')]: {
-        bottom: '60px',
-      },
-    }),
-    ...(position === 'mid' && {
-      [theme.breakpoints.down('md')]: {
-        height: '286px',
-      },
-    }),
+    gap: theme.spacing(8),
+    maxWidth: '1200px',
+    width: '100%',
+    flexWrap: 'wrap',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+      gap: theme.spacing(4),
+    },
   }));
 
-  const DesignImage = styled('img')(({ theme, position }) => ({
-    objectFit: 'cover',
-    cursor: position === 'topLeft' || position === 'bottomRight' ? 'default' : 'pointer',
+  const DeviceSet = styled(Box)(({ theme }) => ({
+    position: 'relative',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.02)',
+    },
     [theme.breakpoints.down('md')]: {
       width: '100%',
+      maxWidth: '350px',
+    },
+  }));
+
+  const LaptopContainer = styled(Box)(({ theme }) => ({
+    position: 'relative',
+    zIndex: 1,
+    '& img': {
+      width: '560px',
+      height: '400',
+      borderRadius: '12px',
+      //boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+      transition: 'all 0.3s ease',
+      [theme.breakpoints.down('md')]: {
+        width: '100%',
+        maxWidth: '350px',
+      },
+    },
+  }));
+
+  const MobileContainer = styled(Box)(({ theme, position }) => ({
+    position: 'absolute',
+    top: '30%',
+    zIndex: 2,
+    ...(position === 'left' && {
+      left: '-80px',
+      [theme.breakpoints.down('md')]: {
+        left: '-30px',
+      },
+    }),
+    ...(position === 'right' && {
+      right: '-80px',
+      [theme.breakpoints.down('md')]: {
+        right: '-30px',
+      },
+    }),
+    '& img': {
+      width: '180px',
       height: 'auto',
-      ...(position === 'topLeft' && {
-        height: '150px',
-      }),
-      ...(position === 'bottomRight' && {
-        height: '150px',
-      }),
+      borderRadius: '8px',
+      //boxShadow: '0 15px 30px rgba(0, 0, 0, 0.4)',
+      transition: 'all 0.3s ease',
+      [theme.breakpoints.down('md')]: {
+        width: '80px',
+      },
     },
   }));
 
   const HoverContent = styled(Box)(({ theme, position, active }) => ({
     position: 'absolute',
-    width: '477px',
-    height: '305px',
-    padding: '56.5px 38px',
-    borderRadius: theme.spacing(1),
-    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-    opacity: 0,
-    visibility: 'hidden',
-    transition: 'all 0.3s ease',
+    width: '320px',
+    padding: '24px',
+    borderRadius: '16px',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backdropFilter: 'blur(10px)',
+    boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
     zIndex: 10,
-    backgroundColor: position === 'right' ? '#60A1EF' : '#B990FD',
-    ...(position === 'right' && {
-      left: 'calc(100% - 70px)',
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+    
+    // Desktop positioning
+    [theme.breakpoints.up('md')]: {
       top: '50%',
-      transform: 'translateY(-50%)',
-    }),
-    ...(position === 'left' && {
-      right: 'calc(100% - 70px)',
-      top: '50%',
-      transform: 'translateY(-50%)',
-    }),
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-      height: 'auto',
-      padding: theme.spacing(2.5),
-      marginTop: theme.spacing(1.25),
-      transform: 'none',
+      ...(position === 'left' && {
+        right: '105%',
+        transform: active 
+          ? 'translateY(-50%) translateX(0)' 
+          : 'translateY(-50%) translateX(20px)',
+      }),
+      ...(position === 'right' && {
+        left: '105%',
+        transform: active 
+          ? 'translateY(-50%) translateX(0)' 
+          : 'translateY(-50%) translateX(-20px)',
+      }),
       opacity: active ? 1 : 0,
       visibility: active ? 'visible' : 'hidden',
-      left: 0,
-      right: 0,
-      top: '200px',
+    },
+    
+    // Mobile positioning
+    [theme.breakpoints.down('md')]: {
+      position: 'relative',
+      width: '100%',
+      marginTop: theme.spacing(2),
+      transform: active ? 'translateY(0)' : 'translateY(-10px)',
+      opacity: active ? 1 : 0,
+      visibility: active ? 'visible' : 'hidden',
+      maxHeight: active ? '200px' : '0',
+      overflow: 'hidden',
     },
   }));
 
-  const HoverContentText = styled(Typography)(({ theme }) => ({
-    textAlign: 'center',
-    fontSize: '24px',
-    lineHeight: '32px',
+  const HoverArrow = styled(Box)(({ theme, position }) => ({
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: 0,
+    height: 0,
+    ...(position === 'left' && {
+      left: '100%',
+      borderTop: '12px solid transparent',
+      borderBottom: '12px solid transparent',
+      borderLeft: '12px solid rgba(255, 255, 255, 0.95)',
+    }),
+    ...(position === 'right' && {
+      right: '100%',
+      borderTop: '12px solid transparent',
+      borderBottom: '12px solid transparent',
+      borderRight: '12px solid rgba(255, 255, 255, 0.95)',
+    }),
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  }));
+
+  const HoverText = styled(Typography)(({ theme }) => ({
+    fontSize: '16px',
+    lineHeight: 1.6,
     color: theme.palette.text.primary,
+    textAlign: 'center',
     margin: 0,
     [theme.breakpoints.down('md')]: {
-      fontSize: '16px',
-      lineHeight: '24px',
+      fontSize: '14px',
     },
   }));
 
-  const PrimaryButton = styled(Button)(({ theme }) => ({
-    padding: '12px 24px',
-    border: 'none',
-    borderRadius: '30px',
-    backgroundColor: theme.palette.primary.main,
+  const CTAButton = styled(Button)(({ theme }) => ({
+    marginTop: theme.spacing(4),
+    padding: '14px 32px',
+    borderRadius: '50px',
+    background: 'linear-gradient(45deg, #7C3AED 30%, #3B82F6 90%)',
     color: 'white',
     fontSize: '16px',
     fontWeight: 600,
-    cursor: 'pointer',
+    textTransform: 'none',
     transition: 'all 0.3s ease',
     '&:hover': {
-      backgroundColor: theme.palette.primary.main,
-      transform: 'scale(1.1)',
-    },
-    [theme.breakpoints.down('md')]: {
-      width: '186px',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 10px 25px rgba(124, 58, 237, 0.4)',
     },
   }));
 
-  return (
-    <Box sx={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      flexFlow: 'column',
-      overflow: 'hidden'
-    }}>
-      <CustomDesignGaleria>
-        {designs.map((design, index) => (
-          <DesignItem key={index} position={design.position}>
-            <DesignImage 
-              src={design.src}
-              alt={design.alt}
-              position={design.position}
-              height={design.position === 'mid' ? undefined : 353}
-              onClick={() => design.position === 'mid' && onHoverChange(index)}
-              sx={{
-                transition: 'transform 0.3s ease-in-out',
-                '&:hover': {
-                  transform: design.position === 'mid' ? 'scale(1.03)' : 'scale(1.05)',
-                  filter: design.position === 'mid' ? 'brightness(1.1)' : 'none',
-                  zIndex: 2
-                }
-              }}
-            />
-            
-            {design.position === 'mid' && (
-              <HoverContent 
-                position={index === 1 ? 'right' : 'left'}
-                active={activeHover === index}
-                sx={{
-                  position: 'absolute',
-                  transition: 'all 0.4s ease-in-out',
-                  backgroundColor: 'rgba(124, 58, 237, 0.95)',
-                  borderRadius: '12px',
-                  padding: { xs: '16px', md: '24px' },
-                  backdropFilter: 'blur(10px)',
-                  
-                  // Desktop
-                  '@media (min-width: 768px)': {
-                    top: '50%',
-                    [index === 1 ? 'left' : 'right']: '105%',
-                    transform: activeHover === index 
-                      ? 'translateY(-50%) translateX(0)' 
-                      : `translateY(-50%) translateX(${index === 1 ? '-20px' : '20px'})`,
-                    opacity: activeHover === index ? 1 : 0,
-                    visibility: activeHover === index ? 'visible' : 'hidden',
-                    width: '280px',
-                    maxWidth: '280px'
-                  },
-                  
-                  // Mobile
-                  '@media (max-width: 767px)': {
-                    top: '105%',
-                    left: '0',
-                    right: '0',
-                    transform: activeHover === index ? 'translateY(0)' : 'translateY(-10px)',
-                    opacity: activeHover === index ? 1 : 0,
-                    visibility: activeHover === index ? 'visible' : 'hidden',
-                    width: '100%',
-                    maxWidth: 'none'
-                  }
-                }}
-              >
-                <HoverContentText sx={{
-                  color: 'white',
-                  fontSize: { xs: '14px', md: '16px' },
-                  lineHeight: 1.5,
-                  fontWeight: 400
-                }}>
-                  {design.hoverText}
-                </HoverContentText>
-              </HoverContent>
-            )}
-          </DesignItem>
-        ))}
-      </CustomDesignGaleria>
+  // Crear pares de dispositivos: laptop con su móvil correspondiente
+  const devicePairs = [
+    {
+      laptop: designs.find(d => d.position === 'mid' && d.alt === "Diseño personalizado 2"), // customdesign02
+      mobile: designs.find(d => d.position === 'topLeft'), // customdesign01
+      position: 'left',
+      laptopIndex: designs.findIndex(d => d.position === 'mid' && d.alt === "Diseño personalizado 2")
+    },
+    {
+      laptop: designs.find(d => d.position === 'mid' && d.alt === "Diseño personalizado 3"), // customdesign03
+      mobile: designs.find(d => d.position === 'bottomRight'), // customdesign04
+      position: 'right',
+      laptopIndex: designs.findIndex(d => d.position === 'mid' && d.alt === "Diseño personalizado 3")
+    }
+  ];
 
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        padding: { 
-          xs: '30px 20px', 
-          sm: '35px 40px', 
-          md: '40px 100px',
-          lg: '40px 200px' 
-        },
-        backgroundColor: 'background.default',
-      }}>
-         <PrimaryButton
-                            variant="contained"
-                            endIcon={<ArrowIcon />}
-                            component={Link}
-                            to="/contactenos"
-                            sx={{
-                                '&:hover': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' }
-                            }}
-                        >
-                            Quiero saber más
-                        </PrimaryButton>
-      </Box>
+  return (
+    <Box>
+    <GalleryContainer>
+      <DevicesGrid>
+        {devicePairs.map((pair, index) => {
+          if (!pair.laptop || !pair.mobile) return null;
+          
+          const isActive = activeHover === pair.laptopIndex;
+          
+          return (
+            <DeviceSet
+              key={index}
+              onMouseEnter={() => !isMobile && onHoverChange(pair.laptopIndex)}
+              onMouseLeave={() => !isMobile && onHoverChange(null)}
+              onClick={() => isMobile && onHoverChange(pair.laptopIndex)}
+            >
+              {/* Laptop */}
+              <LaptopContainer>
+                <img 
+                  src={pair.laptop.src} 
+                  alt={pair.laptop.alt}
+                />
+              </LaptopContainer>
+              
+              {/* Mobile Device */}
+              <MobileContainer position={pair.position}>
+                <img 
+                  src={pair.mobile.src} 
+                  alt={pair.mobile.alt}
+                />
+              </MobileContainer>
+              
+              {/* Hover Content */}
+              <HoverContent 
+                position={pair.position}
+                active={isActive}
+              >
+                <HoverArrow position={pair.position} />
+                <HoverText>
+                  {pair.laptop.hoverText}
+                </HoverText>
+              </HoverContent>
+            </DeviceSet>
+          );
+        })}
+      </DevicesGrid>
+
+     
+      
+      {/* Decorative Background Elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '10%',
+          left: '5%',
+          width: '100px',
+          height: '100px',
+          borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.1)',
+          filter: 'blur(40px)',
+          zIndex: 0,
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '15%',
+          right: '8%',
+          width: '150px',
+          height: '150px',
+          borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.08)',
+          filter: 'blur(50px)',
+          zIndex: 0,
+        }}
+      />
+    </GalleryContainer>
+     {/* CTA Button */}
+     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+  <CTAButton
+    variant="contained"
+    component={Link}
+    to="/contactenos"
+    endIcon={
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path 
+          d="M17 8l4 4m0 0l-4 4m4-4H3" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        />
+      </svg>
+    }
+  >
+    Quiero saber más
+  </CTAButton>
+</Box>
+
+   
     </Box>
   );
 };
+
 export default CustomDesignGallery;

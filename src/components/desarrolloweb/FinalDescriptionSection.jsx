@@ -8,6 +8,7 @@ const FinalDescriptionSection = ({ content }) => {
       justifyContent: 'center',
       padding: '40px 20px',
       backgroundColor: 'background.default',
+      marginTop: '-20px'
     }}>
       <Box sx={{
         padding: { xs: 0, md: '40px' },
