@@ -7,7 +7,7 @@ const AdditionalDescriptionSection = ({ title, content }) => {
       display: 'flex',
       justifyContent: 'center',
       padding: { xs: '0 20px', md: '40px 20px' },
-      backgroundColor: 'background.default'
+      backgroundColor: 'background.default', marginTop: '-50px'
     }}>
       <Container
         maxWidth="lg"

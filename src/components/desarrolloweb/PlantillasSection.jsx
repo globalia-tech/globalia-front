@@ -52,7 +52,7 @@ import PlantillasGallery from './PlantillasGallery';const PlantillasSection = ({
   }));
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '-100px' }}>
       <Box sx={{ width: '100%' }}>
         <Typography
           variant="h2"
