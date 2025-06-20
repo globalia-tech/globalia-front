@@ -5,7 +5,7 @@ export default function ContactSection() {
     return (
         <Box>
             <Typography variant="h5" sx={{ mb: 3, textAlign: 'left' }}>
-                ¡Contactanos!
+                ¡Contáctanos!
             </Typography>
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
                 <ContactItem

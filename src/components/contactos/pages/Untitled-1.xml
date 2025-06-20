@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CalzadosPepito>
+  <CompraStatus>Confirmed</CompraStatus>
+  <CompraID>AZF256</CompraID>
+   <ZapatillasDetails>
+    <ZapatillasMarca>New Balance</ZapatillasMarca>
+    <ZapatillasColor>Blanca</ZapatillasColor>
+    <ZapatillasNumero>39</ZapatillasNumero>
+   </ZapatillasDetails>
+  <TotalCost>14000</TotalCost>
+</CalzadosPepito>
