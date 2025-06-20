@@ -90,7 +90,7 @@ const Contactos = () => {
                     </Typography>
                     <Typography variant="h5" component="p">
                         Hablemos de tu próximo proyecto.<br />
-                        Desde el concepto hasta la implementación, estamos contigo en cada paso
+                        Desde el concepto hasta la implementación, estamos contigo en cada paso.
                     </Typography>
                 </HeroText>
             </HeroSection>

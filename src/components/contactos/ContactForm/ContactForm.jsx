@@ -86,7 +86,7 @@ const ContactForm = ({ onSubmitSuccess }) => {
                     gutterBottom 
                     sx={{ fontWeight: 600, mb: 4 }}
                 >
-                    Todas tus dudas te las responderemos a la brevedad
+                    Todas tus dudas serán respondidas a la brevedad
                 </Typography>
 
                 {/* Only show error messages as alerts now */}
