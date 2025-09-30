@@ -15,9 +15,9 @@ import imagen2 from '../../assets/imagen-fondo-seccion-nosotros.webp';
 import imagenAgustin from '../../assets/perfiles/1617110579258.jpeg';
 import imagenBelen from '../../assets/perfiles/belu.webpc';
 import imagenEli from '../../assets/perfiles/eli.webp';
-import imagenYohan from '../../assets/perfiles/yohan.jpg';
+import imagenMalena from '../../assets/perfiles/male.png';
 import imagenCesar from '../../assets/perfiles/cesar.jpeg';
-import imagenRaul from '../../assets/perfiles/Raul.jpeg';
+import imagenStefano from '../../assets/perfiles/stefano.webp';
 
 
 import {CalidadIcon} from '../common/SvgIcons/CalidadIcon.jsx';
@@ -61,11 +61,11 @@ const QuienesSomos = () => {
 
     const teamMembers = [
         { image: imagenBelen, name: 'Belen Gutierrez' },
-        { image: imagenYohan, name: 'Malena de Arriba' },
+        { image: imagenMalena, name: 'Malena de Arriba' },
         { image: imagenAgustin, name: 'Agustín Moldavsky Rodoni' },
         { image: imagenEli, name: 'Eli Lucero' },
         { image: imagenCesar, name: 'Cesar Maldonado' },
-        { image: imagenRaul, name: 'Stefano Mandolesi' },
+        { image: imagenStefano, name: 'Stefano Mandolesi' },
     ];
 
     return (
