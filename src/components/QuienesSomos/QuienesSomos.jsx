@@ -13,7 +13,7 @@ import ValueCard from '../QuienesSomos/ValueCard.jsx';
 import imagen from '../../assets/imagen-seccion_historia.webp';
 import imagen2 from '../../assets/imagen-fondo-seccion-nosotros.webp';
 import imagenAgustin from '../../assets/perfiles/1617110579258.jpeg';
-import imagenIlena from '../../assets/perfiles/Ileana.jpg';
+import imagenBelen from '../../assets/perfiles/belu.webpc';
 import imagenEli from '../../assets/perfiles/eli.webp';
 import imagenYohan from '../../assets/perfiles/yohan.jpg';
 import imagenCesar from '../../assets/perfiles/cesar.jpeg';
@@ -60,12 +60,12 @@ const QuienesSomos = () => {
     ];
 
     const teamMembers = [
-        { image: imagenIlena, name: 'Ileana Nieto' },
-        { image: imagenYohan, name: 'Yohan J Rodriguez Sosa' },
+        { image: imagenBelen, name: 'Belen Gutierrez' },
+        { image: imagenYohan, name: 'Malena de Arriba' },
         { image: imagenAgustin, name: 'Agustín Moldavsky Rodoni' },
         { image: imagenEli, name: 'Eli Lucero' },
         { image: imagenCesar, name: 'Cesar Maldonado' },
-        { image: imagenRaul, name: 'Raul Madero' },
+        { image: imagenRaul, name: 'Stefano Mandolesi' },
     ];
 
     return (
