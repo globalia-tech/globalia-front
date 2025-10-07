@@ -1,6 +1,5 @@
 import {
     Box,
-    Button,
     Container,
     Grid,
     Typography,
@@ -65,7 +64,7 @@ const QuienesSomos = () => {
         { image: imagenAgustin, name: 'Agustín Moldavsky Rodoni' },
         { image: imagenEli, name: 'Eli Lucero' },
         { image: imagenCesar, name: 'Cesar Maldonado' },
-        { image: imagenRaul, name: 'Stefano Mandolesi' },
+        { image: imagenStefano, name: 'Stefano Mandolesi' },
     ];
 
     return (
