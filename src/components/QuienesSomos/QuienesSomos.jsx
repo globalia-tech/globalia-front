@@ -17,6 +17,7 @@ import imagenEli from '../../assets/perfiles/eli.webp';
 import imagenMalena from '../../assets/perfiles/male.png';
 import imagenCesar from '../../assets/perfiles/cesar.jpeg';
 import imagenStefano from '../../assets/perfiles/stefano.webp';
+import imagenAndersson from '../../assets/perfiles/Andersson.png';
 
 
 import {CalidadIcon} from '../common/SvgIcons/CalidadIcon.jsx';
@@ -65,6 +66,7 @@ const QuienesSomos = () => {
         { image: imagenEli, name: 'Eli Lucero' },
         { image: imagenCesar, name: 'Cesar Maldonado' },
         { image: imagenStefano, name: 'Stefano Mandolesi' },
+        { image: imagenAndersson, name: 'Andersson Godoy Garcia' },
     ];
 
     return (
