@@ -59,7 +59,7 @@ export default function Header() {
                     <ContactInfo
                         href="https://wa.me/5491176255393"
                         icon={<WhatsApp fontSize="small" />}
-                        text={isMobile ? null : "+54 9 11 7625 5393"}
+                        text={isMobile ? null : "+54 9 11 2492 6505"}
                     />
                     <ContactInfo
                         href="mailto:info@globalia-tech.com"

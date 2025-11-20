@@ -12,12 +12,12 @@ import ValueCard from '../QuienesSomos/ValueCard.jsx';
 import imagen from '../../assets/imagen-seccion_historia.webp';
 import imagen2 from '../../assets/imagen-fondo-seccion-nosotros.webp';
 import imagenAgustin from '../../assets/perfiles/1617110579258.jpeg';
-import imagenBelen from '../../assets/perfiles/belu.webp';
 import imagenEli from '../../assets/perfiles/eli.webp';
 import imagenMalena from '../../assets/perfiles/male.png';
 import imagenCesar from '../../assets/perfiles/cesar.jpeg';
 import imagenStefano from '../../assets/perfiles/stefano.webp';
 import imagenAndersson from '../../assets/perfiles/Andersson.png';
+import imagenJoaquin from '../../assets/perfiles/joaquin.jpeg';
 
 
 import {CalidadIcon} from '../common/SvgIcons/CalidadIcon.jsx';
@@ -67,6 +67,7 @@ const QuienesSomos = () => {
         { image: imagenCesar, name: 'Cesar Maldonado' },
         { image: imagenStefano, name: 'Stefano Mandolesi' },
         { image: imagenAndersson, name: 'Andersson Godoy Garcia' },
+        { image: imagenJoaquin, name: 'Joaquín Peña' },
     ];
 
     return (
