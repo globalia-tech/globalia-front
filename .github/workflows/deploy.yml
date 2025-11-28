@@ -29,9 +29,11 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
-      
-      - name: Build
-        run: npm run build
+      # El comando normal sin la variable de entorno.
+      #- name: Build (Modo Dominio Personalizado)
+      #  run: npm run build
+      - name: Build (Modo Subdominio)
+        run: VITE_BASE_PATH='/${{ github.event.repository.name }}/' npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
