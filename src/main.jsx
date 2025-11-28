@@ -10,7 +10,7 @@ import SocialMedia from "./components/SocialMedia.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/globalia-front">
+    <BrowserRouter>
       <Routes>
         {/* Ruta padre debe envolver las rutas hijas */}
         <Route path="/" element={<App />}>
