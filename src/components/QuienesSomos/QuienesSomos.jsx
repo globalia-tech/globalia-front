@@ -1,6 +1,5 @@
 import {
     Box,
-    Button,
     Container,
     Grid,
     Typography,
@@ -13,11 +12,12 @@ import ValueCard from '../QuienesSomos/ValueCard.jsx';
 import imagen from '../../assets/imagen-seccion_historia.webp';
 import imagen2 from '../../assets/imagen-fondo-seccion-nosotros.webp';
 import imagenAgustin from '../../assets/perfiles/1617110579258.jpeg';
-import imagenIlena from '../../assets/perfiles/Ileana.jpg';
 import imagenEli from '../../assets/perfiles/eli.webp';
-import imagenYohan from '../../assets/perfiles/yohan.jpg';
+import imagenMalena from '../../assets/perfiles/male.png';
 import imagenCesar from '../../assets/perfiles/cesar.jpeg';
-import imagenRaul from '../../assets/perfiles/Raul.jpeg';
+import imagenStefano from '../../assets/perfiles/stefano.webp';
+import imagenAndersson from '../../assets/perfiles/Andersson.png';
+import imagenJoaquin from '../../assets/perfiles/joaquin.jpeg';
 
 
 import {CalidadIcon} from '../common/SvgIcons/CalidadIcon.jsx';
@@ -60,12 +60,14 @@ const QuienesSomos = () => {
     ];
 
     const teamMembers = [
-        { image: imagenIlena, name: 'Ileana Nieto' },
-        { image: imagenYohan, name: 'Yohan J Rodriguez Sosa' },
+        { image: imagenBelen, name: 'Belen Gutierrez' },
+        { image: imagenMalena, name: 'Malena de Arriba' },
         { image: imagenAgustin, name: 'Agustín Moldavsky Rodoni' },
         { image: imagenEli, name: 'Eli Lucero' },
         { image: imagenCesar, name: 'Cesar Maldonado' },
-        { image: imagenRaul, name: 'Raul Madero' },
+        { image: imagenStefano, name: 'Stefano Mandolesi' },
+        { image: imagenAndersson, name: 'Andersson Godoy Garcia' },
+        { image: imagenJoaquin, name: 'Joaquín Peña' },
     ];
 
     return (
@@ -125,17 +127,24 @@ const QuienesSomos = () => {
 
             {/* Sección Valores */}
             <Container sx={{ textAlign: 'center', my: 10 }}>
-                <Typography variant="h4" gutterBottom>
-                    Nuestros valores
-                </Typography>
-                <Grid container justifyContent="center" spacing={4}>
-                    {valores.map((valor) => (
-                        <Grid item key={valor.title}>
-                            <ValueCard {...valor} />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
+    <Typography 
+        variant="h4" 
+        gutterBottom 
+        sx={{ 
+            marginTop: '30px',
+            marginBottom: { xs: '40px', sm: '50px', md: '60px' }
+        }}
+    >
+        Nuestros valores
+    </Typography>
+    <Grid container justifyContent="center" spacing={4}>
+        {valores.map((valor) => (
+            <Grid item key={valor.title}>
+                <ValueCard {...valor} />
+            </Grid>
+        ))}
+    </Grid>
+</Container>
 
             <Box
                 sx={{

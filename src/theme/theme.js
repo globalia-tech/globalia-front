@@ -24,36 +24,61 @@ const theme = createTheme({
             header: 'rgba(4, 2, 33, 1)'
         },
     },
+    // Tipografía responsiva usando clamp para escalado fluido
     typography: {
-        fontFamily: '"Inter", sans-serif',
+        fontFamily: 'Inter, sans-serif',
         h1: {
             fontWeight: 700,
-            fontSize: '56px',
-            lineHeight: '64px',
+            fontSize: 'clamp(2.2rem, 6vw, 3.5rem)',
+            lineHeight: 1.1,
             color: '#fff',
         },
+        h3: {
+            fontWeight: 700,
+            fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+            lineHeight: 1.2,
+        },
         h4: {
-            fontSize: '36px',
+            fontSize: 'clamp(1.2rem, 3vw, 2.25rem)',
             fontWeight: 600,
-            lineHeight: '44px',
+            lineHeight: 1.2,
             textAlign: 'center',
         },
         h5: {
-            fontSize: '24px',
-            lineHeight: '32px',
+            fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+            lineHeight: 1.3,
             fontWeight: 600,
         },
         h6: {
             fontWeight: 600,
         },
         body1: {
-            fontSize: '16px',
-            lineHeight: '24px',
+            fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
+            lineHeight: 1.6,
         },
         body2: {
-            fontSize: '14px',
-            lineHeight: '20px',
+            fontSize: 'clamp(0.85rem, 1vw, 1rem)',
+            lineHeight: 1.5,
         },
+        button: {
+            fontSize: 'clamp(1rem, 1.5vw, 1.1rem)',
+            fontWeight: 700,
+        },
+    },
+    // Breakpoints mobile-first estándar
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536
+        },
+    },
+    // Spacing base 8px, pero se recomienda usar sx para responsividad
+    spacing: 8,
+    shape: {
+        borderRadius: 16,
     },
     components: {
         MuiButton: {
@@ -61,14 +86,15 @@ const theme = createTheme({
                 root: {
                     borderRadius: '30px',
                     fontWeight: 700,
-                    fontSize: '16px',
-                    lineHeight: '19.36px',
+                    fontSize: 'clamp(1rem, 1.5vw, 1.1rem)',
+                    lineHeight: 1.2,
                     padding: '12px 24px',
+                    minHeight: 44, // Touch target mínimo
                     textTransform: 'none',
                 },
                 contained: {
                     '&:hover': {
-                        transform: 'scale(1.1)',
+                        transform: 'scale(1.05)',
                     },
                 },
             },
@@ -80,7 +106,7 @@ const theme = createTheme({
                         color: 'white',
                         '&:hover': {
                             backgroundColor: 'rgba(119, 29, 250, 0.9)',
-                            transform: 'scale(1.1)',
+                            transform: 'scale(1.05)',
                         },
                     },
                 },
@@ -99,15 +125,14 @@ const theme = createTheme({
                 },
             },
         },
-    },
-    breakpoints: {
-        values: {
-            xs: 0,
-            sm: 405,
-            md: 768,
-            lg: 1182,
-            xl: 1536,
-            tablet: 1000
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    fontSmoothing: 'antialiased',
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'grayscale',
+                },
+            },
         },
     },
 });
