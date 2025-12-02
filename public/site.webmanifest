@@ -1,19 +1,21 @@
 {
-    "background_color": "#ffffff",
+    "name": "Globalia Tech",
+    "short_name": "Globalia",
+    "description": "Agencia de desarrollo web y social media",
+    "start_url": "/",
     "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2E84EB",
     "icons": [
         {
+            "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
-            "src": "android-chrome-192x192.png",
             "type": "image/png"
         },
         {
+            "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
-            "src": "android-chrome-512x512.png",
             "type": "image/png"
         }
-    ],
-    "name": "",
-    "short_name": "",
-    "theme_color": "#ffffff"
+    ]
 }

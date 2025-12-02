@@ -17,8 +17,8 @@ export default function ContactSection() {
                 <ContactItem
                     label="WhatsApp:"
                     icon={<WhatsApp fontSize="small" />}
-                    text="+54 9 11 7625-5393"
-                    href="https://wa.me/5491176255393"
+                    text="+54 9 11 2492 6505"
+                    href="https://wa.me/5491124926505"
                 />
             </Box>
         </Box>
