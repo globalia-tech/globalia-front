@@ -59,12 +59,8 @@ const QuienesSomos = () => {
     ];
 
     const teamMembers = [
-        { image: imagenMalena, name: 'Malena de Arriba' },
         { image: imagenAgustin, name: 'Agustín Moldavsky Rodoni' },
         { image: imagenEli, name: 'Eli Lucero' },
-        { image: imagenCesar, name: 'Cesar Maldonado' },
-        { image: imagenAndersson, name: 'Andersson Godoy Garcia' },
-        { image: imagenJoaquin, name: 'Joaquín Peña' },
     ];
 
     return (
@@ -162,23 +158,7 @@ const QuienesSomos = () => {
                 />
             </Box>
 
-            {/* Sección Equipo */}
-            <Container sx={{ textAlign: 'center', my: 10 }}>
-                <Typography variant="h4" gutterBottom>
-                    Nuestro equipo
-                </Typography>
-                <Box sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 3,
-                    justifyContent: 'center',
-                    my: 10
-                }}>
-                    {teamMembers.map((member) => (
-                        <TeamMember key={member.name} {...member} />
-                    ))}
-                </Box>
-            </Container>
+
             <TecnologiasSection
                 iconos={[
                     <JavaIcon/>,

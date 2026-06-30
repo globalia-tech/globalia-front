@@ -57,7 +57,7 @@ export default function Header() {
                 {/* Contact Info */}
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
                     <ContactInfo
-                        href="https://wa.me/5491176255393"
+                        href="https://wa.me/5491124926505"
                         icon={<WhatsApp fontSize="small" />}
                         text={isMobile ? null : "+54 9 11 2492 6505"}
                     />
