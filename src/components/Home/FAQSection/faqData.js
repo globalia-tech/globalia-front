@@ -1,6 +1,6 @@
 export const faqs = [
     {
-        question: '1. ¿Qué servicios ofrece Globalia Tech?',
+        question: '1. ¿Qué servicios ofrece AegaTech?',
         "answer": [
             "Diseño y desarrollo de sitios web",
             "Diseño adaptable a distintos dispositivos",
@@ -22,8 +22,8 @@ export const faqs = [
         answer: 'Claro, ofrecemos una consulta inicial gratuita para discutir tu proyecto y proporcionarte un presupuesto personalizado sin compromiso de compra'
     },
     {
-        question: '5. ¿Quiénes forman Globalia Tech?',
-        answer: 'Somos un equipo multidisciplinario que incluye expertos en UX/UI, Desarrollo Front End y Back End, Control de calidad (QA) y Scrum Master. Cada miembro del equipo está comprometido en ofrecer soluciones de alta calidad y una experiencia de usuario excepcional'
+        question: '5. ¿Quiénes forman AegaTech?',
+        answer: 'Somos un equipo multidisciplinario que incluye expertos en UX/UI, Desarrollo Front End y Back End, Control de calidad (QA), Analisis Funcional y PM. Cada miembro del equipo está comprometido en ofrecer soluciones de alta calidad y una experiencia de usuario excepcional'
     },
     {
         question: '6. ¿Ofrecen soporte técnico?',

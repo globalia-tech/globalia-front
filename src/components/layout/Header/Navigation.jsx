@@ -61,7 +61,7 @@ export default function Navigation() {
                                 fontSize: { xs: '1.1rem', md: '1.5rem' }
                         }}
                         >
-                            Globalia Tech
+                            AegaTech
                         </Typography>
                     </Box>
 

@@ -69,9 +69,9 @@ export default function Header() {
                 </Box>
                 {/* Social Icons */}
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <SocialIcon href="https://www.instagram.com/globaliatech/" icon={<Instagram fontSize="small" />} />
-                    <SocialIcon href="https://www.facebook.com/globaliatech/" icon={<Facebook fontSize="small" />} />
-                    <SocialIcon href="https://www.linkedin.com/company/globalia-tech/" icon={<LinkedIn fontSize="small" />} />
+                    <SocialIcon href="https://www.instagram.com/aegatechweb/" icon={<Instagram fontSize="small" />} />
+                    <SocialIcon href="https://www.facebook.com/AegaTech" icon={<Facebook fontSize="small" />} />
+                    <SocialIcon href="https://www.linkedin.com/company/aega-tech/" icon={<LinkedIn fontSize="small" />} />
                 </Box>
             </Box>
 
@@ -122,7 +122,7 @@ export default function Header() {
                                 ml: 1,
                             }}
                         >
-                            Globalia Tech
+                            AegaTech
                         </Typography>
                     </Box>
 

@@ -79,7 +79,7 @@ const HeroSection = ({ setActiveSection, scrollToRef }) => {
                 </Typography>
                 <Typography variant="h5" component="p" sx={{ mb: 4 }}>
                     Diseño web, desarrollo y soluciones innovadoras.
-                    <br /> ¡Empieza hoy con Globalia Tech!
+                    <br /> ¡Empieza hoy con AegaTech!
                 </Typography>
                 <PrimaryButton
                     variant="contained"
