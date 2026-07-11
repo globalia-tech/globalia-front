@@ -7,7 +7,7 @@ import Logo from '../../common/Logo';
 export default function LogoSection() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Logo width={91} height={71} />
+            <Logo width={58} height={71} />
             <Typography variant="h4" sx={{ mb: 2 }}>
                 AegaTech
             </Typography>

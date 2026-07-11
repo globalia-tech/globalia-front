@@ -51,7 +51,7 @@ export default function Navigation() {
                         textDecoration: 'none',
                         minHeight: 44
                     }} aria-label="Ir a inicio">
-                        <Logo width={48} height={36}/>
+                        <Logo width={30} height={36}/>
                         <Typography
                             variant="h4"
                             sx={{
