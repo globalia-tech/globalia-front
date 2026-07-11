@@ -216,12 +216,12 @@ export default function SocialMedia() {
           <HeroBackground>
             <HeroImage
                 src={imagenSocialMedia}
-                alt="Social Media GlobaliaTech"
+                alt="Social Media AegaTech"
                 isMobile={false}
             />
             <HeroImage
                 src={imagenSocialMediaMobile}
-                alt="Social Media GlobaliaTech Mobile"
+                alt="Social Media AegaTech Mobile"
                 isMobile={true}
             />
           </HeroBackground>

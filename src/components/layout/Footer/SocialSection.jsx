@@ -11,17 +11,17 @@ export default function SocialSection() {
             </Typography>
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
                 <SocialLink
-                    href="https://instagram.com/globaliatech"
+                    href="https://www.instagram.com/aegatechweb/"
                     icon={<Instagram fontSize="small" />}
                     label="Instagram"
                 />
                 <SocialLink
-                    href="https://facebook.com/globaliatech"
+                    href="https://www.facebook.com/AegaTech"
                     icon={<Facebook fontSize="small" />}
                     label="Facebook"
                 />
                 <SocialLink
-                    href="https://www.linkedin.com/company/globalia-tech/"
+                    href="https://www.linkedin.com/company/aega-tech/"
                     icon={<LinkedIn fontSize="small" />}
                     label="LinkedIn"
                 />

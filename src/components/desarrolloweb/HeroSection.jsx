@@ -73,7 +73,7 @@ const HeroSection = ({ title, subtitle, backgroundImage }) => {
   return (
     <HeroContainer>
       <HeroBackground>
-        <HeroImage src={backgroundImage} alt="Desarrollo Web GlobaliaTech" />
+        <HeroImage src={backgroundImage} alt="Desarrollo Web AegaTech" />
       </HeroBackground>
       <HeroTextContainer>
         <HeroTitle variant="h1">{title}</HeroTitle>

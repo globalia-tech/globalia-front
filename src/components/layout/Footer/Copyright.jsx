@@ -15,7 +15,7 @@ export default function Copyright() {
             textAlign: 'center'
         }}>
             <Typography variant="body2">
-                &copy; Globalia Tech {currentYear}
+                &copy; AegaTech {currentYear}
             </Typography>
         </Box>
     );

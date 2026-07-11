@@ -16,7 +16,7 @@ const WhyChooseUs = forwardRef((props, ref) => (
         <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', mb: 4 }}>
             ¿Por qué elegir{' '}
             <Box component="span" color="primary.main">
-                Globalia Tech
+                AegaTech
             </Box> para su Empresa o Proyecto Personal?
         </Typography>
 

@@ -132,12 +132,12 @@ const DesarrolloWeb = () => {
 
       {/* Descripción Final */}
       <FinalDescriptionSection
-        content="Globalia Tech ofrece una amplia gama de servicios tecnológicos diseñados para ayudarte a alcanzar tus objetivos de negocio con soluciones innovadoras y personalizadas"
+        content="AegaTech ofrece una amplia gama de servicios tecnológicos diseñados para ayudarte a alcanzar tus objetivos de negocio con soluciones innovadoras y personalizadas"
       />
 
       {/* Sección de Soporte */}
       <SoporteSection
-        title="SOPORTE GLOBALIA TECH"
+        title="SOPORTE AEGATECH"
         content="Si ya eres nuestro cliente, puedes comunicarte con nosotros por cualquier duda o inconveniente, a la brevedad te estaremos respondiendo."
         email="info@globalia-tech.com"
       />

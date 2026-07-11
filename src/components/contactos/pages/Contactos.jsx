@@ -75,7 +75,7 @@ const Contactos = () => {
     return (
         <>
             <HeroSection>
-                <img src={frameImage} alt="Contacta con Globalia Tech" />
+                <img src={frameImage} alt="Contacta con AegaTech" />
                 <HeroText>
                     <Typography 
                         variant="h1" 
@@ -86,7 +86,7 @@ const Contactos = () => {
                             fontWeight: 'bold'
                         }}
                     >
-                        Contacta con Globalia Tech
+                        Contacta con AegaTech
                     </Typography>
                     <Typography variant="h5" component="p">
                         Hablemos de tu próximo proyecto.<br />
